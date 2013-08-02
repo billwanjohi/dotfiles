@@ -6,6 +6,8 @@ ZSH_THEME="tjkirch"
 
 alias zshconfig="vim ~/.zshrc"
 alias ohmyzsh="vim  ~/.oh-my-zsh"
+alias vim="vim -p"
+alias vi="vim -p"
 
 CASE_SENSITIVE="false"
 DISABLE_AUTO_UPDATE="false"
@@ -32,3 +34,5 @@ HELPDIR=/usr/local/share/zsh/helpfiles
 
 # rbenv
 eval "$(rbenv init -)"
+
+source ~/.private

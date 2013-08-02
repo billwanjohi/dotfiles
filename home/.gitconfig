@@ -1,0 +1,9 @@
+[push]
+	default = simple
+[user]
+	name = billwanjohi
+	email = kaguru@gmail.com
+[core]
+	editor = vim
+[color]
+	ui = true

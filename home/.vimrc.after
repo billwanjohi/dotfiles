@@ -1,0 +1,2 @@
+" from http://vim.wikia.com/wiki/Display_line_numbers
+:nmap <C-N><C-N> :set invnumber<CR>
