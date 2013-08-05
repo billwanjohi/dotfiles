@@ -1,2 +1,12 @@
-" from http://vim.wikia.com/wiki/Display_line_numbers
-:nmap <C-N><C-N> :set invnumber<CR>
+" from http://jeffkreeftmeijer.com/2012/relative-line-numbers-in-vim-for-super-fast-movement/
+function! NumberToggle()
+  if(&relativenumber == 1)
+    set number
+  elseif(&number == 1)
+    set nonumber
+  else
+    set relativenumber
+  endif
+endfunc
+
+nnoremap <C-n> :call NumberToggle()<cr>
