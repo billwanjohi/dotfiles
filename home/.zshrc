@@ -24,6 +24,9 @@ source $ZSH/oh-my-zsh.sh
 
 export PATH=/usr/local/bin:/usr/bin:/bin		# regular binaries
 export PATH=$PATH:/usr/local/sbin:/usr/sbin:/sbin	# secure binaries
+alias ls="gls --color=auto"
+eval `gdircolors $HOME/.dir_colors` # for ls colors
+export TERM="screen-256color" # needed for tmux colors
 
 export EDITOR=vim
 
