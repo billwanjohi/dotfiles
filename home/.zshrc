@@ -16,6 +16,7 @@ alias zshconfig="vim ~/.zshrc"
 alias ohmyzsh="vim  ~/.oh-my-zsh"
 alias vim="vim -p"
 alias vi="vim"
+alias gdc="git diff --cached"
 
 alias ls="gls --color=auto"
 eval `gdircolors $HOME/.dir_colors` # for ls colors
