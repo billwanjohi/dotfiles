@@ -17,17 +17,29 @@ alias ohmyzsh="vim  ~/.oh-my-zsh"
 alias vim="vim -p"
 alias vi="vim"
 alias gdc="git diff --cached"
+alias gap="git add --patch"
 
 alias ls="gls --color=auto"
 eval `gdircolors $HOME/.dir_colors` # for ls colors
 export TERM="screen-256color" # needed for tmux colors
 
+# from https://wiki.archlinux.org/index.php/Man_Page#Colored_man_pages
+man() {
+  env LESS_TERMCAP_mb=$(printf "\e[1;31m") \
+      LESS_TERMCAP_md=$(printf "\e[1;31m") \
+      LESS_TERMCAP_me=$(printf "\e[0m") \
+      LESS_TERMCAP_se=$(printf "\e[0m") \
+      LESS_TERMCAP_so=$(printf "\e[1;44;33m") \
+      LESS_TERMCAP_ue=$(printf "\e[0m") \
+      LESS_TERMCAP_us=$(printf "\e[1;32m") \
+  man "$@"
+}
+
 export PATH=/usr/local/bin:/usr/bin:/bin # regular binaries
 export PATH=$PATH:/usr/local/sbin:/usr/sbin:/sbin # secure binaries
 export EDITOR=vim
 
-# per homebrew instructions for zsh
-#unalias run-help # not applicable?
+# from brew info zsh
 autoload run-help
 HELPDIR=/usr/local/share/zsh/helpfiles
 
