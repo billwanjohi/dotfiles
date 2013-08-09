@@ -35,7 +35,8 @@ man() {
   man "$@"
 }
 
-export PATH=/usr/local/bin:/usr/bin:/bin # regular binaries
+export PATH=/usr/local/share/python # brew python
+export PATH=$PATH:/usr/local/bin:/usr/bin:/bin # regular binaries
 export PATH=$PATH:/usr/local/sbin:/usr/sbin:/sbin # secure binaries
 export EDITOR=vim
 
@@ -43,7 +44,11 @@ export EDITOR=vim
 autoload run-help
 HELPDIR=/usr/local/share/zsh/helpfiles
 
-# rbenv
-eval "$(rbenv init -)"
+# virtualenvwrapper (http://virtualenvwrapper.readthedocs.org/en/latest/install.html)
+export WORKON_HOME=$HOME/.virtualenvs
+export PROJECT_HOME=$HOME
+source /usr/local/bin/virtualenvwrapper.sh
+
+eval "$(rbenv init -)" # rbenv
 
 source ~/.private
