@@ -18,6 +18,8 @@ alias vim="vim -p"
 alias vi="vim"
 alias gdc="git diff --cached"
 alias gap="git add --patch"
+alias redsql="psql dev"
+alias tmuxlazy="tmux attach || tmux new-session"
 
 alias ls="gls --color=auto"
 eval `gdircolors $HOME/.dir_colors` # for ls colors
@@ -35,8 +37,7 @@ man() {
   man "$@"
 }
 
-export PATH=/usr/local/share/python # brew python
-export PATH=$PATH:/usr/local/bin:/usr/bin:/bin # regular binaries
+export PATH=/usr/local/bin:/usr/bin:/bin # regular binaries
 export PATH=$PATH:/usr/local/sbin:/usr/sbin:/sbin # secure binaries
 export EDITOR=vim
 
@@ -46,9 +47,11 @@ HELPDIR=/usr/local/share/zsh/helpfiles
 
 # virtualenvwrapper (http://virtualenvwrapper.readthedocs.org/en/latest/install.html)
 export WORKON_HOME=$HOME/.virtualenvs
-export PROJECT_HOME=$HOME
 source /usr/local/bin/virtualenvwrapper.sh
 
 eval "$(rbenv init -)" # rbenv
+source ~/roreps/tmuxinator/completion/tmuxinator.zsh # tmuxinator
 
-source ~/.private
+export AWS_DEFAULT_REGION=us-east-1
+
+source ~/.privaterc

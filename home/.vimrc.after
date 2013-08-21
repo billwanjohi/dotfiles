@@ -22,3 +22,9 @@ endif
 let g:solarized_visibility="high"
 let g:solarized_contrast="high"
 colorscheme solarized
+
+" http://vim.wikia.com/wiki/Toggle_auto-indenting_for_code_paste#Paste_toggle
+set pastetoggle=<F2>
+
+" http://vim-doc.heroku.com/view?https://raw.github.com/rizzatti/dash.vim/master/doc/dash.txt#DashKeyBindings
+:nmap <silent> <leader>d <Plug>DashSearch
