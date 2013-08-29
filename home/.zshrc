@@ -2,8 +2,7 @@
 ZSH=$HOME/.oh-my-zsh
 ZSH_THEME="tjkirch" # or "random" for fun
 CASE_SENSITIVE="false"
-DISABLE_AUTO_UPDATE="false"
-export UPDATE_ZSH_DAYS=13
+DISABLE_AUTO_UPDATE="true"
 DISABLE_LS_COLORS="false"
 DISABLE_AUTO_TITLE="false"
 DISABLE_CORRECTION="true"

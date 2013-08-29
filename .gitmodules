@@ -1,3 +1,18 @@
-[submodule "submodules/dircolors-solarized"]
-	path = submodules/dircolors-solarized
+[submodule "dircolors-solarized"]
+	path = dircolors-solarized
 	url = git@github.com:seebi/dircolors-solarized.git
+[submodule "home/.oh-my-zsh"]
+	path = home/.oh-my-zsh
+	url = git@github.com:robbyrussell/oh-my-zsh.git
+[submodule "home/.vim"]
+	path = home/.vim
+	url = git@github.com:carlhuda/janus.git
+[submodule "home/.janus/dash.vim"]
+	path = home/.janus/dash.vim
+	url = git@github.com:rizzatti/dash.vim.git
+[submodule "home/.janus/funcoo.vim"]
+	path = home/.janus/funcoo.vim
+	url = git@github.com:rizzatti/funcoo.vim.git
+[submodule "home/.janus/vim-colors-solarized"]
+	path = home/.janus/vim-colors-solarized
+	url = git@github.com:altercation/vim-colors-solarized.git

@@ -1,0 +1,2 @@
+./install_zsh
+cd ~/.vim && rake
