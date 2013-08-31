@@ -20,6 +20,11 @@ alias gap="git add --patch"
 alias redsql="psql dev"
 alias tmuxlazy="tmux attach || tmux new-session"
 
+export PATH=~/.rbenv/bin # git rbenv
+export PATH=$PATH:/usr/local/bin:/usr/bin:/bin # regular binaries
+export PATH=$PATH:/usr/local/sbin:/usr/sbin:/sbin # secure binaries
+export EDITOR=vim
+
 alias ls="gls --color=auto"
 eval `gdircolors $HOME/.dir_colors` # for ls colors
 export TERM="screen-256color" # needed for tmux colors
@@ -35,10 +40,6 @@ man() {
       LESS_TERMCAP_us=$(printf "\e[1;32m") \
   man "$@"
 }
-
-export PATH=/usr/local/bin:/usr/bin:/bin # regular binaries
-export PATH=$PATH:/usr/local/sbin:/usr/sbin:/sbin # secure binaries
-export EDITOR=vim
 
 # from brew info zsh
 autoload run-help

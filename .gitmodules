@@ -16,3 +16,15 @@
 [submodule "home/.janus/vim-colors-solarized"]
 	path = home/.janus/vim-colors-solarized
 	url = git@github.com:altercation/vim-colors-solarized.git
+[submodule "home/.rbenv"]
+	path = home/.rbenv
+	url = git@github.com:sstephenson/rbenv.git
+[submodule "rbenv-plugins/rbenv-gem-rehash"]
+	path = rbenv-plugins/rbenv-gem-rehash
+	url = git@github.com:sstephenson/rbenv-gem-rehash.git
+[submodule "rbenv-plugins/rbenv-bundler"]
+	path = rbenv-plugins/rbenv-bundler
+	url = git@github.com:carsomyr/rbenv-bundler.git
+[submodule "rbenv-plugins/ruby-build"]
+	path = rbenv-plugins/ruby-build
+	url = https://github.com/sstephenson/ruby-build.git
