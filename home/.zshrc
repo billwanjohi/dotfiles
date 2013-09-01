@@ -19,6 +19,7 @@ alias gdc="git diff --cached"
 alias gap="git add --patch"
 alias redsql="psql dev"
 alias tmuxlazy="tmux attach || tmux new-session"
+alias gitaudit="cat `g ls-files` | vim -"
 
 alias ls="gls --color=auto" # must `brew install coreutils` first
 eval `gdircolors $HOME/.dir_colors` # for ls colors

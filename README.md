@@ -13,6 +13,11 @@ homesick clone https://github.com/billwanjohi/dotfiles.git
 homesick symlink [dotfiles]
 ```
 
+### Loose ends
+
+*   change your name, email in .gitconfig
+*   provide your own .privaterc
+
 ## TODO
 *   brew cask install iterm2
 *   brew cask install google-drive, twice
