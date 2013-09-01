@@ -20,14 +20,18 @@ alias gap="git add --patch"
 alias redsql="psql dev"
 alias tmuxlazy="tmux attach || tmux new-session"
 
-export PATH=~/.rbenv/bin # git rbenv
-export PATH=$PATH:/usr/local/bin:/usr/bin:/bin # regular binaries
-export PATH=$PATH:/usr/local/sbin:/usr/sbin:/sbin # secure binaries
-export EDITOR=vim
-
-alias ls="gls --color=auto"
+alias ls="gls --color=auto" # must `brew install coreutils` first
 eval `gdircolors $HOME/.dir_colors` # for ls colors
 export TERM="screen-256color" # needed for tmux colors
+
+export EDITOR=vim
+export AWS_DEFAULT_REGION=us-east-1
+
+export PATH=/usr/bin:/bin:/usr/sbin:/sbin
+export PATH=/usr/local/bin:$PATH # homebrew
+export PATH=~/.rbenv/bin:$PATH # git rbenv
+
+eval "$(rbenv init -)"
 
 # from https://wiki.archlinux.org/index.php/Man_Page#Colored_man_pages
 man() {
@@ -49,9 +53,6 @@ HELPDIR=/usr/local/share/zsh/helpfiles
 export WORKON_HOME=$HOME/.virtualenvs
 source /usr/local/bin/virtualenvwrapper.sh
 
-eval "$(rbenv init -)" # rbenv
 source ~/roreps/tmuxinator/completion/tmuxinator.zsh # tmuxinator
-
-export AWS_DEFAULT_REGION=us-east-1
 
 source ~/.privaterc
