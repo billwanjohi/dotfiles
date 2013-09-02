@@ -23,3 +23,4 @@ homesick symlink [dotfiles]
 *   brew cask install google-drive, twice
 *   brew cask install dropbox, twice
 *   split mac and linux configurations
+*   bring tmuxinator repo in, redirect zshrc source
