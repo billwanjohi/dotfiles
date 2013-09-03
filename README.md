@@ -23,4 +23,5 @@ homesick symlink [dotfiles]
 *   brew cask install google-drive, twice
 *   brew cask install dropbox, twice
 *   split mac and linux configurations
-*   bring tmuxinator repo in, redirect zshrc source
+*   pull request for newer tmuxinator oh-my-zsh plugin
+*   remove vim-colors-solarized (redundant)

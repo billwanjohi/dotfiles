@@ -8,7 +8,7 @@ DISABLE_AUTO_TITLE="false"
 DISABLE_CORRECTION="true"
 COMPLETION_WAITING_DOTS="true"
 DISABLE_UNTRACKED_FILES_DIRTY="false"
-plugins=(git rails ruby)
+plugins=(brew bundle capistrano gem git rails tmux tmuxinator virtualenvwrapper)
 source $ZSH/oh-my-zsh.sh
 
 alias zshconfig="vim ~/.zshrc"
@@ -18,8 +18,6 @@ alias vi="vim"
 alias gdc="git diff --cached"
 alias gap="git add --patch"
 alias redsql="psql dev"
-alias tmuxlazy="tmux attach || tmux new-session"
-alias gitaudit="cat `g ls-files` | vim -"
 
 alias ls="gls --color=auto" # must `brew install coreutils` first
 eval `gdircolors $HOME/.dir_colors` # for ls colors
@@ -53,7 +51,5 @@ HELPDIR=/usr/local/share/zsh/helpfiles
 # virtualenvwrapper (http://virtualenvwrapper.readthedocs.org/en/latest/install.html)
 export WORKON_HOME=$HOME/.virtualenvs
 source /usr/local/bin/virtualenvwrapper.sh
-
-source ~/roreps/tmuxinator/completion/tmuxinator.zsh # tmuxinator
 
 source ~/.privaterc
