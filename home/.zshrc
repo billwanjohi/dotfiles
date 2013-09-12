@@ -8,7 +8,7 @@ DISABLE_AUTO_TITLE="false"
 DISABLE_CORRECTION="true"
 COMPLETION_WAITING_DOTS="true"
 DISABLE_UNTRACKED_FILES_DIRTY="false"
-plugins=(brew bundle capistrano gem git rails tmux tmuxinator virtualenvwrapper)
+plugins=(brew bundler capistrano gem git rails tmux tmuxinator virtualenvwrapper)
 source $ZSH/oh-my-zsh.sh
 
 alias zshconfig="vim ~/.zshrc"
@@ -17,9 +17,12 @@ alias vim="vim -p"
 alias vi="vim"
 alias gdc="git diff --cached"
 alias gap="git add --patch"
+alias gcolt="git checkout \`git tag | gsort -V | tail -1\`" #mac-specific
+#alias gcolt="git checkout \`git tag | sort -V | tail -1\`" #unix
 alias redsql="psql dev"
 
-alias ls="gls --color=auto" # must `brew install coreutils` first
+alias ls="gls --color=always" # must `brew install coreutils` first
+alias tree="tree -C --filelimit 16"
 eval `gdircolors $HOME/.dir_colors` # for ls colors
 export TERM="screen-256color" # needed for tmux colors
 

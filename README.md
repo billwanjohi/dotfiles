@@ -20,8 +20,11 @@ homesick symlink [dotfiles]
 
 ## TODO
 *   brew cask install iterm2
+*   brew cask install daisy-disk
 *   brew cask install google-drive, twice
 *   brew cask install dropbox, twice
 *   split mac and linux configurations
 *   pull request for newer tmuxinator oh-my-zsh plugin
 *   remove vim-colors-solarized (redundant)
+*   add source highlight for LESS
+*   make homesickrc idempotent
