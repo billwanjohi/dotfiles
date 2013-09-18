@@ -4,6 +4,7 @@
 [submodule "home/.oh-my-zsh"]
 	path = home/.oh-my-zsh
 	url = https://github.com/robbyrussell/oh-my-zsh.git
+# janus
 [submodule "home/.vim"]
 	path = home/.vim
 	url = https://github.com/carlhuda/janus.git
@@ -16,9 +17,10 @@
 [submodule "home/.janus/vim-colors-solarized"]
 	path = home/.janus/vim-colors-solarized
 	url = https://github.com/altercation/vim-colors-solarized.git
-[submodule "home/.janus/sukima/xmledit"]
-        path = home/.janus/xmledit
-        url = https://github.com/sukima/xmledit.git
+[submodule "home/.janus/xmledit"]
+	path = home/.janus/xmledit
+	url = https://github.com/sukima/xmledit.git
+# rbenv
 [submodule "home/.rbenv"]
 	path = home/.rbenv
 	url = https://github.com/sstephenson/rbenv.git
