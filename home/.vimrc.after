@@ -30,3 +30,12 @@ set pastetoggle=<F2>
 nmap <silent> <leader>d <Plug>DashSearch
 
 set tabstop=8
+
+" http://vim.wikia.com/wiki/Vim_as_XML_Editor
+let g:xml_syntax_folding=1
+au FileType xml setlocal foldmethod=syntax
+au FileType html setlocal foldmethod=syntax
+au FileType ruby setlocal foldmethod=syntax
+
+" http://stackoverflow.com/questions/8316139/vim-how-to-set-the-default-to-unfolded-when-you-open-a-file
+set nofoldenable

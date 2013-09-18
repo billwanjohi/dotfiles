@@ -8,3 +8,5 @@
 	excludesfile = $HOME/.gitignore_global
 [color]
 	ui = auto
+[url "git@github.com:"]
+	insteadOf = https://github.com/

@@ -28,3 +28,6 @@
 [submodule "rbenv-plugins/ruby-build"]
 	path = rbenv-plugins/ruby-build
 	url = https://github.com/sstephenson/ruby-build.git
+[submodule "sukima/xmledit"]
+	path = home/.janus/xmledit
+	url = https://github.com/sukima/xmledit.git

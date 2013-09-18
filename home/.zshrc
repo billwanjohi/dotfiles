@@ -4,11 +4,11 @@ ZSH_THEME="tjkirch" # or "random" for fun
 CASE_SENSITIVE="false"
 DISABLE_AUTO_UPDATE="true"
 DISABLE_LS_COLORS="false"
-DISABLE_AUTO_TITLE="false"
+DISABLE_AUTO_TITLE="true"  # so tmuxinator names stick
 DISABLE_CORRECTION="true"
 COMPLETION_WAITING_DOTS="true"
 DISABLE_UNTRACKED_FILES_DIRTY="false"
-plugins=(brew bundler capistrano gem git rails tmux tmuxinator virtualenvwrapper)
+plugins=(brew bundler capistrano extract gem git rails tmux tmuxinator vagrant virtualenvwrapper)
 source $ZSH/oh-my-zsh.sh
 
 alias zshconfig="vim ~/.zshrc"
@@ -28,10 +28,12 @@ export TERM="screen-256color" # needed for tmux colors
 
 export EDITOR=vim
 export AWS_DEFAULT_REGION=us-east-1
+export GOPATH=$HOME/go
 
 export PATH=/usr/bin:/bin:/usr/sbin:/sbin
 export PATH=/usr/local/bin:$PATH # homebrew
 export PATH=~/.rbenv/bin:$PATH # git rbenv
+export PATH=$PATH:$GOPATH/bin
 
 eval "$(rbenv init -)"
 
@@ -55,4 +57,4 @@ HELPDIR=/usr/local/share/zsh/helpfiles
 export WORKON_HOME=$HOME/.virtualenvs
 source /usr/local/bin/virtualenvwrapper.sh
 
-source ~/.privaterc
+source ~/.zshrc.private
