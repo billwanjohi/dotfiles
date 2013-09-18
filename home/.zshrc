@@ -8,8 +8,13 @@ DISABLE_AUTO_TITLE="true"  # so tmuxinator names stick
 DISABLE_CORRECTION="true"
 COMPLETION_WAITING_DOTS="true"
 DISABLE_UNTRACKED_FILES_DIRTY="false"
-plugins=(brew bundler capistrano extract gem git rails tmux tmuxinator vagrant virtualenvwrapper)
+plugins=(brew bundler capistrano extract gem git github
+         rails tmux tmuxinator vagrant virtualenvwrapper)
 source $ZSH/oh-my-zsh.sh
+
+if [[ $OSTYPE != "linux-gnu" ]]; then
+  gnu_prefix=g
+fi
 
 alias zshconfig="vim ~/.zshrc"
 alias ohmyzsh="vim  ~/.oh-my-zsh"
@@ -17,13 +22,12 @@ alias vim="vim -p"
 alias vi="vim"
 alias gdc="git diff --cached"
 alias gap="git add --patch"
-alias gcolt="git checkout \`git tag | gsort -V | tail -1\`" #mac-specific
-#alias gcolt="git checkout \`git tag | sort -V | tail -1\`" #unix
+alias gcolt="git checkout \`git tag | ${gnu_prefix}sort -V | tail -1\`"
 alias redsql="psql dev"
 
-alias ls="gls --color=always" # must `brew install coreutils` first
+alias ls="${gnu_prefix}ls --color=always" # must `brew install coreutils` first
 alias tree="tree -C --filelimit 16"
-eval `gdircolors $HOME/.dir_colors` # for ls colors
+eval `${gnu_prefix}dircolors $HOME/.dir_colors` # for ls colors
 export TERM="screen-256color" # needed for tmux colors
 
 export EDITOR=vim
@@ -55,6 +59,6 @@ HELPDIR=/usr/local/share/zsh/helpfiles
 
 # virtualenvwrapper (http://virtualenvwrapper.readthedocs.org/en/latest/install.html)
 export WORKON_HOME=$HOME/.virtualenvs
-source /usr/local/bin/virtualenvwrapper.sh
+#source virtualenvwrapper.sh
 
 source ~/.zshrc.private

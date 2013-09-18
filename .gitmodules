@@ -1,33 +1,33 @@
 [submodule "dircolors-solarized"]
 	path = dircolors-solarized
-	url = git@github.com:seebi/dircolors-solarized.git
+	url = https://github.com/seebi/dircolors-solarized.git
 [submodule "home/.oh-my-zsh"]
 	path = home/.oh-my-zsh
-	url = git@github.com:robbyrussell/oh-my-zsh.git
+	url = https://github.com/robbyrussell/oh-my-zsh.git
 [submodule "home/.vim"]
 	path = home/.vim
-	url = git@github.com:carlhuda/janus.git
+	url = https://github.com/carlhuda/janus.git
 [submodule "home/.janus/dash.vim"]
 	path = home/.janus/dash.vim
-	url = git@github.com:rizzatti/dash.vim.git
+	url = https://github.com/rizzatti/dash.vim.git
 [submodule "home/.janus/funcoo.vim"]
 	path = home/.janus/funcoo.vim
-	url = git@github.com:rizzatti/funcoo.vim.git
+	url = https://github.com/rizzatti/funcoo.vim.git
 [submodule "home/.janus/vim-colors-solarized"]
 	path = home/.janus/vim-colors-solarized
-	url = git@github.com:altercation/vim-colors-solarized.git
+	url = https://github.com/altercation/vim-colors-solarized.git
+[submodule "home/.janus/sukima/xmledit"]
+        path = home/.janus/xmledit
+        url = https://github.com/sukima/xmledit.git
 [submodule "home/.rbenv"]
 	path = home/.rbenv
-	url = git@github.com:sstephenson/rbenv.git
+	url = https://github.com/sstephenson/rbenv.git
 [submodule "rbenv-plugins/rbenv-gem-rehash"]
 	path = rbenv-plugins/rbenv-gem-rehash
-	url = git@github.com:sstephenson/rbenv-gem-rehash.git
+	url = https://github.com/sstephenson/rbenv-gem-rehash.git
 [submodule "rbenv-plugins/rbenv-bundler"]
 	path = rbenv-plugins/rbenv-bundler
-	url = git@github.com:carsomyr/rbenv-bundler.git
+	url = https://github.com/carsomyr/rbenv-bundler.git
 [submodule "rbenv-plugins/ruby-build"]
 	path = rbenv-plugins/ruby-build
 	url = https://github.com/sstephenson/ruby-build.git
-[submodule "sukima/xmledit"]
-	path = home/.janus/xmledit
-	url = https://github.com/sukima/xmledit.git

@@ -1,10 +1,7 @@
+# this needs to be rubified, or evaluated with homeshick
 #!/usr/bin/env sh
 
-./install_zsh
-
-cd ~/.vim && rake && cd -
-
-ln -s ../../rbenv-plugins home/.rbenv/plugins
+#osx
 ruby -e "$(curl -fsSL https://raw.github.com/mxcl/homebrew/go)"
 
 brew install ack
@@ -52,8 +49,20 @@ brew cask install vagrant
 brew cask install vlc
 
 pip install virtualenvwrapper
-
-gem install tmuxinator
-
 vagrant init ubuntu-raring-64 http://cloud-images.ubuntu.com/raring/current/raring-server-cloudimg-vagrant-amd64-disk1.box
-vagrant up
+vagrant up # should probably confirm that this isn't itself a vm
+
+#linux
+sudo apt-get install python-pip
+sudo pip install virtualenvwrapper
+sudo apt-get install libssl-dev libreadline-dev #ruby deps
+sudo yum install openssl-devel readline-devel #ruby deps
+
+#all
+./install_zsh
+cd ~/.vim && rake && cd -
+
+ln -s ../../rbenv-plugins $HOME/.rbenv/plugins
+
+rbenv install 2.0.0-p247 && rbenv global 2.0.0-p247
+gem install tmuxinator

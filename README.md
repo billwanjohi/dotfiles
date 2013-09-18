@@ -1,8 +1,7 @@
 # dotfiles
 
 This is a homesick castle. You can pull and symlink using that ruby gem,
-or just do so manually. At this point, much of this is specific to OSX,
-but I intend to clean this up to work fully on Linux too.
+or just do so manually. This works on OSX and Linux.
 
 ## Installation
 
