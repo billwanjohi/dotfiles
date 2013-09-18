@@ -5,7 +5,6 @@
 	email = kaguru@gmail.com
 [core]
 	editor = vim
-	excludesfile = $HOME/.gitignore_global
 [color]
 	ui = auto
 [url "git@github.com:"]

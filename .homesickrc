@@ -59,9 +59,10 @@ sudo yum install openssl-devel readline-devel #ruby deps
 
 #all
 ./install_zsh
-cd ~/.vim && rake && cd -
 
 ln -s ../../rbenv-plugins $HOME/.rbenv/plugins
 
 rbenv install 2.0.0-p247 && rbenv global 2.0.0-p247
-gem install tmuxinator
+rbenv rehash
+gem install bundler tmuxinator rake homesick github
+cd ~/.vim && rake && cd -
