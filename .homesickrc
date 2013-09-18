@@ -1,5 +1,5 @@
-# this needs to be rubified, or evaluated with homeshick
 #!/usr/bin/env sh
+# this needs to be rubified, or evaluated with homeshick
 
 #osx
 ruby -e "$(curl -fsSL https://raw.github.com/mxcl/homebrew/go)"
@@ -49,7 +49,6 @@ brew cask install vagrant
 brew cask install vlc
 
 pip install virtualenvwrapper
-vagrant init ubuntu-raring-64 http://cloud-images.ubuntu.com/raring/current/raring-server-cloudimg-vagrant-amd64-disk1.box
 vagrant up # should probably confirm that this isn't itself a vm
 
 #linux
