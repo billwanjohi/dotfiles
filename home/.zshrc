@@ -71,6 +71,7 @@ HELPDIR=/usr/local/share/zsh/helpfiles
 export WORKON_HOME=$HOME/.virtualenvs
 #source virtualenvwrapper.sh
 
-source ~/.zshrc.private
 export GVM_ROOT=$HOME/.gvm
 source $GVM_ROOT/scripts/gvm-default
+
+[[ -s $HOME/.zshrc.private ]] && source $HOME/.zshrc.private
