@@ -41,6 +41,7 @@ alias tree="tree -C --filelimit 16"
 eval `${gnu_prefix}dircolors $HOME/.dir_colors` # for ls colors
 export TERM="screen-256color" # needed for tmux colors
 
+export TZ=UTC
 export XDG_CONFIG_HOME=$HOME/.config
 export EDITOR=vim
 export AWS_DEFAULT_REGION=us-east-1

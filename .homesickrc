@@ -63,7 +63,7 @@ sudo yum install openssl-devel readline-devel #ruby deps
 ./install_zsh
 
 #gvm
-gvm install go1.1.2 $$ gvm use go1.1.2
+gvm install go1.1.2 && gvm use go1.1.2
 
 #rbenv
 ln -s ../../rbenv-plugins $HOME/.rbenv/plugins
