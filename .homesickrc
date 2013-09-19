@@ -56,6 +56,7 @@ sudo apt-get install python-pip
 sudo pip install virtualenvwrapper
 sudo apt-get install libssl-dev libreadline-dev libcurl4-openssl-dev zlib1g-dev libpcre3-dev
 sudo apt-get install libpq-dev libmysqlclient-dev libsqlite3-dev # databases
+sudo apt-get install curl git mercurial make binutils bison gcc # https://github.com/moovweb/gvm/blob/224a8d/README#L62
 
 sudo yum install openssl-devel readline-devel #ruby deps
 
@@ -63,6 +64,8 @@ sudo yum install openssl-devel readline-devel #ruby deps
 ./install_zsh
 
 ln -s ../../rbenv-plugins $HOME/.rbenv/plugins
+#gvm
+gvm install go1.1.2 $$ gvm use go1.1.2
 
 rbenv install 2.0.0-p247 && rbenv global 2.0.0-p247
 rbenv rehash

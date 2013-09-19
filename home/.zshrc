@@ -44,12 +44,10 @@ export TERM="screen-256color" # needed for tmux colors
 export XDG_CONFIG_HOME=$HOME/.config
 export EDITOR=vim
 export AWS_DEFAULT_REGION=us-east-1
-export GOPATH=$HOME/go
 
 export PATH=/usr/bin:/bin:/usr/sbin:/sbin
 export PATH=/usr/local/bin:$PATH # homebrew
 export PATH=~/.rbenv/bin:$PATH # git rbenv
-export PATH=$PATH:$GOPATH/bin
 
 eval "$(rbenv init -)"
 
@@ -74,3 +72,5 @@ export WORKON_HOME=$HOME/.virtualenvs
 #source virtualenvwrapper.sh
 
 source ~/.zshrc.private
+export GVM_ROOT=$HOME/.gvm
+source $GVM_ROOT/scripts/gvm-default

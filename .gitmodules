@@ -4,6 +4,9 @@
 [submodule "home/.oh-my-zsh"]
 	path = home/.oh-my-zsh
 	url = https://github.com/robbyrussell/oh-my-zsh.git
+[submodule "home/.gvm"]
+	path = home/.gvm
+	url = https://github.com/moovweb/gvm.git
 # janus
 [submodule "home/.vim"]
 	path = home/.vim
