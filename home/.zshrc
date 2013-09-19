@@ -8,8 +8,19 @@ DISABLE_AUTO_TITLE="true"  # so tmuxinator names stick
 DISABLE_CORRECTION="true"
 COMPLETION_WAITING_DOTS="true"
 DISABLE_UNTRACKED_FILES_DIRTY="false"
-plugins=(brew bundler capistrano extract gem git github
-         rails tmux tmuxinator vagrant virtualenvwrapper)
+plugins=(
+  brew
+  bundler
+  capistrano
+  extract
+  gem
+  git
+  rails
+  tmux
+  tmuxinator
+  vagrant
+  virtualenvwrapper
+)
 source $ZSH/oh-my-zsh.sh
 
 if [[ $OSTYPE != "linux-gnu" ]]; then
