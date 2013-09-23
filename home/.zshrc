@@ -15,6 +15,7 @@ plugins=(
   extract
   gem
   git
+  hub
   rails
   tmux
   tmuxinator

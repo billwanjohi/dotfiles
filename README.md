@@ -20,10 +20,8 @@ homesick symlink [dotfiles]
 
 ## TODO
 *   brew cask install iterm2
-*   brew cask install google-drive, twice
-*   split mac and linux configurations
-*   pull request for newer tmuxinator oh-my-zsh plugin
+*   test google-drive alternatives
 *   remove vim-colors-solarized (redundant)
 *   add source highlight for LESS
-*   make homesickrc idempotent
+*   make homesickrc automatic, idempotent
 *   consider homeshick, to remove ruby dependency
