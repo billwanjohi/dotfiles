@@ -69,10 +69,7 @@ man() {
 autoload run-help
 HELPDIR=/usr/local/share/zsh/helpfiles
 
-# virtualenvwrapper (http://virtualenvwrapper.readthedocs.org/en/latest/install.html)
-export WORKON_HOME=$HOME/.virtualenvs
-#source virtualenvwrapper.sh
-
+# go version manager
 export GVM_ROOT=$HOME/.gvm
 source $GVM_ROOT/scripts/gvm-default
 
