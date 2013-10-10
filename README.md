@@ -3,6 +3,8 @@
 This is a homesick castle. You can pull and symlink using that ruby gem,
 or just do so manually. This works on OSX and Linux.
 
+Homeshick seems to work too.
+
 ## Installation
 
 ```bash

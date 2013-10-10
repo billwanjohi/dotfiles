@@ -28,6 +28,7 @@ if [[ $OSTYPE != "linux-gnu" ]]; then
   gnu_prefix=g
 fi
 
+alias homeshick="source $HOME/.homesick/repos/homeshick/bin/homeshick.sh"
 alias zshconfig="vim ~/.zshrc"
 alias ohmyzsh="vim  ~/.oh-my-zsh"
 alias vim="vim -p"
@@ -36,9 +37,10 @@ alias gdc="git diff --cached"
 alias gap="git add --patch"
 alias gcolt="git checkout \`git tag | ${gnu_prefix}sort -V | tail -1\`"
 alias redsql="psql dev"
+alias ttree="tree --filelimit 16"
 
+alias tree="tree -C"
 alias ls="${gnu_prefix}ls --color=always" # must `brew install coreutils` first
-alias tree="tree -C --filelimit 16"
 eval `${gnu_prefix}dircolors $HOME/.dir_colors` # for ls colors
 export TERM="screen-256color" # needed for tmux colors
 
