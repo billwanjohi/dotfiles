@@ -38,6 +38,7 @@ alias gap="git add --patch"
 alias gcolt="git checkout \`git tag | ${gnu_prefix}sort -V | tail -1\`"
 alias redsql="psql dev"
 alias ttree="tree --filelimit 16"
+alias lss="ls -A"
 
 alias tree="tree -C"
 alias ls="${gnu_prefix}ls --color=always" # must `brew install coreutils` first

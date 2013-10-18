@@ -1,0 +1,7 @@
+--http://www.craigkerstiens.com/2013/02/21/more-out-of-psql/
+\pset linestyle unicode
+\pset border 2
+--\pset pager off
+\pset format wrapped
+\pset null NULL
+\timing
