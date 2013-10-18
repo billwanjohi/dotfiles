@@ -37,7 +37,7 @@ alias gdc="git diff --cached"
 alias gap="git add --patch"
 alias gcolt="git checkout \`git tag | ${gnu_prefix}sort -V | tail -1\`"
 alias redsql="psql dev"
-alias ttree="tree --filelimit 16"
+alias ttree="tree --filelimit 16 -a"
 alias lss="ls -A"
 
 alias tree="tree -C"
