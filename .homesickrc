@@ -2,6 +2,7 @@
 # this needs to be rubified, or evaluated with homeshick
 
 #osx
+```
 ruby -e "$(curl -fsSL https://raw.github.com/mxcl/homebrew/go)"
 
 brew install ack
@@ -22,34 +23,20 @@ brew install zsh
 brew tap phinze/homebrew-cask
 brew install brew-cask
 
-brew cask install adium # jabber client
-brew cask install avidemux
-brew cask install caffeine # keep screen on
-brew cask install crashplan # backup
-brew cask install dbeaver
-brew cask install evernote
-brew cask install f-lux # adjust color temp by time
 brew cask install --appdir="/Applications" firefox
 brew cask install google-chrome
 brew cask install google-hangouts
-brew cask install handbrake
 brew cask install hip-chat
+brew cask install iterm2
 brew cask install keyremap4macbook
-brew cask install kindle
 brew cask install pc-keyboardhack
-brew cask install quassel-client # irc
-brew cask install rdio
-brew cask install second-bar # menu bar on second screen
 brew cask install size-up # window placement shortcuts
-brew cask install skype
-brew cask install tunnelblick # openvpn
-brew cask install u-torrent
 brew cask install virtualbox
 brew cask install vagrant
 brew cask install vlc
 
 pip install virtualenvwrapper
-vagrant up # should probably confirm that this isn't itself a vm
+vagrant up # should probably confirm that this is not itself a vm
 
 #linux
 sudo apt-get install python-pip && sudo pip install virtualenvwrapper
@@ -74,3 +61,4 @@ rbenv rehash
 gem install bundler tmuxinator rake homesick hub
 # janus
 cd ~/.vim && rake && cd -
+```
