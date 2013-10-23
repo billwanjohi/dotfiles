@@ -50,8 +50,7 @@ export XDG_CONFIG_HOME=$HOME/.config
 export EDITOR=vim
 export AWS_DEFAULT_REGION=us-east-1
 
-export PATH=/usr/bin:/bin:/usr/sbin:/sbin
-export PATH=/usr/local/bin:$PATH # homebrew
+export PATH=/usr/local/bin:/usr/bin:/bin
 export PATH=~/.rbenv/bin:$PATH # git rbenv
 
 eval "$(rbenv init -)"
