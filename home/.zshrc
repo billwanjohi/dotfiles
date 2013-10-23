@@ -1,3 +1,17 @@
+if [[ $OSTYPE != "linux-gnu" ]]; then
+  gnu_prefix=g
+fi
+
+# Set path
+export PATH=/usr/local/bin:/usr/bin:/bin
+
+# go version manager
+export GVM_ROOT=$HOME/.gvm
+source $GVM_ROOT/scripts/gvm-default
+
+export PATH=~/.rbenv/bin:$PATH # git rbenv
+eval "$(rbenv init -)"
+
 # oh-my-zsh config
 ZSH=$HOME/.oh-my-zsh
 ZSH_THEME="tjkirch" # or "random" for fun
@@ -22,38 +36,13 @@ plugins=(
   vagrant
   virtualenvwrapper
 )
-source $ZSH/oh-my-zsh.sh
+source $ZSH/oh-my-zsh.sh  # evaluates plugins, custom files
 
-if [[ $OSTYPE != "linux-gnu" ]]; then
-  gnu_prefix=g
-fi
-
-alias homeshick="source $HOME/.homesick/repos/homeshick/bin/homeshick.sh"
-alias zshconfig="vim ~/.zshrc"
-alias ohmyzsh="vim  ~/.oh-my-zsh"
-alias vim="vim -p"
-alias vi="vim"
-alias gdc="git diff --cached"
-alias gap="git add --patch"
-alias gcolt="git checkout \`git tag | ${gnu_prefix}sort -V | tail -1\`"
-alias redsql="psql dev"
-alias ttree="tree --filelimit 16 -a"
-alias lss="ls -A"
-
+# Colorize
 alias tree="tree -C"
 alias ls="${gnu_prefix}ls --color=always" # must `brew install coreutils` first
 eval `${gnu_prefix}dircolors $HOME/.dir_colors` # for ls colors
 export TERM="screen-256color" # needed for tmux colors
-
-export TZ=UTC
-export XDG_CONFIG_HOME=$HOME/.config
-export EDITOR=vim
-export AWS_DEFAULT_REGION=us-east-1
-
-export PATH=/usr/local/bin:/usr/bin:/bin
-export PATH=~/.rbenv/bin:$PATH # git rbenv
-
-eval "$(rbenv init -)"
 
 # from https://wiki.archlinux.org/index.php/Man_Page#Colored_man_pages
 man() {
@@ -67,12 +56,25 @@ man() {
   man "$@"
 }
 
-# from brew info zsh
-autoload run-help
-HELPDIR=/usr/local/share/zsh/helpfiles
+# Custom aliases
+alias zshconfig="vim ~/.zshrc"
+alias ohmyzsh="vim  ~/.oh-my-zsh"
+alias vim="vim -p"
+alias vi="vim"
+alias gdc="git diff --cached"
+alias gap="git add --patch"
+alias gcolt="git checkout \`git tag | ${gnu_prefix}sort -V | tail -1\`"
+alias ttree="tree --filelimit 16 -a -I .git"
+alias lss="ls -A"
 
-# go version manager
-export GVM_ROOT=$HOME/.gvm
-source $GVM_ROOT/scripts/gvm-default
+export TZ=UTC
+export XDG_CONFIG_HOME=$HOME/.config
+export EDITOR=vim
+export AWS_DEFAULT_REGION=us-east-1
 
-[[ -s $HOME/.zshrc.private ]] && source $HOME/.zshrc.private
+# zsh help (for built-in commands) -- invoke with Alt-h
+# http://zshwiki.org/home/builtin/functions/run-help
+[[ -d /usr/local/share/zsh/helpfiles ]] && HELPDIR=/usr/local/share/zsh/helpfiles # homebrew
+[[ -d /usr/share/zsh/help ]] && HELPDIR=/usr/share/zsh/help # aptitude
+unalias run-help 2> /dev/null # in case already unaliased
+autoload run-help run-help-git
