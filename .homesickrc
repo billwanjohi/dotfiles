@@ -35,6 +35,7 @@ brew cask install virtualbox
 brew cask install vagrant
 brew cask install vlc
 
+pip install Pygments
 pip install virtualenvwrapper
 vagrant up # should probably confirm that this is not itself a vm
 

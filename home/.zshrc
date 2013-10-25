@@ -4,6 +4,7 @@ fi
 
 # Set path
 export PATH=/usr/local/bin:/usr/bin:/bin
+export PATH=$PATH:/usr/local/sbin:/usr/sbin:/sbin
 
 # go version manager
 export GVM_ROOT=$HOME/.gvm
@@ -26,10 +27,11 @@ plugins=(
   brew
   bundler
   capistrano
+  colored-man
+  colorize
   extract
   gem
   git
-  hub
   rails
   tmux
   tmuxinator
@@ -43,18 +45,6 @@ alias tree="tree -C"
 alias ls="${gnu_prefix}ls --color=always" # must `brew install coreutils` first
 eval `${gnu_prefix}dircolors $HOME/.dir_colors` # for ls colors
 export TERM="screen-256color" # needed for tmux colors
-
-# from https://wiki.archlinux.org/index.php/Man_Page#Colored_man_pages
-man() {
-  env LESS_TERMCAP_mb=$(printf "\e[1;31m") \
-      LESS_TERMCAP_md=$(printf "\e[1;31m") \
-      LESS_TERMCAP_me=$(printf "\e[0m") \
-      LESS_TERMCAP_se=$(printf "\e[0m") \
-      LESS_TERMCAP_so=$(printf "\e[1;44;33m") \
-      LESS_TERMCAP_ue=$(printf "\e[0m") \
-      LESS_TERMCAP_us=$(printf "\e[1;32m") \
-  man "$@"
-}
 
 # Custom aliases
 alias zshconfig="vim ~/.zshrc"
