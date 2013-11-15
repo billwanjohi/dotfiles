@@ -41,6 +41,8 @@ plugins=(
 source $ZSH/oh-my-zsh.sh  # evaluates plugins, custom files
 
 # Colorize
+# for less/more: pipe through colorize, provided with oh-my-zsh plugin
+# to automate: http://pythonic.pocoo.org/2008/3/28/using-pygments-with-less
 alias tree="tree -C"
 alias ls="${gnu_prefix}ls --color=always" # must `brew install coreutils` first
 eval `${gnu_prefix}dircolors $HOME/.dir_colors` # for ls colors

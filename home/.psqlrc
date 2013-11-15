@@ -1,6 +1,7 @@
 --http://www.craigkerstiens.com/2013/02/21/more-out-of-psql/
 \pset linestyle unicode
-\pset border 2
+--border 2 is pretty but doesn't play nice with expanded format
+\pset border 1
 --\pset pager off
 \pset format wrapped
 \pset null NULL

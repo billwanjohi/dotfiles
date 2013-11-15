@@ -37,6 +37,7 @@ brew cask install vlc
 
 pip install Pygments
 pip install virtualenvwrapper
+pip install awscli
 vagrant up # should probably confirm that this is not itself a vm
 
 #linux
@@ -63,3 +64,8 @@ gem install bundler tmuxinator rake homesick hub
 # janus
 cd ~/.vim && rake && cd -
 ```
+
+# other tweaks
+# mac osx
+# show scroll bars: always
+# turn on filevault
