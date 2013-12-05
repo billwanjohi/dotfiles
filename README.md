@@ -23,7 +23,6 @@ For now, you should manually work through .homesickrc script
 ### Loose ends
 
 *   change your name, email in .gitconfig
-*   provide your own .privaterc
 
 ## TODO
 *   test google-drive alternatives
