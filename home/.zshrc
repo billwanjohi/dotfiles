@@ -10,6 +10,8 @@ export PATH=$PATH:/usr/local/sbin:/usr/sbin:/sbin
 export GVM_ROOT=$HOME/.gvm
 source $GVM_ROOT/scripts/gvm-default
 
+# ruby environment
+export RBENV_ROOT=$HOME/.rbenv
 export PATH=~/.rbenv/bin:$PATH # git rbenv
 eval "$(rbenv init -)"
 
