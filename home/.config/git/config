@@ -1,11 +1,10 @@
 [push]
 	default = simple
-[user]
-	name = billwanjohi
-	email = kaguru@gmail.com
 [core]
 	editor = vim
 [color]
 	ui = auto
 [url "git@github.com:"]
 	insteadOf = https://github.com/
+[include]
+	path = user
