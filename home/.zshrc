@@ -35,6 +35,7 @@ plugins=(
   gem
   git
   rails
+  sbt
   tmux
   tmuxinator
   vagrant
