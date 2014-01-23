@@ -10,6 +10,7 @@ brew install autoconf
 brew install coreutils # gnu > bsd
 brew install git
 brew install macvim # requires full x-code
+brew install mysql
 brew install postgresql # active_record dependency
 brew install python
 brew install readline # irb needs this
@@ -33,12 +34,11 @@ brew cask install pc-keyboardhack
 brew cask install size-up # window placement shortcuts
 brew cask install virtualbox
 brew cask install vagrant
-brew cask install vlc
 
 pip install Pygments
 pip install virtualenvwrapper
 pip install awscli
-vagrant up # should probably confirm that this is not itself a vm
+vagrant up # should probably first confirm that this is not itself a vm
 
 #linux
 sudo apt-get install python-pip && sudo pip install virtualenvwrapper
@@ -56,11 +56,12 @@ gvm install go1.1.2 && gvm use go1.1.2
 
 #rbenv
 ln -s ../../rbenv-plugins $HOME/.rbenv/plugins
-rbenv install 2.0.0-p247 && rbenv global 2.0.0-p247
+rbenv install 2.0.0-p247 && rbenv global 2.0.0-p247 #should update these
 rbenv rehash
+gem update --system
 
 # misc
-gem install bundler tmuxinator rake homesick hub
+gem install bundler rake homesick
 # janus
 cd ~/.vim && rake && cd -
 ```
