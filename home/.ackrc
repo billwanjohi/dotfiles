@@ -1,4 +1,6 @@
---ignore-dir=tags
+--ignore-file=match:tags
+--ignore-dir=project
+--ignore-dir=target
 
 # from https://github.com/linjunpop/ackrc-rails
 

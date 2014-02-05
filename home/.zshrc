@@ -1,3 +1,4 @@
+# use prefix to specify gnu version of a core utility on OSX
 if [[ $OSTYPE != "linux-gnu" ]]; then
   gnu_prefix=g
 fi
