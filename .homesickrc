@@ -10,6 +10,7 @@ brew install autoconf
 brew install coreutils # gnu > bsd
 brew install git
 brew install macvim # requires full x-code
+brew install mercurial # for gvm
 brew install mysql
 brew install postgresql # active_record dependency
 brew install python
