@@ -1,28 +1,43 @@
 # dotfiles
 
-This is a homesick castle. You can pull and symlink using that ruby gem,
-or just do so manually. This works on OSX and Linux.
+This is a homesick castle.
+You can pull and symlink using that ruby gem,
+or just do so manually.
+This works on OSX and Linux.
 
-Homeshick seems to work too, but I don't like it's implementation of
-symlinks (symlinks all tracked files, ignores .homesick_subdir, ignores
-new files)
+Features:
+
+-   git-based installations of the following packages:
+    -   janus (Vim plugin suite)
+    -   oh-my-zsh
+    -   gvm - go version manager
+    -   rbenv - ruby environment manager
+-   configuration files for:
+    -   ack
+    -   irb
+    -   psql
+    -   tmux
+    -   vim
+    -   zsh
+    -   vagrant
+-   installation instructions for many other dev packages
 
 ## Installation
 
-```bash
-[sudo] apt-get/brew install git
-[sudo] gem install homesick
-rbenv rehash
-homesick clone https://github.com/billwanjohi/dotfiles.git
-homesick list
-homesick symlink [dotfiles]
-```
+1.  Run these bash commands:
 
-For now, you should manually work through .homesickrc script
+    ```bash
+    brew install git || sudo apt-get install git
+    [sudo] gem install homesick
+    rbenv rehash # OK if fails
+    homesick clone https://github.com/billwanjohi/dotfiles.git
+    homesick list
+    homesick symlink [dotfiles]
+    cp $HOME/.config/git/user.example $HOME/.config/git/user
+    ```
 
-### Loose ends
-
-*   change your name, email in .gitconfig
+2.  edit ~/.config/git/user to include your details
+3.  manually relevant lines in .homesickrc
 
 ## TODO
 *   test google-drive alternatives

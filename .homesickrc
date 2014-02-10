@@ -1,7 +1,7 @@
-#!/usr/bin/env sh
-# this needs to be rubified, or evaluated with homeshick
+#!/usr/bin/env ruby
+# three blocks follow
 
-#osx
+# osx
 ```
 ruby -e "$(curl -fsSL https://raw.github.com/mxcl/homebrew/go)"
 
@@ -39,24 +39,30 @@ pip install Pygments
 pip install virtualenvwrapper
 pip install awscli
 vagrant up # should probably first confirm that this is not itself a vm
+```
 
-#linux
-sudo apt-get install python-pip && sudo pip install virtualenvwrapper
+# linux
+```
+sudo apt-get install python-pip
+sudo pip install virtualenvwrapper
 sudo apt-get install libssl-dev libreadline-dev libcurl4-openssl-dev zlib1g-dev libpcre3-dev
 sudo apt-get install libpq-dev libmysqlclient-dev libsqlite3-dev # databases
 sudo apt-get install curl git mercurial make binutils bison gcc # https://github.com/moovweb/gvm/blob/224a8d/README#L62
 
 sudo yum install openssl-devel readline-devel #ruby deps
+```
 
-#all
+# all
+```
 ./install_zsh
 
 #gvm
-gvm install go1.1.2 && gvm use go1.1.2
+gvm install go1.2
+gvm use go1.2 --default
 
 #rbenv
 ln -s ../../rbenv-plugins $HOME/.rbenv/plugins
-rbenv install 2.0.0-p247 && rbenv global 2.0.0-p247 #should update these
+rbenv install 2.0.0-p343 && rbenv global 2.0.0-p343 #should update these
 rbenv rehash
 gem update --system
 
@@ -66,7 +72,6 @@ gem install bundler rake homesick
 cd ~/.vim && rake && cd -
 ```
 
-# other tweaks
-# mac osx
+# other mac tweets
 # show scroll bars: always
 # turn on filevault
