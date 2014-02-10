@@ -4,6 +4,8 @@
 # osx
 ```
 ruby -e "$(curl -fsSL https://raw.github.com/mxcl/homebrew/go)"
+brew update
+brew doctor # pay attention to this output
 
 brew install ack
 brew install autoconf
@@ -49,19 +51,19 @@ sudo pip install virtualenvwrapper
 sudo apt-get install libssl-dev libreadline-dev libcurl4-openssl-dev zlib1g-dev libpcre3-dev
 sudo apt-get install libpq-dev libmysqlclient-dev libsqlite3-dev # databases
 sudo apt-get install curl git mercurial make binutils bison gcc # https://github.com/moovweb/gvm/blob/224a8d/README#L62
-
 sudo yum install openssl-devel readline-devel #ruby deps
 ```
 
 # all
 ```
-./install_zsh
+sh $HOME/.homesick/dotfiles/install_zsh.sh
 
-#gvm
+# gvm install
 gvm install go1.2
 gvm use go1.2 --default
 
-#rbenv
+# rbenv install
+# (symlink is necessary because plugin is part of a distinct submodule to rbenv)
 ln -s ../../rbenv-plugins $HOME/.rbenv/plugins
 rbenv install 2.0.0-p343 && rbenv global 2.0.0-p343 #should update these
 rbenv rehash

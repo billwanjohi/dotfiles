@@ -44,4 +44,3 @@ Features:
 *   add source highlight for LESS
 *   make homesickrc automatic, idempotent
     *   check OS, virtual-ness, run relevant shell script
-*   consider homeshick, to remove ruby dependency
