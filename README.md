@@ -37,7 +37,7 @@ Features:
     ```
 
 2.  edit ~/.config/git/user to include your details
-3.  manually relevant lines in .homesickrc
+3.  manually invoke relevant lines in .homesickrc file
 
 ## TODO
 *   test google-drive alternatives

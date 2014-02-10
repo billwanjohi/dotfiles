@@ -73,6 +73,6 @@ gem install bundler rake homesick
 cd ~/.vim && rake && cd -
 ```
 
-# other mac tweets
+# other mac tweaks
 # show scroll bars: always
 # turn on filevault
