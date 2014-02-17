@@ -3,6 +3,7 @@ tmp/
 *.un~
 *.swp
 *.pid.lock
+*.pyc
 
 # From https://help.github.com/articles/ignoring-files:
 

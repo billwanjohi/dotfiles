@@ -2,6 +2,7 @@
 	default = simple
 [core]
 	editor = vim
+	pager = less -R
 [color]
 	ui = auto
 [url "git@github.com:"]
