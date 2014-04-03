@@ -66,7 +66,6 @@ alias lss="ls -A"
 export TZ=UTC
 export XDG_CONFIG_HOME=$HOME/.config
 export EDITOR=vim
-export AWS_DEFAULT_REGION=us-east-1
 
 # zsh help (for built-in commands) -- invoke with Alt-h
 # http://zshwiki.org/home/builtin/functions/run-help

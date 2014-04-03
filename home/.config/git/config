@@ -9,3 +9,5 @@
 	insteadOf = https://github.com/
 [include]
 	path = user
+[gui]
+	recentrepo = /Users/bill/Civis/console

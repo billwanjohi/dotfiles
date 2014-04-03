@@ -39,6 +39,10 @@ Features:
 2.  edit ~/.config/git/user to include your details
 3.  manually invoke relevant lines in .homesickrc file
 
+## Update submodules
+
+`git submodule foreach git pull origin master`
+
 ## TODO
 *   test google-drive alternatives
 *   add source highlight for LESS
