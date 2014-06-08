@@ -16,7 +16,8 @@ if has('gui_running')
     set background=light
     let g:solarized_termcolors=256
 else
-    set background=dark
+    "set background=dark
+    set background=light
     let g:solarized_termcolors=16
 endif
 let g:solarized_visibility="high"
