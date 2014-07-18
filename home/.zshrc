@@ -62,6 +62,8 @@ alias gap="git add --patch"
 alias gcolt="git checkout \`git tag | ${gnu_prefix}sort -V | tail -1\`"
 alias ttree="tree --filelimit 16 -a -I .git"
 alias lss="ls -A"
+mkdir -p logs/psql
+alias psql_log="psql -e -L logs/psql/$(date +%Y_%m_%d).txt"
 
 export TZ=UTC
 export XDG_CONFIG_HOME=$HOME/.config

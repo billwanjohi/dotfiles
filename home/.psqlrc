@@ -4,5 +4,19 @@
 \pset border 1
 --\pset pager off
 --\pset format wrapped
-\pset null NULL
+\pset null ¤
 \timing
+
+--from cmanning
+\set HISTFILE ~/.psql_history_ :HOST _ :DBNAME
+\set HISTSIZE 2000
+\set HISTCONTROL ignoredups
+
+--http://www.postgresql.org/docs/8.4/static/app-psql.html#APP-PSQL-PROMPTING
+\set PROMPT1 '%n@%M:%>/%/ %# '
+\set PROMPT2 '%n@%M:%>/%/ %# '
+\set PROMPT3 '%n@%M:%>/%/ %# '
+
+--https://github.com/datachomp/dotfiles/blob/master/.psqlrc
+\set VERBOSITY verbose;
+\set COMP_KEYWORD_CASE upper

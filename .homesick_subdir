@@ -1,3 +1,4 @@
 Library/Preferences
 .ssh
 .config/git
+logs/psql
