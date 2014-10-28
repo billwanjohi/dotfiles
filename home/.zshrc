@@ -7,6 +7,11 @@ fi
 export PATH=/usr/local/bin:/usr/bin:/bin
 export PATH=$PATH:/usr/local/sbin:/usr/sbin:/sbin
 
+# python environment
+export PYENV_ROOT=$HOME/.pyenv
+export PATH=$PYENV_ROOT/bin:$PATH
+eval "$(pyenv init -)"
+
 # go version manager
 export GVM_ROOT=$HOME/.gvm
 source $GVM_ROOT/scripts/gvm-default
@@ -32,6 +37,7 @@ plugins=(
   capistrano
   colored-man
   colorize
+  docker
   extract
   gem
   git
@@ -40,7 +46,7 @@ plugins=(
   tmux
   tmuxinator
   vagrant
-  virtualenvwrapper
+  #virtualenvwrapper
 )
 source $ZSH/oh-my-zsh.sh  # evaluates plugins, custom files
 
@@ -62,10 +68,10 @@ alias gap="git add --patch"
 alias gcolt="git checkout \`git tag | ${gnu_prefix}sort -V | tail -1\`"
 alias ttree="tree --filelimit 16 -a -I .git"
 alias lss="ls -A"
-mkdir -p logs/psql
 alias psql_log="psql -e -L logs/psql/$(date +%Y_%m_%d).txt"
 
 export TZ=UTC
+export XDG_CACHE_HOME=$HOME/.cache
 export XDG_CONFIG_HOME=$HOME/.config
 export EDITOR=vim
 
