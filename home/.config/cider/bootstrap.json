@@ -1,0 +1,46 @@
+{
+    "casks": [
+        "caffeine",
+        "eclipse-ide",
+        "google-hangouts",
+        "graphviz",
+        "iterm2",
+        "java",
+        "libreoffice",
+        "sizeup",
+        "skype",
+        "vagrant",
+        "virtualbox",
+        "vlc"
+    ],
+    "formulas": [
+        "ack",
+        "apg",
+        "boot2docker",
+        "brew-cask",
+        "coreutils",
+        "ctags",
+        "dateutils",
+        "docker",
+        "fig",
+        "fleetctl",
+        "git",
+        "gnu-sed",
+        "go",
+        "jq",
+        "macvim",
+        "phantomjs",
+        "postgresql",
+        "readline",
+        "tig",
+        "tmux",
+        "tree",
+        "vim",
+        "w3m",
+        "wget",
+        "zsh"
+    ],
+    "taps": [
+        "caskroom/cask"
+    ]
+}

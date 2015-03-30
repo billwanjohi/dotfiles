@@ -9,7 +9,7 @@
 
 --from cmanning
 \set HISTFILE ~/.psql_history_ :HOST _ :DBNAME
-\set HISTSIZE 2000
+\set HISTSIZE 100000
 \set HISTCONTROL ignoredups
 
 --http://www.postgresql.org/docs/8.4/static/app-psql.html#APP-PSQL-PROMPTING
@@ -20,3 +20,8 @@
 --https://github.com/datachomp/dotfiles/blob/master/.psqlrc
 \set VERBOSITY verbose;
 \set COMP_KEYWORD_CASE upper
+
+
+--https://www.periscope.io/blog/optimizing-your-psql.html
+\setenv LESS -imx4F
+--\x auto
