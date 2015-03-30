@@ -3,77 +3,31 @@
 
 # osx
 ```
-ruby -e "$(curl -fsSL https://raw.github.com/mxcl/homebrew/go)"
-brew update
-brew doctor # pay attention to this output
-
-brew install ack
-brew install autoconf
-brew install coreutils # gnu > bsd
-brew install git
-brew install macvim # requires full x-code
-brew install mercurial # for gvm
-brew install mysql
-brew install postgresql # active_record dependency
-brew install python
-brew install readline # irb needs this
-brew install sqlite
-brew install tig
-brew install tmux
-brew install tree
-brew install wget
-brew install zsh
-
-brew tap phinze/homebrew-cask
-brew install brew-cask
-
-brew cask install --appdir="/Applications" firefox
-brew cask install google-chrome
-brew cask install google-hangouts
-brew cask install hip-chat
-brew cask install iterm2
-brew cask install keyremap4macbook
-brew cask install pc-keyboardhack
-brew cask install size-up # window placement shortcuts
-brew cask install virtualbox
-brew cask install vagrant
-
-pip install Pygments
-pip install virtualenvwrapper
-pip install awscli
-vagrant up # should probably first confirm that this is not itself a vm
-```
-
-# linux
-```
-sudo apt-get install python-pip
-sudo pip install virtualenvwrapper
-sudo apt-get install libssl-dev libreadline-dev libcurl4-openssl-dev zlib1g-dev libpcre3-dev
-sudo apt-get install libpq-dev libmysqlclient-dev libsqlite3-dev # databases
-sudo apt-get install curl git mercurial make binutils bison gcc # https://github.com/moovweb/gvm/blob/224a8d/README#L62
-sudo yum install openssl-devel readline-devel #ruby deps
-```
-
-# all
-```
 sh $HOME/.homesick/dotfiles/install_zsh.sh
+cp $HOME/.config/git/user.example $HOME/.config/git/user
+
+ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
+brew update
+brew install caskroom/cask/brew-cask
+brew install python
+
 
 # gvm install
-gvm install go1.2
-gvm use go1.2 --default
+gvm install go1.42
+gvm use go1.42 --default
 
 # rbenv install
-# (symlink is necessary because plugin is part of a distinct submodule to rbenv)
 ln -s ../../rbenv-plugins $HOME/.rbenv/plugins
-rbenv install 2.0.0-p343 && rbenv global 2.0.0-p343 #should update these
+rbenv install 2.2.0
+rbenv global 2.2.0
 rbenv rehash
 gem update --system
 
-# misc
-gem install bundler rake homesick
-# janus
-cd ~/.vim && rake && cd -
+gem install rake
+pushd ~/.vim && rake popd  # janus
 ```
+
+`brew doctor # pay attention to this output`
 
 # other mac tweaks
 # show scroll bars: always

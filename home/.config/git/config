@@ -1,13 +1,12 @@
-[push]
-	default = simple
 [core]
 	editor = vim
 	pager = less -R
 [color]
 	ui = auto
-[url "git@github.com:"]
-	insteadOf = https://github.com/
 [include]
 	path = user
-[gui]
-	recentrepo = /Users/bill/Civis/console
+[push]
+	default = simple
+# this is problematic on systems not already configured for ssh
+#[url "git@github.com:"]
+#	insteadOf = https://github.com/

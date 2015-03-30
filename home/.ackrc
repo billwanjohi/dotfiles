@@ -4,7 +4,7 @@
 
 # from https://github.com/linjunpop/ackrc-rails
 
---ignore-case
+#--ignore-case
 
 --sort-files
 --follow
