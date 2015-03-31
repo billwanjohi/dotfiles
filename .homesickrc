@@ -1,34 +1,34 @@
 #!/usr/bin/env ruby
-# three blocks follow
 
-# osx
-```
-sh $HOME/.homesick/dotfiles/install_zsh.sh
-cp $HOME/.config/git/user.example $HOME/.config/git/user
+`
+cp -n $HOME/.config/git/user.example $HOME/.config/git/user
+
+pushd ~/.vim && rake && popd  # janus
 
 ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
 brew update
 brew install caskroom/cask/brew-cask
+sh $HOME/.homesick/repos/dotfiles/install_zsh.sh  # requires brew
+
 brew install python
-
-
-# gvm install
-gvm install go1.42
-gvm use go1.42 --default
+pip install -U cider
+cider restore
 
 # rbenv install
-ln -s ../../rbenv-plugins $HOME/.rbenv/plugins
-rbenv install 2.2.0
+ln -fs ../../rbenv-plugins $HOME/.rbenv/plugins
+rbenv install --skip-existing 2.2.0
 rbenv global 2.2.0
 rbenv rehash
 gem update --system
 
-gem install rake
-pushd ~/.vim && rake popd  # janus
-```
+# gvm install
+gvm install go1.4.2
+source $GVM_ROOT/scripts/env/use
+source $GVM_ROOT/scripts/function/tools
+source $GVM_ROOT/scripts/function/gvm_export_path
+source $GVM_ROOT/scripts/function/display_message
+gvm_use go1.4.2 --default
 
-`brew doctor # pay attention to this output`
+brew doctor # pay attention to this output
+`
 
-# other mac tweaks
-# show scroll bars: always
-# turn on filevault

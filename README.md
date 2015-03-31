@@ -56,3 +56,7 @@ rake
 *   add source highlight for LESS
 *   make homesickrc automatic, idempotent
     *   check OS, virtual-ness, run relevant shell script
+*   other mac tweaks
+    *   show scroll bars: always
+    *   turn on filevault
+
