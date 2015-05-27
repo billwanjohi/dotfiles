@@ -38,24 +38,18 @@ This is now geared exclusively to OSX.
     ```
 
 1.  edit ~/.config/git/user to include your details
-1.  manually invoke relevant lines in .homesickrc file
 
 ## Update
 
 ```bash
-brew update
-gem update homesick
 cd $(homesick show_path)
 git pull
 git submodule foreach git pull origin master
-cd ~/.vim
-rake
+homesick rc
 ```
 
 ## TODO
 *   add source highlight for LESS
-*   make homesickrc automatic, idempotent
-    *   check OS, virtual-ness, run relevant shell script
 *   other mac tweaks
     *   show scroll bars: always
     *   turn on filevault

@@ -71,6 +71,7 @@ alias gcolt="git checkout \`git tag | ${gnu_prefix}sort -V | tail -1\`"
 alias ttree="tree --filelimit 16 -a -I .git"
 alias lss="ls -A"
 alias psql_log="psql -e -L ~/logs/psql/$(date +%Y_%m_%d).txt"
+alias gitroot="git rev-parse --show-toplevel"
 
 export TZ=UTC
 export XDG_CACHE_HOME=$HOME/.cache

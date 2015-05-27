@@ -1,10 +1,11 @@
+--ignore-dir=_site
 --ignore-file=match:tags
 --ignore-dir=project
 --ignore-dir=target
 
 # from https://github.com/linjunpop/ackrc-rails
 
-#--ignore-case
+--ignore-case
 
 --sort-files
 --follow

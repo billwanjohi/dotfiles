@@ -78,3 +78,6 @@ let g:vim_json_syntax_conceal = 0
 
 " https://github.com/kien/ctrlp.vim/issues/279
 let g:ctrlp_show_hidden = 1
+
+" http://stackoverflow.com/a/2496570/684619
+set autoread
