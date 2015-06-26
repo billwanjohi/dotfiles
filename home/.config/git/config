@@ -1,12 +1,19 @@
+[color]
+	ui = auto
+
 [core]
 	editor = vim
 	pager = less -R
-[color]
-	ui = auto
+
 [include]
 	path = user
+
+[init]
+	templateDir = ~/.config/git/template
+
 [push]
 	default = simple
+
 # this is problematic on systems not already configured for ssh
 #[url "git@github.com:"]
 #	insteadOf = https://github.com/
