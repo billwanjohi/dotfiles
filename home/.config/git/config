@@ -1,19 +1,11 @@
 [color]
-	ui = auto
-
-[core]
-	editor = vim
-	pager = less -R
+  ui = auto
 
 [include]
-	path = user
+  path = user  # this lets us set user variables in separate file
 
 [init]
-	templateDir = ~/.config/git/template
+  templateDir = ~/.config/git/template
 
-[push]
-	default = simple
-
-# this is problematic on systems not already configured for ssh
-#[url "git@github.com:"]
-#	insteadOf = https://github.com/
+[url "git@github.com:"]
+  insteadOf = https://github.com/
