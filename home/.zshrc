@@ -1,82 +1,62 @@
-# use prefix to specify gnu version of a core utility on OSX
-if [[ $OSTYPE != "linux-gnu" ]]; then
-  gnu_prefix=g
-fi
+export ZSH=~/.oh-my-zsh
 
-# Set path
-export PATH=/usr/local/bin:/usr/bin:/bin
-export PATH=$PATH:/usr/local/sbin:/usr/sbin:/sbin
-
-# python environment
-export PYENV_ROOT=$HOME/.pyenv
-export PATH=$PYENV_ROOT/bin:$PATH
-eval "$(pyenv init -)"
-
-# go version manager
-export GVM_ROOT=$HOME/.gvm
-source $GVM_ROOT/scripts/gvm-default
-
-# ruby environment
-export RBENV_ROOT=$HOME/.rbenv
-export PATH=~/.rbenv/bin:$PATH # git rbenv
-eval "$(rbenv init -)"
-
-# oh-my-zsh config
-ZSH=$HOME/.oh-my-zsh
-ZSH_THEME="tjkirch" # or "random" for fun
-CASE_SENSITIVE="false"
-DISABLE_AUTO_UPDATE="true"
-DISABLE_LS_COLORS="false"
+ZSH_THEME="robbyrussell"  # or "random" for fun
+COMPLETION_WAITING_DOTS="true"
+ZSH_CUSTOM=~/.zsh_custom
 DISABLE_AUTO_TITLE="true"  # so tmuxinator names stick
 DISABLE_CORRECTION="true"
-COMPLETION_WAITING_DOTS="true"
 DISABLE_UNTRACKED_FILES_DIRTY="false"
+
 plugins=(
   brew
-  bundler
-  capistrano
-  colored-man
-  colorize
   docker
-  extract
-  gem
-  go
+  docker-compose
+  emacs
   git
-  git-flow
-  rails
-  sbt
+  pyenv
+  rbenv
   tmux
-  tmuxinator
-  vagrant
-  #virtualenvwrapper
 )
-source $ZSH/oh-my-zsh.sh  # evaluates plugins, custom files
 
-# Colorize
-# for less/more: pipe through colorize, provided with oh-my-zsh plugin
-# to automate: http://pythonic.pocoo.org/2008/3/28/using-pygments-with-less
-alias tree="tree -C"
-alias ls="${gnu_prefix}ls --color=always" # must `brew install coreutils` first
-eval `${gnu_prefix}dircolors $HOME/.dir_colors` # for ls colors
-export TERM="screen-256color" # needed for tmux colors
+#futureplugins(
+#  archlinux
+#  colored-man
+#  npm
+#  pip
+#  terraform
+#  vagrant
+#  virtualenv
+#)
 
-# Custom aliases
-alias zshconfig="vim ~/.zshrc"
-alias ohmyzsh="vim  ~/.oh-my-zsh"
-alias vim="vim -p"
-alias vi="vim"
-alias gdc="git diff --cached"
-alias gap="git add --patch"
+#rejectedplugins(
+#  bundler
+#  emoji
+#  github
+#  osx
+#  python
+#  ruby
+#  tmuxinator
+#  yarn
+#)
+
+source $ZSH/oh-my-zsh.sh
+
+###### User configuration
+
+# use prefix to specify gnu version of a core utility on OSX
+if [[ $OSTYPE != "linux-gnu" ]]; then
+    gnu_prefix=g
+fi
+
 alias gcolt="git checkout \`git tag | ${gnu_prefix}sort -V | tail -1\`"
-alias ttree="tree --filelimit 16 -a -I .git"
+alias gitroot="git rev-parse --show-toplevel"
 alias lss="ls -A"
 alias psql_log="psql -e -L ~/logs/psql/$(date +%Y_%m_%d).txt"
-alias gitroot="git rev-parse --show-toplevel"
+alias ttree="tree --filelimit 16 -aC -I .git"
+alias vi=vim
 
+export LANG=en_US.UTF-8
 export TZ=UTC
-export XDG_CACHE_HOME=$HOME/.cache
-export XDG_CONFIG_HOME=$HOME/.config
-export EDITOR=vim
 
 # zsh help (for built-in commands) -- invoke with Alt-h
 # http://zshwiki.org/home/builtin/functions/run-help
