@@ -12,17 +12,17 @@ nnoremap <C-n> :call NumberToggle()<cr>
 
 " https://github.com/altercation/vim-colors-solarized
 " http://stackoverflow.com/questions/7278267/incorrect-colors-with-vim-in-iterm2-using-solarized/
-if has('gui_running')
-    set background=light
-    let g:solarized_termcolors=256
-else
-    "set background=dark
-    set background=light
-    let g:solarized_termcolors=16
-endif
-let g:solarized_visibility="high"
-let g:solarized_contrast="high"
-colorscheme solarized
+"if has('gui_running')
+"    set background=light
+"    let g:solarized_termcolors=256
+"else
+"    "set background=dark
+"    set background=light
+"    let g:solarized_termcolors=16
+"endif
+"let g:solarized_visibility="high"
+"let g:solarized_contrast="high"
+"colorscheme solarized
 
 " http://vim.wikia.com/wiki/Toggle_auto-indenting_for_code_paste#Paste_toggle
 set pastetoggle=<F2>

@@ -1,45 +1,27 @@
 {
     "casks": [
-        "caffeine",
-        "eclipse-ide",
-        "google-hangouts",
-        "graphviz",
-        "iterm2",
-        "java",
-        "libreoffice",
+        "firefox",
+        "karabiner-elements",
         "sizeup",
-        "skype",
         "vagrant",
-        "virtualbox",
-        "vlc"
+        "virtualbox"
     ],
     "formulas": [
-        "ack",
-        "apg",
-        "boot2docker",
-        "brew-cask",
         "coreutils",
-        "ctags",
-        "dateutils",
-        "docker",
-        "fig",
-        "fleetctl",
+        "d12frosted/emacs-plus/emacs-plus",
         "git",
-        "gnu-sed",
-        "jq",
-        "macvim",
-        "phantomjs",
-        "postgresql",
-        "readline",
+        "hub",
+        "pyenv",
+        "rbenv",
         "tig",
+        "tldr",
         "tmux",
         "tree",
-        "vim",
-        "w3m",
-        "wget",
         "zsh"
     ],
     "taps": [
         "caskroom/cask"
+        "d12frosted/emacs-plus"
+        "homebrew/core"
     ]
 }
