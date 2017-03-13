@@ -6,23 +6,6 @@ or just do so manually.
 
 This is now geared exclusively to OSX.
 
-## Features
-
--   git-based installations of the following packages:
-    -   janus (Vim plugin suite)
-    -   oh-my-zsh
-    -   gvm - go version manager
-    -   rbenv - ruby environment manager
--   configuration files for:
-    -   ack
-    -   irb
-    -   psql
-    -   tmux
-    -   vim
-    -   zsh
-    -   vagrant
--   installation instructions for many other dev packages
-
 ## Installation
 
 1.  Type Cmd-Space to reach spotlight
@@ -52,5 +35,7 @@ homesick rc
 *   add source highlight for LESS
 *   other mac tweaks
     *   show scroll bars: always
+    *   tab through windows
+    *   side swipe doesn't move back
     *   turn on filevault
 

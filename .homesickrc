@@ -1,33 +1,28 @@
 #!/usr/bin/env ruby
 
+# this should be run after installing stuff from Mac App Store, Casper Self Service
+
 `
 cp -n $HOME/.config/git/user.example $HOME/.config/git/user
 
-pushd ~/.vim && rake && popd  # janus
-
-ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
 brew update
-brew install caskroom/cask/brew-cask
-sh $HOME/.homesick/repos/dotfiles/install_zsh.sh  # requires brew
 
-brew install python
+sh $HOME/.homesick/repos/dotfiles/install_zsh.sh  # requires brew
+brew install pyenv
+pyenv install 2.7.13
+pyenv global 2.7.13
+`
+
+`
 pip install -U cider
 cider restore
 
 # rbenv install
-ln -fs ../../rbenv-plugins $HOME/.rbenv/plugins
 rbenv install --skip-existing 2.2.0
 rbenv global 2.2.0
 rbenv rehash
 gem update --system
 
-# gvm install
-gvm install go1.4.2
-source $GVM_ROOT/scripts/env/use
-source $GVM_ROOT/scripts/function/tools
-source $GVM_ROOT/scripts/function/gvm_export_path
-source $GVM_ROOT/scripts/function/display_message
-gvm_use go1.4.2 --default
 
 brew doctor # pay attention to this output
 `

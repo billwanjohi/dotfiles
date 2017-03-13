@@ -1,9 +1,10 @@
-tags
-tmp/
-*.un~
-*.swp
 *.pid.lock
 *.pyc
+*.swp
+*.un~
+.#*
+tags
+tmp/
 
 # From https://help.github.com/articles/ignoring-files:
 
