@@ -1,0 +1,10 @@
+[style]
+
+# [Default Style Definitions](https://github.com/google/yapf/blob/master/yapf/yapflib/style.py)
+based_on_style = google
+
+
+# [Knobs](https://github.com/google/yapf#knobs)
+DEDENT_CLOSING_BRACKETS = true
+SPACE_BETWEEN_ENDING_COMMA_AND_CLOSING_BRACKET = false
+

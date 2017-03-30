@@ -3,3 +3,4 @@ Library/Preferences
 .config/git
 logs/psql
 .config
+.aws
