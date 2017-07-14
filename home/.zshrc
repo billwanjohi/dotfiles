@@ -48,14 +48,15 @@ if [[ $OSTYPE != "linux-gnu" ]]; then
     gnu_prefix=g
 fi
 
+alias findalias="alias | ag"
 alias gcolt="git checkout \`git tag | ${gnu_prefix}sort -V | tail -1\`"
-alias gitroot="git rev-parse --show-toplevel"
-alias lss="ls -A"
+alias gpfwl="git push --force-with-lease"
 alias psql_log="psql -e -L ~/logs/psql/$(date +%Y_%m_%d).txt"
 alias ttree="tree --filelimit 16 -aC -I .git"
 alias vi=vim
 
 export LANG=en_US.UTF-8
+export LESS="--quit-if-one-screen --ignore-case --RAW-CONTROL-CHARS --no-init"
 export TZ=UTC
 
 # zsh help (for built-in commands) -- invoke with Alt-h
