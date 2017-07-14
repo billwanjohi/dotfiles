@@ -1,17 +1,63 @@
+[core]
+	pager = diff-so-fancy | less
+
+[alias]
+	#glog = log --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset'
+	stash-all = stash save --include-untracked
+	undo = reset --soft HEAD^
+	patch = !git --no-pager diff --no-color
+
 [color]
-  ui = auto
+	ui = always
+
+# https://github.com/paulirish/dotfiles/blob/63cb8193b0e66cf80ab6332477f1f52c7fbb9311/.gitconfig#L23-L36
+#[color "diff"]
+#	meta = yellow bold
+#	commit = green bold
+#	frag = magenta bold
+#	old = red bold
+#	new = green bold
+#	whitespace = red reverse
+
+#[color "diff-highlight"]
+#	oldNormal = red bold
+#	oldHighlight = "red bold 52"
+#	newNormal = "green bold"
+#	newHighlight = "green bold 22"
+
+#[commit]
+#	gpgSign = true
+
+#[diff]
+#	tool = diff-so-fancy
+#
+#[diff "diff-so-fancy"]
+#	cmd = /usr/local/bin/diff-so-fancy
 
 [diff]
 	colorMoved = default
 
 [include]
-  path = user  # this lets us set user variables in separate file
+	path = user  # this lets us set user variables in separate file
 
 [init]
-  templateDir = ~/.config/git/template
+	templateDir = ~/.config/git/template
+
+[merge]
+	conflictstyle = diff3
+
+[push]
+	default = simple
+	followTags = true
+
+[status]
+	showUntrackedFiles = all
+
+[transfer]
+	fsckobjects = true
 
 [pull]
 	rebase = true
 
 [url "git@github.com:"]
-  insteadOf = https://github.com/
+	insteadOf = https://github.com/

@@ -83,8 +83,10 @@ if [[ $OSTYPE != "linux-gnu" ]]; then
     gnu_prefix=g
 fi
 
+alias findalias="alias | ag"
 alias gcolt="git checkout \`git tag | ${gnu_prefix}sort -V | tail -1\`"
 alias gitroot="git rev-parse --show-toplevel"
+alias gpfwl="git push --force-with-lease"
 alias gs="echo 'did you mean gss?'"
 alias lss="ls -A"
 # TODO: use XDG log location
@@ -96,7 +98,7 @@ alias xo=xdg-open
 
 export EDITOR=vim  # todo: figure out how to use `emacsclient -t`
 export LANG=en_US.UTF-8
-export LESS="--RAW-CONTROL-CHARS --quit-if-one-screen"
+export LESS="--quit-if-one-screen --ignore-case --RAW-CONTROL-CHARS --no-init"
 export TZ=UTC
 
 # zsh help (for built-in commands) -- invoke with Alt-h
