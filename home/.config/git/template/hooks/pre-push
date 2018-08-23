@@ -1,11 +1,14 @@
-#!/bin/sh
+#!/usr/bin/env bash
 
-current_branch=$(git symbolic-ref HEAD | sed -e 's,.*/\(.*\),\1,')
+current_branch=$(git rev-parse --abbrev-ref HEAD)
 
-if [[ $current_branch = 'master' ]]; then
-  echo "Attempted push to master. Aborting. To override, use 'git push --no-verify'."
-  exit 1
-fi
+case ${current_branch} in
+    master|develop|dev)
+        echo "Blocked attempt to push to master. To override, use 'git push --no-verify'."
+        exit 1
+        ;;
+    *)
+       exit 0
+esac
 
 exit 0
-

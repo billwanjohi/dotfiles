@@ -41,8 +41,8 @@ au FileType ruby setlocal foldmethod=syntax
 " http://stackoverflow.com/questions/8316139/vim-how-to-set-the-default-to-unfolded-when-you-open-a-file
 set nofoldenable
 
-" https://stackoverflow.com/questions/2447109/showing-a-different-background-colour-in-vim-past-80-characters
-let &colorcolumn=join(range(101,999),",")
+"" https://stackoverflow.com/questions/2447109/showing-a-different-background-colour-in-vim-past-80-characters
+"let &colorcolumn=join(range(101,999),",")
 
 " https://github.com/fatih/vim-go/blob/master/README.md
 

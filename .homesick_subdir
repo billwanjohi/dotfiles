@@ -4,3 +4,6 @@ Library/Preferences
 logs/psql
 .config
 .aws
+.config/qt5ct
+.config/gtk-3.0
+.minikube
