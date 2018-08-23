@@ -1,38 +1,22 @@
-[core]
-	pager = diff-so-fancy | less
-
 [alias]
-	#glog = log --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset'
+	glog = log --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset'
+	# https://github.com/so-fancy/diff-so-fancy/blob/master/pro-tips.md#raw-patches
+	patch = !git --no-pager diff --no-color
 	stash-all = stash save --include-untracked
 	undo = reset --soft HEAD^
-	patch = !git --no-pager diff --no-color
 
 [color]
 	ui = always
 
-# https://github.com/paulirish/dotfiles/blob/63cb8193b0e66cf80ab6332477f1f52c7fbb9311/.gitconfig#L23-L36
-#[color "diff"]
-#	meta = yellow bold
-#	commit = green bold
-#	frag = magenta bold
-#	old = red bold
-#	new = green bold
-#	whitespace = red reverse
+[commit]
+	#gpgSign = true
 
-#[color "diff-highlight"]
-#	oldNormal = red bold
-#	oldHighlight = "red bold 52"
-#	newNormal = "green bold"
-#	newHighlight = "green bold 22"
+[core]
+	# https://github.com/so-fancy/diff-so-fancy#usage
+	pager = diff-so-fancy | less --tabs=4 -RFX
 
-#[commit]
-#	gpgSign = true
-
-#[diff]
-#	tool = diff-so-fancy
-#
-#[diff "diff-so-fancy"]
-#	cmd = /usr/local/bin/diff-so-fancy
+[credential]
+	helper = osxkeychain
 
 [diff]
 	colorMoved = default
@@ -45,6 +29,10 @@
 
 [merge]
 	conflictstyle = diff3
+
+[pager]
+  # https://github.com/so-fancy/diff-so-fancy/blob/master/pro-tips.md#moving-around-in-the-diff
+  diff = diff-so-fancy | less --tabs=4 -RFX --pattern '^(Date|added|deleted|modified): '
 
 [push]
 	default = simple

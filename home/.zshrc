@@ -1,5 +1,7 @@
 # Which zsh file should I put X?
 # https://unix.stackexchange.com/a/71258/32186
+export ZPLUG_HOME=/usr/local/opt/zplug
+source $ZPLUG_HOME/init.zsh
 
 # .zshrc - interactive shell configuration
 ##########################################
@@ -20,61 +22,56 @@ export XDG_CONFIG_HOME=$HOME/.config
 export XDG_DATA_HOME=$HOME/.local/share
 #export XDG_RUNTIME_DIR=
 
-## official and custom directories
-ZSH=/usr/share/oh-my-zsh  # ~/.oh-my-zsh for homebrew
-ZSH_CACHE_DIR=$XDG_CACHE_HOME/zsh
-ZSH_CUSTOM=$XDG_CONFIG_HOME/oh-my-zsh
+### oh-my-zsh options
+#COMPLETION_WAITING_DOTS="true"
+#DISABLE_AUTO_TITLE="true"  # so tmuxinator names stick
+#DISABLE_CORRECTION="true"
+#DISABLE_UNTRACKED_FILES_DIRTY="false"
+#ZSH_TMUX_AUTOSTART="false"
+#PURE_CMD_MAX_EXEC_TIME=1
 
-## oh-my-zsh options
-COMPLETION_WAITING_DOTS="true"
-DISABLE_AUTO_TITLE="true"  # so tmuxinator names stick
-DISABLE_CORRECTION="true"
-DISABLE_UNTRACKED_FILES_DIRTY="false"
-ZSH_TMUX_AUTOSTART="false"
+#zplug lib/bzr, from:oh-my-zsh
+#zplug lib/correction, from:oh-my-zsh
+#zplug lib/diagnostics, from:oh-my-zsh
+#zplug lib/git, from:oh-my-zsh
+#zplug lib/grep, from:oh-my-zsh
+#zplug lib/key-bindings, from:oh-my-zsh
+#zplug lib/misc, from:oh-my-zsh
+#zplug lib/nvm, from:oh-my-zsh
+#zplug lib/prompt_info_functions, from:oh-my-zsh
+#zplug lib/spectrum, from:oh-my-zsh
+#zplug lib/termsupport, from:oh-my-zsh
+#zplug lib/theme-and-appearance, from:oh-my-zsh
+zplug $HOME/.config/oh-my-zsh/spantree.zsh, from:local
+zplug lib/clipboard, from:oh-my-zsh
+zplug lib/compfix, from:oh-my-zsh
+zplug lib/completion, from:oh-my-zsh
+zplug lib/directories, from:oh-my-zsh
+zplug lib/functions, from:oh-my-zsh
+zplug lib/history, from:oh-my-zsh
+zplug mafredri/zsh-async, from:github
+#zplug plugins/archlinux, from:oh-my-zsh
+zplug plugins/brew, from:oh-my-zsh
+zplug plugins/cargo, from:oh-my-zsh
+zplug plugins/colored-man, from:oh-my-zsh
+zplug plugins/colorize, from:oh-my-zsh
+zplug plugins/docker, from:oh-my-zsh
+zplug plugins/docker-compose, from:oh-my-zsh
+zplug plugins/emacs, from:oh-my-zsh
+zplug plugins/git, from:oh-my-zsh
+zplug plugins/minikube, from:oh-my-zsh
+zplug plugins/osx, from:oh-my-zsh
+zplug plugins/rust, from:oh-my-zsh
+zplug plugins/tmux, from:oh-my-zsh
+zplug sindresorhus/pure, use:pure.zsh, from:github, as:theme
+zplug spwhitt/nix-zsh-completions, from:github
+zplug wting/autojump, use:bin/autojump.zsh, from:github
 
-## Themes
-# https://github.com/robbyrussell/oh-my-zsh/wiki/Plugins
-# "random" is fun
-# "robby-lite" is custom and good
-# "kennethreitz" is pretty, and is venv aware
-# "robbyrussell" looks good on it's own, but not with git-prompt
-# "bureau" works with (instead of?) git-prompt
-ZSH_THEME=""  # we're configuring this in pure.zsh
+if ! zplug check; then
+    zplug install
+fi
 
-plugins=()
-plugins+=('archlinux')        # pacman/pacaur
-#plugins+=('brew')              # mac only
-#plugins+=('bundler')           # don't use ruby much anymore
-plugins+=('cargo')
-plugins+=('colored-man')
-plugins+=('colorize')         # pygments in pager
-#plugins+=('docker')
-#plugins+=('docker-compose')
-plugins+=('emacs')            # aliases
-#plugins+=('emoji')
-plugins+=('git')              # aliases, completion
-#plugins+=('gitfast')
-#plugins+=('github')
-#plugins+=('git-prompt')       # right-side prompt that pulls from remote
-plugins+=('minikube')         # custom plugin to give me completion
-plugins+=('npm')         # custom plugin to give me completion
-#plugins+=('osx')               # mac only
-#plugins+=('pip')
-plugins+=('pyenv')            # handles initialization
-#plugins+=('python')
-#plugins+=('rbenv')             # don't use ruby much anymore
-#plugins+=('ruby')
-plugins+=('rust')
-#plugins+=('terraform')
-plugins+=('tmux')             # can't remember
-#plugins+=('tmuxinator')
-#plugins+=('vagrant')
-#plugins+=('virtualenv')
-#plugins+=('yarn')
-
-export PATH=~/bin:$PATH  # needed before we load minikube
-
-source $ZSH/oh-my-zsh.sh
+zplug load # --verbose
 
 ###### User configuration
 
@@ -83,6 +80,7 @@ if [[ $OSTYPE != "linux-gnu" ]]; then
     gnu_prefix=g
 fi
 
+alias lss="ls -a"
 alias findalias="alias | ag"
 alias gcolt="git checkout \`git tag | ${gnu_prefix}sort -V | tail -1\`"
 alias gitroot="git rev-parse --show-toplevel"

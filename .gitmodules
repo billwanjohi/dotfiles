@@ -1,9 +1,9 @@
 [submodule "dircolors-solarized"]
 	path = dircolors-solarized
 	url = https://github.com/seebi/dircolors-solarized.git
-[submodule "home/.tmux/plgins/tpm"]
-	path = home/.tmux/plgins/tpm
-	url = git://github.com/tmux-plugins/tpm
+[submodule "gruvbox-contrib"]
+	path = gruvbox-contrib
+	url = git@github.com:morhetz/gruvbox-contrib.git
 [submodule "home/.tmux/plugins/tpm"]
 	path = home/.tmux/plugins/tpm
 	url = git://github.com/tmux-plugins/tpm
