@@ -1,4 +1,5 @@
 {
     "WantReportError": true,
+    "WantUpdateNotification": false,
     "vm-driver": "kvm2"
 }

@@ -72,8 +72,6 @@ plugins+=('tmux')             # can't remember
 #plugins+=('virtualenv')
 #plugins+=('yarn')
 
-export PATH=~/bin:$PATH  # needed before we load minikube
-
 source $ZSH/oh-my-zsh.sh
 
 ###### User configuration

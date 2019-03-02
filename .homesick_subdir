@@ -7,3 +7,7 @@ logs/psql
 .config/qt5ct
 .config/gtk-3.0
 .minikube
+.kube
+.config/Code/User
+.rustup
+.cargo
