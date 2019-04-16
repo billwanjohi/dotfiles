@@ -28,6 +28,7 @@ export XDG_DATA_HOME=$HOME/.local/share
 #DISABLE_CORRECTION="true"
 #DISABLE_UNTRACKED_FILES_DIRTY="false"
 #ZSH_TMUX_AUTOSTART="false"
+
 #PURE_CMD_MAX_EXEC_TIME=1
 
 #zplug lib/bzr, from:oh-my-zsh
@@ -35,35 +36,36 @@ export XDG_DATA_HOME=$HOME/.local/share
 #zplug lib/diagnostics, from:oh-my-zsh
 #zplug lib/git, from:oh-my-zsh
 #zplug lib/grep, from:oh-my-zsh
-#zplug lib/key-bindings, from:oh-my-zsh
 #zplug lib/misc, from:oh-my-zsh
 #zplug lib/nvm, from:oh-my-zsh
 #zplug lib/prompt_info_functions, from:oh-my-zsh
 #zplug lib/spectrum, from:oh-my-zsh
 #zplug lib/termsupport, from:oh-my-zsh
 #zplug lib/theme-and-appearance, from:oh-my-zsh
-zplug $HOME/.config/oh-my-zsh/spantree.zsh, from:local
+#zplug plugins/archlinux, from:oh-my-zsh
+#zplug sindresorhus/pure, use:pure.zsh, from:github, as:theme
+#zplug plugins/emacs, from:oh-my-zsh
+zplug $HOME/.config/oh-my-zsh, use:spaceship.zsh, from:local
+zplug $HOME/.config/oh-my-zsh, use:spantree.zsh, from:local
+zplug denysdovhan/spaceship-prompt, use:spaceship.zsh, from:github, as:theme
 zplug lib/clipboard, from:oh-my-zsh
 zplug lib/compfix, from:oh-my-zsh
 zplug lib/completion, from:oh-my-zsh
 zplug lib/directories, from:oh-my-zsh
 zplug lib/functions, from:oh-my-zsh
 zplug lib/history, from:oh-my-zsh
+zplug lib/key-bindings, from:oh-my-zsh   # needed for reverse-menu-complete
 zplug mafredri/zsh-async, from:github
-#zplug plugins/archlinux, from:oh-my-zsh
 zplug plugins/brew, from:oh-my-zsh
 zplug plugins/cargo, from:oh-my-zsh
 zplug plugins/colored-man, from:oh-my-zsh
 zplug plugins/colorize, from:oh-my-zsh
 zplug plugins/docker, from:oh-my-zsh
 zplug plugins/docker-compose, from:oh-my-zsh
-zplug plugins/emacs, from:oh-my-zsh
 zplug plugins/git, from:oh-my-zsh
 zplug plugins/minikube, from:oh-my-zsh
 zplug plugins/osx, from:oh-my-zsh
 zplug plugins/rust, from:oh-my-zsh
-zplug plugins/tmux, from:oh-my-zsh
-zplug sindresorhus/pure, use:pure.zsh, from:github, as:theme
 zplug spwhitt/nix-zsh-completions, from:github
 zplug wting/autojump, use:bin/autojump.zsh, from:github
 
@@ -80,23 +82,28 @@ if [[ $OSTYPE != "linux-gnu" ]]; then
     gnu_prefix=g
 fi
 
-alias lss="ls -a"
 alias findalias="alias | ag"
 alias gcolt="git checkout \`git tag | ${gnu_prefix}sort -V | tail -1\`"
 alias gitroot="git rev-parse --show-toplevel"
 alias gpfwl="git push --force-with-lease"
 alias gs="echo 'did you mean gss?'"
 alias lss="ls -A"
-# TODO: use XDG log location
-alias psql_log="psql -e -L ~/logs/psql/$(date +%Y_%m_%d).txt"
+alias lss="ls -a"
+alias neovim="echo 'do you mean nvim?'"
+alias psql_log="psql -e -L ${XDG_DATA_HOME}/psql/logs/$(date +%Y_%m_%d).txt"
 alias rsync="echo run as root"
+alias te="emacsclient -t"
 alias ttree="tree --filelimit 64 -aC -I .git"
 alias vi="echo 'do you mean vim?'"
+alias vim=nvim
 alias xo=xdg-open
 
-export EDITOR=vim  # todo: figure out how to use `emacsclient -t`
+bindkey -e  # [Always use emacs-style zsh bindings](https://superuser.com/a/457401/145170)
+
+export EDITOR=nvim
 export LANG=en_US.UTF-8
 export LESS="--quit-if-one-screen --ignore-case --RAW-CONTROL-CHARS --no-init"
+export RIPGREP_CONFIG_PATH=$XDG_CONFIG_HOME/ripgrep/config
 export TZ=UTC
 
 # zsh help (for built-in commands) -- invoke with Alt-h
@@ -105,3 +112,8 @@ export TZ=UTC
 [[ -d /usr/share/zsh/help ]] && HELPDIR=/usr/share/zsh/help # aptitude
 unalias run-help 2> /dev/null # in case already unaliased
 autoload run-help run-help-git
+
+# https://github.com/Homebrew/homebrew-cask/issues/52560
+# Affects me because I disabled the path_helper
+export PATH=$PATH:/usr/local/share/dotnet
+source <(aws-okta completion zsh)

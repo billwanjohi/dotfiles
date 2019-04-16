@@ -1,4 +1,4 @@
-;; -*- mode: emacs-lisp -*-
+;; -*- mode: emacs-lisp; lexical-binding: t -*-
 ;; This file is loaded by Spacemacs at startup.
 ;; It must be stored in your home directory.
 
@@ -34,6 +34,12 @@ This function should only modify configuration layer settings."
    ;; List of configuration layers to load.
    dotspacemacs-configuration-layers
    '(
+     ;; ----------------------------------------------------------------
+     ;; Example of useful layers you may want to use right away.
+     ;; Uncomment some layer names and press `SPC f e R' (Vim style) or
+     ;; `M-m f e R' (Emacs style) to install them.
+     ;; ----------------------------------------------------------------
+     helm  ;; or ivy
      ;; ansible
      auto-completion
      ;; better-defaults ; for emacs editing style
@@ -42,14 +48,26 @@ This function should only modify configuration layer settings."
      emacs-lisp
      ;; elixir
      ;; evernote
+     fsharp
      ;; games
      git
+     github
      ;; gtags
      graphviz
+     (go :variables
+         ;; go-backend 'lsp  ; disabled because bingo backend not installing
+         go-format-before-save t
+         go-use-gocheck-for-testing t
+         go-use-golangci-lint t
+         godoc-at-point-function 'godoc-gogetdoc
+         gofmt-command "goimports"
+         )
      html
-     ivy
      java
      javascript
+     ipython-notebook
+     kotlin
+     lsp
      (markdown :variables markdown-live-preview-engine 'vmd)
      neotree
      (org :variables
@@ -60,26 +78,29 @@ This function should only modify configuration layer settings."
      plantuml
      (python :variables
              python-test-runner 'pytest)
+     react
      restclient
      rust
      ;; ruby
      scala
      (shell :variables
-            shell-default-height 30
-            shell-default-position 'bottom)
+            shell-default-term-shell "/usr/local/bin/zsh")
      shell-scripts
      ;; speed-reading
      ;; spell-checking
      sql
      syntax-checking
-     systemd
+     ;; systemd
      terraform
+     (typescript :variables
+                 typescript-fmt-tool 'prettier
+                 typescript-fmt-on-save t)
      ;; tmux
      ;; vagrant
-     '(version-control :variables
+     (version-control :variables
                        version-control-diff-tool 'diff-hl)
      yaml
-
+     )
 
    ;; List of additional packages that will be installed without being
    ;; wrapped in a layer. If you need some configuration for these
@@ -90,9 +111,10 @@ This function should only modify configuration layer settings."
    ;; Also include the dependencies as they will not be resolved automatically.
    dotspacemacs-additional-packages
    '(
-     base16-theme
-     mocha
-     string-inflection
+     ;; devdocs-lookup     ;; cross-language documentation
+     graphql-mode       ;; what it says
+     mocha              ;; javascript testing
+     string-inflection  ;; change_casing_style
      )
 
    ;; A list of packages that cannot be updated.
@@ -207,7 +229,7 @@ It should only modify the values of Spacemacs settings."
    dotspacemacs-startup-buffer-responsive t
 
    ;; Default major mode of the scratch buffer (default `text-mode')
-   dotspacemacs-scratch-mode 'text-mode
+   dotspacemacs-scratch-mode 'org-mode
 
    ;; Initial message in the scratch buffer, such as "Welcome to Spacemacs!"
    ;; (default nil)
@@ -216,15 +238,15 @@ It should only modify the values of Spacemacs settings."
    ;; List of themes, the first of the list is loaded when spacemacs starts.
    ;; Press `SPC T n' to cycle to the next theme in the list (works great
    ;; with 2 themes variants, one dark and one light)
-   dotspacemacs-themes '(base16-monokai
+   dotspacemacs-themes '(base16-gruvbox-dark-medium
                          base16-tomorrow)
 
    ;; Set the theme for the Spaceline. Supported themes are `spacemacs',
-   ;; `all-the-icons', `custom', `vim-powerline' and `vanilla'. The first three
-   ;; are spaceline themes. `vanilla' is default Emacs mode-line. `custom' is a
-   ;; user defined themes, refer to the DOCUMENTATION.org for more info on how
-   ;; to create your own spaceline theme. Value can be a symbol or list with\
-   ;; additional properties.
+   ;; `all-the-icons', `custom', `doom', `vim-powerline' and `vanilla'. The
+   ;; first three are spaceline themes. `doom' is the doom-emacs mode-line.
+   ;; `vanilla' is default Emacs mode-line. `custom' is a user defined themes,
+   ;; refer to the DOCUMENTATION.org for more info on how to create your own
+   ;; spaceline theme. Value can be a symbol or list with additional properties.
    ;; (default '(spacemacs :separator wave :separator-scale 1.5))
    dotspacemacs-mode-line-theme '(spacemacs :separator wave :separator-scale 1.5)
 
@@ -298,9 +320,9 @@ It should only modify the values of Spacemacs settings."
    ;; Maximum number of rollback slots to keep in the cache. (default 5)
    dotspacemacs-max-rollback-slots 5
 
-   ;; If non-nil, the paste transient-state is enabled. While enabled, pressing
-   ;; `p' several times cycles through the elements in the `kill-ring'.
-   ;; (default nil)
+   ;; If non-nil, the paste transient-state is enabled. While enabled, after you
+   ;; paste something, pressing `C-j' and `C-k' several times cycles through the
+   ;; elements in the `kill-ring'. (default nil)
    dotspacemacs-enable-paste-transient-state nil
 
    ;; Which-key delay in seconds. The which-key buffer is the popup listing
@@ -462,7 +484,10 @@ This function defines the environment variables for your Emacs session. By
 default it calls `spacemacs/load-spacemacs-env' which loads the environment
 variables declared in `~/.spacemacs.env' or `~/.spacemacs.d/.spacemacs.env'.
 See the header of this file for more information."
-  (spacemacs/load-spacemacs-env))
+  (setenv "SHELL" "/usr/local/bin/zsh")
+  (spacemacs/force-init-spacemacs-env)
+  (spacemacs/load-spacemacs-env)
+  )
 
 (defun dotspacemacs/user-init ()
   "Initialization for user code:
@@ -485,9 +510,14 @@ This function is called at the very end of Spacemacs startup, after layer
 configuration.
 Put your configuration code here, except for variables that should be set
 before packages are loaded."
+  ;; (add-to-list 'exec-path "/usr/local/bin")
+  ;; (add-to-list 'exec-path "~/go/bin")
+  ;; (add-to-list 'exec-path "~/.nix-profile/bin")
   (setq csv-separators '("," "\t" "|"))
   (setq scroll-margin 5)
   (setq-default js-indent-level 2)
+  (setq-default ts-indent-level 2)
+  (add-to-list 'auto-mode-alist '("\\.prisma\\'" . graphql-mode))
   )
 
 ;; Do not write anything past this comment. This is where Emacs will
@@ -518,9 +548,10 @@ This function is called at the very end of Spacemacs initialization."
  ;; Your init file should contain only one such instance.
  ;; If there is more than one, they won't work right.
  '(evil-want-Y-yank-to-eol nil)
+ '(org-agenda-files (quote ("~/projects/spantree/notes.org")))
  '(package-selected-packages
    (quote
-    (yasnippet-snippets vmd-mode toml-mode symon string-inflection spaceline-all-the-icons all-the-icons memoize racer plantuml-mode pippel pipenv password-generator ox-gfm overseer org-brain nameless mvn mocha meghanada maven-test-mode magit-svn json-navigator hierarchy ivy-yasnippet ivy-xref ivy-purpose window-purpose imenu-list insert-shebang importmagic epc ctable concurrent deferred impatient-mode groovy-mode groovy-imports pcache gradle-mode gitignore-templates flycheck-rust flycheck-bashate fish-mode evil-org evil-lion evil-goggles evil-cleverparens paredit editorconfig counsel-css company-terraform company-shell company-emacs-eclim eclim centered-cursor-mode cargo rust-mode browse-at-remote base16-theme dotenv-mode dockerfile-mode docker tablist docker-tramp org-mime sql-indent ob-restclient ob-http company-restclient restclient know-your-http-well noflet ensime sbt-mode scala-mode ghub let-alist systemd unfill mwim org-category-capture ob-elixir flycheck-mix flycheck-credo alchemist elixir-mode graphviz-dot-mode terraform-mode hcl-mode xterm-color typit mmt sudoku shell-pop pacmacs multi-term fuzzy flyspell-correct-ivy flyspell-correct eshell-z eshell-prompt-extras esh-help company-web web-completion-data company-tern dash-functional tern company-statistics company-anaconda company auto-yasnippet auto-dictionary ac-ispell auto-complete 2048-game git-gutter-fringe+ git-gutter-fringe fringe-helper git-gutter+ git-gutter flycheck-pos-tip pos-tip flycheck diff-hl php-extras web-mode tagedit slim-mode scss-mode sass-mode pug-mode less-css-mode haml-mode emmet-mode php-auto-yasnippets drupal-mode phpunit phpcbf php-mode winum web-beautify livid-mode skewer-mode simple-httpd json-mode json-snatcher json-reformat js2-refactor yasnippet multiple-cursors js2-mode js-doc coffee-mode org-projectile org-present org-pomodoro alert log4e gntp org-download htmlize gnuplot yapfify pyvenv pytest pyenv-mode py-isort pip-requirements live-py-mode hy-mode cython-mode anaconda-mode pythonic orgit smeargle org magit-gitflow gitignore-mode gitconfig-mode gitattributes-mode git-timemachine git-messenger git-link evil-magit magit magit-popup git-commit with-editor yaml-mode mmm-mode markdown-toc markdown-mode gh-md rvm ruby-tools ruby-test-mode rubocop rspec-mode robe rbenv rake minitest chruby bundler inf-ruby ws-butler window-numbering which-key wgrep volatile-highlights vi-tilde-fringe uuidgen use-package toc-org spaceline powerline smex restart-emacs request rainbow-delimiters popwin persp-mode pcre2el paradox spinner org-plus-contrib org-bullets open-junk-file neotree move-text macrostep lorem-ipsum linum-relative link-hint ivy-hydra info+ indent-guide ido-vertical-mode hydra hungry-delete hl-todo highlight-parentheses highlight-numbers parent-mode highlight-indentation hide-comnt help-fns+ helm-make helm helm-core google-translate golden-ratio flx-ido flx fill-column-indicator fancy-battery eyebrowse expand-region exec-path-from-shell evil-visualstar evil-visual-mark-mode evil-unimpaired evil-tutor evil-surround evil-search-highlight-persist evil-numbers evil-nerd-commenter evil-mc evil-matchit evil-lisp-state smartparens evil-indent-plus evil-iedit-state iedit evil-exchange evil-escape evil-ediff evil-args evil-anzu anzu evil goto-chg undo-tree eval-sexp-fu highlight elisp-slime-nav dumb-jump popup f s diminish define-word counsel-projectile projectile pkg-info epl counsel swiper ivy column-enforce-mode clean-aindent-mode bind-map bind-key auto-highlight-symbol auto-compile packed dash async aggressive-indent adaptive-wrap ace-window ace-link avy quelpa package-build spacemacs-theme))))
+    (ob-ipython ein polymode websocket dockerfile-mode docker tablist docker-tramp org-mime sql-indent ob-restclient ob-http company-restclient restclient know-your-http-well noflet ensime sbt-mode scala-mode ghub let-alist systemd unfill mwim org-category-capture ob-elixir flycheck-mix flycheck-credo alchemist elixir-mode graphviz-dot-mode terraform-mode hcl-mode xterm-color typit mmt sudoku shell-pop pacmacs multi-term fuzzy flyspell-correct-ivy flyspell-correct eshell-z eshell-prompt-extras esh-help company-web web-completion-data company-tern dash-functional tern company-statistics company-anaconda company auto-yasnippet auto-dictionary ac-ispell auto-complete 2048-game git-gutter-fringe+ git-gutter-fringe fringe-helper git-gutter+ git-gutter flycheck-pos-tip pos-tip flycheck diff-hl php-extras web-mode tagedit slim-mode scss-mode sass-mode pug-mode less-css-mode haml-mode emmet-mode php-auto-yasnippets drupal-mode phpunit phpcbf php-mode winum web-beautify livid-mode skewer-mode simple-httpd json-mode json-snatcher json-reformat js2-refactor yasnippet multiple-cursors js2-mode js-doc coffee-mode org-projectile org-present org-pomodoro alert log4e gntp org-download htmlize gnuplot yapfify pyvenv pytest pyenv-mode py-isort pip-requirements live-py-mode hy-mode cython-mode anaconda-mode pythonic orgit smeargle org magit-gitflow gitignore-mode gitconfig-mode gitattributes-mode git-timemachine git-messenger git-link evil-magit magit magit-popup git-commit with-editor yaml-mode mmm-mode markdown-toc markdown-mode gh-md rvm ruby-tools ruby-test-mode rubocop rspec-mode robe rbenv rake minitest chruby bundler inf-ruby ws-butler window-numbering which-key wgrep volatile-highlights vi-tilde-fringe uuidgen use-package toc-org spaceline powerline smex restart-emacs request rainbow-delimiters popwin persp-mode pcre2el paradox spinner org-plus-contrib org-bullets open-junk-file neotree move-text macrostep lorem-ipsum linum-relative link-hint ivy-hydra info+ indent-guide ido-vertical-mode hydra hungry-delete hl-todo highlight-parentheses highlight-numbers parent-mode highlight-indentation hide-comnt help-fns+ helm-make helm helm-core google-translate golden-ratio flx-ido flx fill-column-indicator fancy-battery eyebrowse expand-region exec-path-from-shell evil-visualstar evil-visual-mark-mode evil-unimpaired evil-tutor evil-surround evil-search-highlight-persist evil-numbers evil-nerd-commenter evil-mc evil-matchit evil-lisp-state smartparens evil-indent-plus evil-iedit-state iedit evil-exchange evil-escape evil-ediff evil-args evil-anzu anzu evil goto-chg undo-tree eval-sexp-fu highlight elisp-slime-nav dumb-jump popup f s diminish define-word counsel-projectile projectile pkg-info epl counsel swiper ivy column-enforce-mode clean-aindent-mode bind-map bind-key auto-highlight-symbol auto-compile packed dash async aggressive-indent adaptive-wrap ace-window ace-link avy quelpa package-build spacemacs-theme))))
 (custom-set-faces
  ;; custom-set-faces was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.
