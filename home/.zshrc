@@ -84,7 +84,9 @@ fi
 
 alias findalias="alias | ag"
 alias gcolt="git checkout \`git tag | ${gnu_prefix}sort -V | tail -1\`"
+alias glfod="git ls-files --others --directory"
 alias gitroot="git rev-parse --show-toplevel"
+alias gdls='git checkout -q master && git for-each-ref refs/heads/ "--format=%(refname:short)" | while read branch; do mergeBase=$(git merge-base master $branch) && [[ $(git cherry master $(git commit-tree $(git rev-parse $branch\^{tree}) -p $mergeBase -m _)) == "-"* ]] && git branch -D $branch; done'
 alias gpfwl="git push --force-with-lease"
 alias gs="echo 'did you mean gss?'"
 alias lss="ls -A"
@@ -96,6 +98,7 @@ alias te="emacsclient -t"
 alias ttree="tree --filelimit 64 -aC -I .git"
 alias vi="echo 'do you mean vim?'"
 alias vim=nvim
+alias yes="echo no"
 alias xo=xdg-open
 
 bindkey -e  # [Always use emacs-style zsh bindings](https://superuser.com/a/457401/145170)
@@ -117,3 +120,29 @@ autoload run-help run-help-git
 # Affects me because I disabled the path_helper
 export PATH=$PATH:/usr/local/share/dotnet
 source <(aws-okta completion zsh)
+
+# ASDF
+source /usr/local/opt/asdf/asdf.sh
+source /usr/local/etc/bash_completion.d/asdf.bash
+
+# direnv
+eval "$(direnv hook zsh)"
+
+# tabtab source for serverless package
+# uninstall by removing these lines or running `tabtab uninstall serverless`
+[[ -f /Users/bill/projects/customers/lincoln/lincolnsec-ics-form-builder/node_modules/tabtab/.completions/serverless.zsh ]] && . /Users/bill/projects/customers/lincoln/lincolnsec-ics-form-builder/node_modules/tabtab/.completions/serverless.zsh
+# tabtab source for sls package
+# uninstall by removing these lines or running `tabtab uninstall sls`
+[[ -f /Users/bill/projects/customers/lincoln/lincolnsec-ics-form-builder/node_modules/tabtab/.completions/sls.zsh ]] && . /Users/bill/projects/customers/lincoln/lincolnsec-ics-form-builder/node_modules/tabtab/.completions/sls.zsh
+# tabtab source for slss package
+# uninstall by removing these lines or running `tabtab uninstall slss`
+[[ -f /Users/bill/projects/customers/lincoln/lincolnsec-ics-form-builder/node_modules/tabtab/.completions/slss.zsh ]] && . /Users/bill/projects/customers/lincoln/lincolnsec-ics-form-builder/node_modules/tabtab/.completions/slss.zsh
+
+export LDFLAGS="-L/usr/local/opt/openssl@1.1/lib"
+export CPPFLAGS="-I/usr/local/opt/openssl@1.1/include"
+
+
+export PATH="/usr/local/opt/ruby/bin:$PATH"
+export PATH=/usr/local/lib/ruby/gems/2.7.0/bin:$PATH
+export PATH="/usr/local/opt/php@7.2/bin:$PATH"
+export PATH="/usr/local/opt/php@7.2/sbin:$PATH"

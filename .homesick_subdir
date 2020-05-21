@@ -7,3 +7,9 @@ logs/psql
 .config/qt5ct
 .config/gtk-3.0
 .minikube
+.config/alacritty
+.config/oh-my-zsh
+.config/ripgrep
+Library/Application Support/Code/User
+.SpaceVim.d
+.config/htop

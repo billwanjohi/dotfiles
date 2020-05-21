@@ -1,0 +1,39 @@
+<application>
+  <component name="DimensionService">
+    <location key="#com.intellij.execution.impl.EditConfigurationsDialog.0.0.2560.1440" x="1280" y="921" />
+    <location key="com.intellij.execution.console.ConsoleHistoryController$MyBrowseAction$1.0.0.2560.1440" x="1280" y="23" />
+    <location key="com.intellij.database.run.ParametersPanel.Standalone.0.0.2560.1440" x="1042" y="457" />
+    <location key="com.intellij.database.view.ui.AbstractDbRefactoringDialog.0.0.3840.2400@192dpi" x="1920" y="46" />
+    <location key="com.intellij.database.view.ui.AbstractDbRefactoringDialog.0.0.2560.1440" x="1280" y="23" />
+    <location key="SettingsEditor.0.0.2560.1440" x="1178" y="461" />
+    <location key="#com.intellij.openapi.updateSettings.impl.PluginUpdateInfoDialog.0.0.2560.1440" x="1280" y="856" />
+    <size key="#com.intellij.execution.impl.EditConfigurationsDialog.0.0.2560.1440" width="1280" height="449" />
+    <size key="DatabaseViewActions_Filter.0.0.2560.1440" width="254" height="195" />
+    <size key="com.intellij.execution.console.ConsoleHistoryController$MyBrowseAction$1.0.0.2560.1440" width="1280" height="1346" />
+    <size key="GridCell.Tab.0.left.0.0.2560.1440" width="1742" height="575" />
+    <size key="GridCell.Tab.0.center.0.0.2560.1440" width="1742" height="575" />
+    <size key="GridCell.Tab.0.right.0.0.2560.1440" width="1742" height="575" />
+    <size key="GridCell.Tab.0.bottom.0.0.2560.1440" width="1742" height="575" />
+    <size key="GridCell.Tab.0.left.0.0.3840.2400@192dpi" width="1836" height="968" />
+    <size key="GridCell.Tab.0.center.0.0.3840.2400@192dpi" width="1836" height="968" />
+    <size key="GridCell.Tab.0.right.0.0.3840.2400@192dpi" width="1836" height="968" />
+    <size key="GridCell.Tab.0.bottom.0.0.3840.2400@192dpi" width="1836" height="968" />
+    <size key="com.intellij.database.view.ui.AbstractDbRefactoringDialog.0.0.3840.2400@192dpi" width="1920" height="2212" />
+    <size key="com.intellij.database.view.ui.AbstractDbRefactoringDialog.0.0.2560.1440" width="1280" height="1346" />
+    <size key="#com.intellij.openapi.updateSettings.impl.PluginUpdateInfoDialog.0.0.2560.1440" width="1280" height="514" />
+    <size key="HiddenNamespacesPopup.0.0.2560.1440" width="234" height="457" />
+  </component>
+  <component name="WindowManager">
+    <frame x="1280" y="697" width="1280" height="674" />
+    <layout>
+      <window_info content_ui="combo" id="Database" order="0" weight="0.25" />
+      <window_info anchor="bottom" id="Message" order="0" />
+      <window_info anchor="bottom" id="Find" order="1" />
+      <window_info anchor="bottom" id="Run" order="2" />
+      <window_info anchor="bottom" id="Inspection" order="3" weight="0.4" />
+      <window_info anchor="bottom" id="TODO" order="4" />
+      <window_info anchor="right" content_ui="combo" id="Project" order="0" weight="0.25" />
+      <window_info anchor="right" id="Structure" order="1" side_tool="true" weight="0.25" />
+    </layout>
+  </component>
+</application>

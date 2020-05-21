@@ -1,7 +1,18 @@
+/ignored/
+
+# Tags #
+########
+
+GPATH
+GRTAGS
+GTAGS
+
 # Emacs #
 #########
 .#*
 flycheck_*
+.tern-port
+.log/
 
 # Visual Studio Code #
 ######################
@@ -9,7 +20,16 @@ flycheck_*
 
 # IntelliJ #
 # ##########
-.idea/
+# https://intellij-support.jetbrains.com/hc/en-us/articles/206544839-How-to-manage-projects-under-Version-Control-Systems
+*.iml
+.idea/libraries/*.xml
+.idea/shelf/
+.idea/sonarlint
+.idea/tasks.xml
+.idea/usage.statistics.xml
+.idea/workspace.xml
+dictionaries/
+gradle.xml
 
 ## https://gist.github.com/octocat/9257657
 

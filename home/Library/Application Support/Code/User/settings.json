@@ -1,0 +1,18 @@
+{
+    // "window.zoomLevel": 0,
+    "files.trimTrailingWhitespace": true,
+    "editor.renderWhitespace": "boundary",
+    "workbench.colorTheme": "Gruvbox Dark (Medium)",
+    "editor.fontLigatures": true,
+    "editor.fontFamily": "Fira Code",
+    "window.zoomLevel": 1,
+    "FSharp.fsacRuntime": "netcore",
+    "explorer.confirmDragAndDrop": false,
+    "go.useLanguageServer": true,
+    "editor.codeActionsOnSave": {
+        "source.fixAll.eslint": false,
+    },
+    "[javascript]": {
+        "editor.defaultFormatter": "esbenp.prettier-vscode"
+    }
+}

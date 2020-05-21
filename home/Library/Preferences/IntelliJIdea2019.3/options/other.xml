@@ -1,0 +1,115 @@
+<application>
+  <component name="NodeJsLocalInterpreters">
+    <local-interpreter path="$USER_HOME$/.asdf/shims/node" />
+    <local-interpreter path="/usr/local/bin/node" />
+    <local-interpreter path="$USER_HOME$/.asdf/installs/nodejs/12.16.1/bin/node" />
+    <local-interpreter path="$USER_HOME$/.asdf/installs/nodejs/12.13.1/bin/node" />
+    <local-interpreter path="$USER_HOME$/.asdf/installs/nodejs/11.15.0/bin/node" />
+    <local-interpreter path="/usr/local/Cellar/node/11.6.0/bin/node" />
+    <local-interpreter path="/usr/local/Cellar/node/11.4.0/bin/node" />
+    <local-interpreter path="$USER_HOME$/.asdf/installs/nodejs/10.17.0/bin/node" />
+    <local-interpreter path="$USER_HOME$/.asdf/installs/nodejs/10.16.3/bin/node" />
+    <local-interpreter path="/usr/local/Cellar/node/10.11.0/bin/node" />
+    <local-interpreter path="/usr/local/Cellar/node/10.8.0/bin/node" />
+    <local-interpreter path="$USER_HOME$/.asdf/installs/nodejs/8.16.2/bin/node" />
+    <local-interpreter path="$USER_HOME$/.asdf/installs/nodejs/8.15.0/bin/node" />
+  </component>
+  <component name="PropertiesComponent">
+    <property name="BuildView.Splitter.Proportion" value="0.22699879" />
+    <property name="CommitChangeListDialog.DETAILS_SPLITTER_PROPORTION_2" value="0.95" />
+    <property name="Copy.OpenInEditor" value="true" />
+    <property name="DBE.Default.Dialect" value="PostgreSQL" />
+    <property name="ExpandBeforeRunStepsPanel" value="true" />
+    <property name="ExpandRunDashboardTypesPanel" value="false" />
+    <property name="FileTemplates.SelectedTemplate" value="HTML File" />
+    <property name="Gradle.Splitter.Proportion" value="0.28618693" />
+    <property name="GradleModuleWizard.inheritGroupId" value="true" />
+    <property name="GradleModuleWizard.inheritVersion" value="true" />
+    <property name="GradleSupport.hideIgnoredTests" value="false" />
+    <property name="GradleSupport.hidePassedTests" value="false" />
+    <property name="GradleSupport.showInternalTestNodes" value="false" />
+    <property name="InstalledPluginsSearchHistory" value="sonarlint&#10;sonarlin&#10;sonarli&#10;git&#10;g" />
+    <property name="JUnit.Splitter.Proportion" value="0.29859388" />
+    <property name="JUnitSupport.hidePassedTests" value="false" />
+    <property name="KEYMAP" value="increase&#10;zoom&#10;font&#10;font size&#10;resize" />
+    <property name="LAST_INJECTED_LANGUAGE" value="JSON" />
+    <property name="LayoutCode.optimizeImports" value="true" />
+    <property name="LayoutCode.processChangedText" value="false" />
+    <property name="LayoutCode.rearrangeEntries" value="true" />
+    <property name="LayoutCode.rearrangeEntriesKotlin" value="false" />
+    <property name="MarketplacePluginsSearchHistory" value="rails&#10;/tag:Keymap&#10;/tag:Editor&#10;vim&#10;js graphql" />
+    <property name="MemberChooser.copyJavadoc" value="false" />
+    <property name="MemberChooser.showClasses" value="true" />
+    <property name="MochaJavaScriptTestRunnerSupport.hideIgnoredTests" value="true" />
+    <property name="MochaJavaScriptTestRunnerSupport.hidePassedTests" value="false" />
+    <property name="MochaJavaScriptTestRunnerSupport.scrollToSource" value="true" />
+    <property name="MochaJavaScriptTestRunnerSupport.selectFirtsDefect" value="true" />
+    <property name="MultipleBuildsView.Splitter.Proportion" value="0.11691442" />
+    <property name="PluginConfigurable.selectionTab" value="1" />
+    <property name="RegistryRecentKeys" value="compiler.automake.allow.when.app.running" />
+    <property name="SHELLCHECK.PATH" value="$APPLICATION_PLUGINS_DIR$/Shell Script/shellcheck" />
+    <property name="SHFMT.PATH" value="$APPLICATION_PLUGINS_DIR$/Shell Script/shfmt" />
+    <property name="ScalaSupport.hideIgnoredTests" value="true" />
+    <property name="ScalaSupport.hidePassedTests" value="false" />
+    <property name="SettingsSearchHistory" value="cli interp&#10;php&#10;font size&#10;style&#10;sonarlint" />
+    <property name="ShowDocumentationInToolWindow" value="true" />
+    <property name="SplitFileEditor.Proportion" value="0.51985174" />
+    <property name="SpringBeansModulesPanel[0]" value="0.16556291" />
+    <property name="SpringMvcModulesPanel[0]" value="0.16556291" />
+    <property name="SpringRepositoriesModulesPanel[0]" value="0.16556291" />
+    <property name="SqlStructureView.filterD.file.structure.state" value="true" />
+    <property name="TrendingPluginsSearchHistory" value="gradle&#10;sortBy:downloads&#10;sortBy:rating&#10;sortBy:featured&#10;f-sharp" />
+    <property name="build.toolwindow.Build Output.selection.state" value="com.intellij.build.BuildTreeConsoleView" />
+    <property name="build.toolwindow.Sync.selection.state" value="com.intellij.build.BuildTreeConsoleView" />
+    <property name="build.toolwindow.run.selection.state" value="consoleView" />
+    <property name="com.intellij.openapi.roots.ui.configuration.TabbedModuleEditor.selectedEditor" value="Dependencies" />
+    <property name="create.project.preferred.importer" value="Gradle" />
+    <property name="decompiler.legal.notice.accepted" value="true" />
+    <property name="defaultJdkConfigured" value="true" />
+    <property name="evlsprt.183" value="168c3adecff" />
+    <property name="evlsprt2.183" value="16876710374" />
+    <property name="evlsprt3.183" value="15" />
+    <property name="evlsprt3.192" value="17" />
+    <property name="evlsprt3.193" value="17" />
+    <property name="file.gist.reindex.count" value="44264" />
+    <property name="fileTypeChangedCounter" value="39" />
+    <property name="go.download.sdk.last.target.path" value="$USER_HOME$/go" />
+    <property name="go.last.update.timestamp" value="1568993650694" />
+    <property name="go.libraries.notification.had.been.shown" value="true" />
+    <property name="ide.memory.adjusted" value="true" />
+    <property name="ideavim.statistics.timestamp" value="1590014395179" />
+    <property name="installed.kotlin.plugin.version" value="1.3.72-release-IJ2019.3-1" />
+    <property name="java.module.default.source.root" value="src" />
+    <property name="jdk.selected.JAVA_MODULE" value="11" />
+    <property name="js.rename.search.for.text.occurrences" value="false" />
+    <property name="js.rename.search.in.comments" value="false" />
+    <property name="kotlin-gradle-user-dirs" value="$USER_HOME$/.gradle" />
+    <property name="kotlin.lastUpdateCheck" value="1585927387414" />
+    <property name="kotlin.plugin.releaseDate" value="1.3.72-release-IJ2019.3-1:2020-04-14" />
+    <property name="last.imported.location" value="$USER_HOME$/projects/customers/proof/proof-data-pipeline" />
+    <property name="lastTip" value="143" />
+    <property name="mt.showStatisticsAgreement" value="true" />
+    <property name="org.rust.LAST_UPDATE" value="1568645518757" />
+    <property name="packagesearch.endpoint.url.fulltext" value="https://package-search.services.jetbrains.com/api/search/idea/fulltext" />
+    <property name="packagesearch.endpoint.url.suggest" value="https://package-search.services.jetbrains.com/api/search/idea/suggest" />
+    <property name="packagesearch.status.updated.ts" value="1590014388800" />
+    <property name="project.wizard.group" value="Scala" />
+    <property name="project.wizard.template" value="sbt" />
+    <property name="rerun.tests.notification.shown" value="true" />
+    <property name="scala.last.updated" value="1567796246191" />
+    <property name="selected.color.option.type" value="RHTML_SCRIPTING_BACKGROUND_ID" />
+    <property name="settings.code.style.selected.tab.JAVA" value="Blank Lines" />
+    <property name="settings.code.style.selected.tab.PHP" value="Wrapping and Braces" />
+    <property name="settings.code.style.selected.tab.kotlin" value="Tabs and Indents" />
+    <property name="spek.Splitter.Proportion" value="0.25310978" />
+    <property name="spek2Support.hideIgnoredTests" value="false" />
+    <property name="spek2Support.hidePassedTests" value="false" />
+    <property name="spekSupport.hideIgnoredTests" value="true" />
+    <property name="spekSupport.hidePassedTests" value="false" />
+    <property name="spekSupport.sortTestsByDuration" value="true" />
+    <property name="spring.initializr.service.url.history" value="" />
+    <property name="spring.initializr.service.url.last" value="https://start.spring.io" />
+    <property name="tasks.pass.word.conversion.enforced" value="true" />
+    <property name="ts.lib.d.ts.version" value="3.7.2" />
+  </component>
+</application>

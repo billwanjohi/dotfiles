@@ -1,0 +1,21 @@
+<application>
+  <component name="RunnerLayoutSettings">
+    <runner id="Database Console">
+      <ViewImpl>
+        <option name="ID" value="Input" />
+        <option name="placeInGrid" value="center" />
+      </ViewImpl>
+      <ViewImpl>
+        <option name="ID" value="ResultTab#2.1" />
+        <option name="placeInGrid" value="center" />
+      </ViewImpl>
+      <ViewImpl>
+        <option name="ID" value="ResultTab#11.1" />
+        <option name="placeInGrid" value="center" />
+      </ViewImpl>
+      <TabImpl>
+        <option name="displayName" value="Database Console" />
+      </TabImpl>
+    </runner>
+  </component>
+</application>
