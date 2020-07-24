@@ -141,7 +141,7 @@
     <size key="run.anything.popup.0.0.2560.1440" width="670" height="675" />
   </component>
   <component name="WindowManager">
-    <frame x="0" y="23" width="1280" height="1346" extendedState="6" />
+    <frame x="0" y="23" width="1280" height="1346" />
     <layout>
       <window_info content_ui="combo" id="Project" order="0" weight="0.25" />
       <window_info id="Structure" order="1" weight="0.25" />

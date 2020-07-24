@@ -3,6 +3,7 @@
     <pluginVersions>
       <plugin id="com.intellij" version="IU-193.6015.39" />
       <plugin id="com.intellij.database" version="IU-183.4886.37" />
+      <plugin id="com.intellij.javaee" version="IU-193.7288.26" />
     </pluginVersions>
   </component>
 </application>

@@ -31,6 +31,8 @@ export XDG_DATA_HOME=$HOME/.local/share
 
 #PURE_CMD_MAX_EXEC_TIME=1
 
+eval "$(starship init zsh)"
+
 #zplug lib/bzr, from:oh-my-zsh
 #zplug lib/correction, from:oh-my-zsh
 #zplug lib/diagnostics, from:oh-my-zsh
@@ -47,7 +49,7 @@ export XDG_DATA_HOME=$HOME/.local/share
 #zplug plugins/emacs, from:oh-my-zsh
 zplug $HOME/.config/oh-my-zsh, use:spaceship.zsh, from:local
 zplug $HOME/.config/oh-my-zsh, use:spantree.zsh, from:local
-zplug denysdovhan/spaceship-prompt, use:spaceship.zsh, from:github, as:theme
+# zplug denysdovhan/spaceship-prompt, use:spaceship.zsh, from:github, as:theme
 zplug lib/clipboard, from:oh-my-zsh
 zplug lib/compfix, from:oh-my-zsh
 zplug lib/completion, from:oh-my-zsh
@@ -83,14 +85,13 @@ if [[ $OSTYPE != "linux-gnu" ]]; then
 fi
 
 alias findalias="alias | ag"
-alias gcolt="git checkout \`git tag | ${gnu_prefix}sort -V | tail -1\`"
+alias gcolt="git switch $(git tag | ${gnu_prefix}sort -V | tail -1)"
 alias glfod="git ls-files --others --directory"
 alias gitroot="git rev-parse --show-toplevel"
 alias gdls='git checkout -q master && git for-each-ref refs/heads/ "--format=%(refname:short)" | while read branch; do mergeBase=$(git merge-base master $branch) && [[ $(git cherry master $(git commit-tree $(git rev-parse $branch\^{tree}) -p $mergeBase -m _)) == "-"* ]] && git branch -D $branch; done'
 alias gpfwl="git push --force-with-lease"
 alias gs="echo 'did you mean gss?'"
 alias lss="ls -A"
-alias lss="ls -a"
 alias neovim="echo 'do you mean nvim?'"
 alias psql_log="psql -e -L ${XDG_DATA_HOME}/psql/logs/$(date +%Y_%m_%d).txt"
 alias rsync="echo run as root"
@@ -146,3 +147,5 @@ export PATH="/usr/local/opt/ruby/bin:$PATH"
 export PATH=/usr/local/lib/ruby/gems/2.7.0/bin:$PATH
 export PATH="/usr/local/opt/php@7.2/bin:$PATH"
 export PATH="/usr/local/opt/php@7.2/sbin:$PATH"
+
+export PIPENV_VERBOSITY=-1
