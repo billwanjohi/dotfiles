@@ -1,0 +1,61 @@
+# vim: filetype=yaml
+---
+meta:
+  description: manjaro-i3 17.0 default
+bar_colors:
+  background: darkslategray
+  statusline: whitesmoke
+  separator: darkslategray1
+  focused_workspace:
+    border: whitesmoke
+    background: lightseagreen
+    text: darkslategray
+  active_workspace:
+    border: dimgray
+    background: darkslategray2
+    text: oldlace
+  inactive_workspace:
+    border: dimgray
+    background: darkslategray2
+    text: antiquewhite
+  urgent_workspace:
+    border: lightseagreen
+    background: oldlace
+    text: red
+colors:
+  darkslategray: '#2B2C2B'
+  whitesmoke: '#F9FAF9'
+  darkslategray1: '#454947'
+  lightseagreen: '#16A085'
+  dimgray: '#595B5B'
+  darkslategray2: '#353836'
+  oldlace: '#FDF6E3'
+  antiquewhite: '#EEE8D5'
+  red: '#E5201D'
+  gray: '#808280'
+  aqua: '#80FFF9'
+  darkslategrey: '#434745'
+  darkslategray3: '#454948'
+  chocolate: '#CB4B16'
+  steelblue: '#268BD2'
+window_colors:
+  focused:
+    border: gray
+    background: gray
+    text: aqua
+    indicator: oldlace
+  focused_inactive:
+    border: darkslategrey
+    background: darkslategrey
+    text: lightseagreen
+    indicator: darkslategray3
+  unfocused:
+    border: darkslategrey
+    background: darkslategrey
+    text: lightseagreen
+    indicator: darkslategray3
+  urgent:
+    border: chocolate
+    background: oldlace
+    text: lightseagreen
+    indicator: steelblue
