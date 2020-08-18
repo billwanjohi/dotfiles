@@ -30,7 +30,7 @@ COMPLETION_WAITING_DOTS="true"
 DISABLE_AUTO_TITLE="true"  # so tmuxinator names stick
 DISABLE_CORRECTION="true"
 DISABLE_UNTRACKED_FILES_DIRTY="false"
-ZSH_TMUX_AUTOSTART="false"
+ZSH_TMUX_AUTOSTART="true"
 
 ## Themes
 # https://github.com/robbyrussell/oh-my-zsh/wiki/Plugins
@@ -46,7 +46,7 @@ plugins+=('archlinux')        # pacman/pacaur
 #plugins+=('brew')              # mac only
 #plugins+=('bundler')           # don't use ruby much anymore
 plugins+=('cargo')
-plugins+=('colored-man')
+#plugins+=('colored-man')
 plugins+=('colorize')         # pygments in pager
 #plugins+=('docker')
 #plugins+=('docker-compose')
@@ -88,6 +88,7 @@ alias lss="ls -A"
 # TODO: use XDG log location
 alias psql_log="psql -e -L ~/logs/psql/$(date +%Y_%m_%d).txt"
 alias rsync="echo run as root"
+alias screengrab=import
 alias ttree="tree --filelimit 64 -aC -I .git"
 alias vi="echo 'do you mean vim?'"
 alias xo=xdg-open

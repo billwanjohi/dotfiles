@@ -1,5 +1,4 @@
 default_toolchain = "nightly-x86_64-unknown-linux-gnu"
-telemetry = false
 version = "12"
 
 [overrides]

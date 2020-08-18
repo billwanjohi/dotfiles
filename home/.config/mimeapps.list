@@ -1,0 +1,21 @@
+[Default Applications]
+application/pdf=epdfview.desktop
+application/x-bittorrent=transmission-gtk.desktop
+application/x-extension-htm=brave.desktop;chromium.desktop;userapp-Pale Moon.desktop
+application/x-extension-html=brave.desktop;chromium.desktop;userapp-Pale Moon.desktop
+application/x-extension-shtml=brave.desktop;chromium.desktop;userapp-Pale Moon.desktop
+application/x-extension-xht=brave.desktop;chromium.desktop;userapp-Pale Moon.desktop
+application/x-extension-xhtml=brave.desktop;chromium.desktop;userapp-Pale Moon.desktop
+application/xhtml+xml=brave.desktop;chromium.desktop;userapp-Pale Moon.desktop
+image/jpeg=viewnior.desktop;gpicview.desktop
+image/png=viewnior.desktop;gpicview.desktop
+message/rfc822=userapp-Thunderbird.desktop
+text/html=code-oss.desktop;brave.desktop;chromium.desktop;userapp-Pale Moon.desktop
+text/plain=code-oss.desktop;mousepad.desktop
+x-scheme-handler/chrome=brave.desktop;chromium.desktop;userapp-Pale Moon.desktop
+x-scheme-handler/ftp=brave.desktop;chromium.desktop;userapp-Pale Moon.desktop
+x-scheme-handler/http=brave.desktop;chromium.desktop;userapp-Pale Moon.desktop
+x-scheme-handler/https=brave.desktop;chromium.desktop;userapp-Pale Moon.desktop
+x-scheme-handler/mailto=brave.desktop;chromium.desktop
+
+[Added Associations]
