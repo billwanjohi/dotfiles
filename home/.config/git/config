@@ -4,9 +4,6 @@
 [diff]
 	colorMoved = default
 
-[include]
-  path = user  # this lets us set user variables in separate file
-
 [init]
   templateDir = ~/.config/git/template
 
