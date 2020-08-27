@@ -1,16 +1,17 @@
 [color]
-  ui = auto
+	ui = auto
 
 [diff]
 	colorMoved = default
 
 [init]
-  templateDir = ~/.config/git/template
+	templateDir = ~/.config/git/template
+
+[include]
+	path = user  # this lets us set user variables in separate file
 
 [pull]
 	rebase = true
 
 [url "git@github.com:"]
-  insteadOf = https://github.com/
-[user]
-	email = bill@ka.guru
+	insteadOf = https://github.com/
