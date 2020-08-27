@@ -164,4 +164,5 @@ export TZ=UTC
 unalias run-help 2> /dev/null # in case already unaliased
 autoload run-help run-help-git
 
+eval "$(zoxide init zsh)"
 eval "$(starship init zsh)"
