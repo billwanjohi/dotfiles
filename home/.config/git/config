@@ -1,8 +1,14 @@
+[alias]
+	patch = !git --no-pager diff --no-color
+
 [color]
 	ui = auto
 
-[diff]
-	colorMoved = default
+[core]
+	pager = delta
+
+[delta]
+	side-by-side = false
 
 [init]
 	templateDir = ~/.config/git/template

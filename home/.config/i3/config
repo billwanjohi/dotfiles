@@ -304,6 +304,7 @@ exec --no-startup-id xautolock -time 15 -locker "i3exit lock"
 exec_always --no-startup-id ff-theme-util
 exec_always --no-startup-id fix_xcursor
 
+exec opensnitch-ui
 exec com.slack.Slack
 exec us.zoom.Zoom
 exec firefox

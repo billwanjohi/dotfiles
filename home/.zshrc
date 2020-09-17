@@ -99,6 +99,7 @@ ZSH_THEME=""  # we're configuring this in pure.zsh
 
 plugins=()
 plugins+=('archlinux')        # pacman/pacaur
+plugins+=('asdf')
 #plugins+=('brew')              # mac only
 #plugins+=('bundler')           # don't use ruby much anymore
 plugins+=('cargo')
@@ -142,6 +143,7 @@ alias cp="cp -i"                                                # Confirm before
 alias df="df -h"
 alias gcolt="git checkout \`git tag | ${gnu_prefix}sort -V | tail -1\`"
 alias gitroot="git rev-parse --show-toplevel"
+alias glfod="git ls-files --others --directory"
 alias gs="echo 'did you mean gss?'"
 alias lss="ls -A"
 # TODO: use XDG log location
@@ -155,6 +157,7 @@ alias xo=xdg-open
 export EDITOR=vim  # todo: figure out how to use `emacsclient -t`
 export LANG=en_US.UTF-8
 export LESS="--RAW-CONTROL-CHARS --quit-if-one-screen"
+export RIPGREP_CONFIG_PATH=$XDG_CONFIG_HOME/ripgrep/config
 export TZ=UTC
 
 # zsh help (for built-in commands) -- invoke with Alt-h
