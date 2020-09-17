@@ -108,6 +108,7 @@ export EDITOR=nvim
 export LANG=en_US.UTF-8
 export LESS="--quit-if-one-screen --ignore-case --RAW-CONTROL-CHARS --no-init"
 export RIPGREP_CONFIG_PATH=$XDG_CONFIG_HOME/ripgrep/config
+
 export TZ=UTC
 
 # zsh help (for built-in commands) -- invoke with Alt-h

@@ -413,6 +413,7 @@ It should only modify the values of Spacemacs settings."
    ;; This variable can also be set to a property list for finer control:
    ;; '(:relative nil
    ;;   :visual nil
+
    ;;   :disabled-for-modes dired-mode
    ;;                       doc-view-mode
    ;;                       markdown-mode
@@ -546,6 +547,7 @@ before packages are loaded."
   (add-to-list 'exec-path "~/.nix-profile/bin")
   (setq csv-separators '("," "\t" "|"))
   (setq delete-trailing-lines nil)
+  ;; https://github.com/syl20bnr/spacemacs/issues/6097#issuecomment-220490742
   (setq scroll-margin 5)
   (setq-default js-indent-level 2)
   (setq-default ts-indent-level 2)

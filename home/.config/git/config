@@ -9,7 +9,7 @@
 	ui = always
 
 [commit]
-	#gpgSign = true
+#	gpgSign = true
 
 [core]
 	# https://github.com/so-fancy/diff-so-fancy#usage
@@ -20,6 +20,9 @@
 
 [diff]
 	colorMoved = dimmed_zebra
+
+[diff "sopsdiffer"]
+	textconv = sops -d
 
 [include]
 	path = user  # this lets us set user variables in separate file
@@ -42,6 +45,9 @@
   # https://github.com/so-fancy/diff-so-fancy/blob/master/pro-tips.md#moving-around-in-the-diff
   diff = diff-so-fancy | less --tabs=4 -RFX --pattern '^(Date|added|deleted|modified): '
 
+[pull]
+	rebase = true
+
 [push]
 	default = simple
 	followTags = true
@@ -57,5 +63,3 @@
 
 [url "git@github.com:"]
 	insteadOf = https://github.com/
-[diff "sopsdiffer"]
-	textconv = sops -d
