@@ -1,20 +1,38 @@
-# Data #
+/ignored/
+
+# Tags #
 ########
-*.csv
+
+GPATH
+GRTAGS
+GTAGS
 
 # Emacs #
 #########
 .#*
 flycheck_*
+.tern-port
+.log/
 
 # Visual Studio Code #
-#########
-.#*
-flycheck_*
-.vscode/
+######################
+#.vscode/
+
+# IntelliJ #
+# ##########
+# https://intellij-support.jetbrains.com/hc/en-us/articles/206544839-How-to-manage-projects-under-Version-Control-Systems
+*.iml
+.idea/libraries/*.xml
+.idea/shelf/
+.idea/sonarlint
+.idea/tasks.xml
+.idea/usage.statistics.xml
+.idea/workspace.xml
+dictionaries/
+gradle.xml
 
 ## https://gist.github.com/octocat/9257657
-#
+
 ## Compiled source #
 ####################
 #*.com
@@ -23,7 +41,7 @@ flycheck_*
 #*.exe
 #*.o
 #*.so
-#
+
 ## Packages #
 #############
 ## it's better to unpack these files and commit the raw source
@@ -36,13 +54,13 @@ flycheck_*
 #*.rar
 #*.tar
 #*.zip
-#
+
 ## Logs and databases #
 #######################
 #*.log
 ##*.sql
 #*.sqlite
-#
+
 ## OS generated files #
 #######################
 #.DS_Store

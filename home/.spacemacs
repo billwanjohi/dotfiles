@@ -46,7 +46,6 @@ This function should only modify configuration layer settings."
      emacs-lisp
      ;; (elixir :variables elixir-backend 'alchemist)
      ;; evernote
-     ;; games
      git
      github
      gtags
@@ -104,7 +103,7 @@ This function should only modify configuration layer settings."
      ;; spell-checking
      sql
      syntax-checking
-     systemd
+     ;; systemd
      terraform
      ;; tmux
      (treemacs :variables

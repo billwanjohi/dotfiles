@@ -113,6 +113,7 @@ font:
 
   # Italic font face
   italic:
+
     # Font family
     #
     # If the italic family is not specified, it will fall back to the
@@ -149,6 +150,7 @@ font:
   #  x: 0
   #  y: 0
 
+
   # Thin stroke font rendering (macOS only)
   #
   # Thin strokes are suitable for retina displays, but for non-retina screens
@@ -166,6 +168,7 @@ colors:
   primary:
     background: '#272822'
     foreground: '#f8f8f2'
+
 
     # Bright and dim foreground colors
     #
@@ -306,6 +309,7 @@ colors:
   #     args: ["Hello, World!"]
   #
   #command: None
+
 
 # Background opacity
 #

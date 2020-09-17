@@ -1,0 +1,6 @@
+BashSupport
+Git4Idea
+com.jetbrains.changeReminder
+net.vektah.codeglance
+org.jetbrains.plugins.github
+some.awesome

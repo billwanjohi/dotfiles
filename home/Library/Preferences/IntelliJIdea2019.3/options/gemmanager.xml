@@ -1,0 +1,13 @@
+<application>
+  <component name="RubySdkGemsetsSettings">
+    <moduleSdks>
+      <map>
+        <entry key="ascent-rails">
+          <value>
+            <list />
+          </value>
+        </entry>
+      </map>
+    </moduleSdks>
+  </component>
+</application>

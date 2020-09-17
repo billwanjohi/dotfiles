@@ -1,0 +1,9 @@
+<application>
+  <component name="MaterialThemeConfig">
+    <option name="isWizardShown" value="true" />
+    <option name="accentColor" value="ffd866" />
+    <option name="selectedTheme" value="MONOKAI" />
+    <option name="userId" value="638c584c:168766fa8ce:-8000" />
+    <option name="version" value="4.11.5" />
+  </component>
+</application>

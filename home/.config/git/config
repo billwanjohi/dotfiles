@@ -1,20 +1,64 @@
 [alias]
+	glog = log --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)<%an>%Creset'
+	# https://github.com/so-fancy/diff-so-fancy/blob/master/pro-tips.md#raw-patches
 	patch = !git --no-pager diff --no-color
+	stash-all = stash save --include-untracked
+	undo = reset --soft HEAD^
 
 [color]
 	ui = auto
 
+[commit]
+	#	gpgSign = true
+
 [core]
 	pager = delta
+
+[credential]
+	# helper = osxkeychain
 
 [delta]
 	side-by-side = false
 
-[init]
-	templateDir = ~/.config/git/template
+[diff]
+	colorMoved = dimmed_zebra
+
+[diff "sopsdiffer"]
+	textconv = sops -d
 
 [include]
 	path = user  # this lets us set user variables in separate file
+
+[init]
+	templateDir = ~/.config/git/template
+
+[magithub]
+	online = false
+
+[magithub "status"]
+	includeStatusHeader = false
+	includePullRequestsSection = false
+	includeIssuesSection = false
+
+[merge]
+	conflictstyle = diff3
+
+[pager]
+  # https://github.com/so-fancy/diff-so-fancy/blob/master/pro-tips.md#moving-around-in-the-diff
+  diff = diff-so-fancy | less --tabs=4 -RFX --pattern '^(Date|added|deleted|modified): '
+
+[pull]
+	rebase = true
+
+[push]
+	default = simple
+	followTags = true
+
+[status]
+	showUntrackedFiles = all
+
+[transfer]
+	fsckobjects = true
 
 [pull]
 	rebase = true

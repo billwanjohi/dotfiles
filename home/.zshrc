@@ -1,5 +1,7 @@
 # Which zsh file should I put X?
 # https://unix.stackexchange.com/a/71258/32186
+export ZPLUG_HOME=/usr/local/opt/zplug
+source $ZPLUG_HOME/init.zsh
 
 # .zshrc - interactive shell configuration
 ##########################################
@@ -95,7 +97,7 @@ ZSH_TMUX_AUTOSTART="false"
 # "kennethreitz" is pretty, and is venv aware
 # "robbyrussell" looks good on it's own, but not with git-prompt
 # "bureau" works with (instead of?) git-prompt
-ZSH_THEME=""  # we're configuring this in pure.zsh
+ZSH_THEME=""  # we're configuring this with starship
 
 plugins=()
 plugins+=('archlinux')        # pacman/pacaur
@@ -131,6 +133,47 @@ plugins+=('tmux')             # can't remember
 
 source $ZSH/oh-my-zsh.sh
 
+# #zplug lib/bzr, from:oh-my-zsh
+# #zplug lib/correction, from:oh-my-zsh
+# #zplug lib/diagnostics, from:oh-my-zsh
+# #zplug lib/git, from:oh-my-zsh
+# #zplug lib/grep, from:oh-my-zsh
+# #zplug lib/misc, from:oh-my-zsh
+# #zplug lib/nvm, from:oh-my-zsh
+# #zplug lib/prompt_info_functions, from:oh-my-zsh
+# #zplug lib/spectrum, from:oh-my-zsh
+# #zplug lib/termsupport, from:oh-my-zsh
+# #zplug lib/theme-and-appearance, from:oh-my-zsh
+# #zplug plugins/archlinux, from:oh-my-zsh
+# #zplug sindresorhus/pure, use:pure.zsh, from:github, as:theme
+# #zplug plugins/emacs, from:oh-my-zsh
+# # zplug denysdovhan/spaceship-prompt, use:spaceship.zsh, from:github, as:theme
+# zplug lib/clipboard, from:oh-my-zsh
+# zplug lib/compfix, from:oh-my-zsh
+# zplug lib/completion, from:oh-my-zsh
+# zplug lib/directories, from:oh-my-zsh
+# zplug lib/functions, from:oh-my-zsh
+# zplug lib/history, from:oh-my-zsh
+# zplug lib/key-bindings, from:oh-my-zsh   # needed for reverse-menu-complete
+# zplug mafredri/zsh-async, from:github
+# zplug plugins/brew, from:oh-my-zsh
+# zplug plugins/cargo, from:oh-my-zsh
+# zplug plugins/colored-man, from:oh-my-zsh
+# zplug plugins/colorize, from:oh-my-zsh
+# zplug plugins/docker, from:oh-my-zsh
+# zplug plugins/docker-compose, from:oh-my-zsh
+# zplug plugins/git, from:oh-my-zsh
+# zplug plugins/minikube, from:oh-my-zsh
+# zplug plugins/osx, from:oh-my-zsh
+# zplug plugins/rust, from:oh-my-zsh
+# zplug spwhitt/nix-zsh-completions, from:github
+
+# if ! zplug check; then
+#     zplug install
+# fi
+
+# zplug load # --verbose
+
 ###### User configuration
 
 # use prefix to specify gnu version of a core utility on OSX
@@ -141,22 +184,30 @@ fi
 ## Alias section
 alias cp="cp -i"                                                # Confirm before overwriting something
 alias df="df -h"
-alias gcolt="git checkout \`git tag | ${gnu_prefix}sort -V | tail -1\`"
-alias gitroot="git rev-parse --show-toplevel"
+alias findalias="alias | ag"
+alias gcolt="git switch $(git tag | ${gnu_prefix}sort -V | tail -1)"
 alias glfod="git ls-files --others --directory"
+alias gitroot="git rev-parse --show-toplevel"
+alias gdls='git checkout -q master && git for-each-ref refs/heads/ "--format=%(refname:short)" | while read branch; do mergeBase=$(git merge-base master $branch) && [[ $(git cherry master $(git commit-tree $(git rev-parse $branch\^{tree}) -p $mergeBase -m _)) == "-"* ]] && git branch -D $branch; done'
+alias gpfwl="git push --force-with-lease"
 alias gs="echo 'did you mean gss?'"
 alias lss="ls -A"
-# TODO: use XDG log location
-alias psql_log="psql -e -L ~/logs/psql/$(date +%Y_%m_%d).txt"
+alias neovim="echo 'do you mean nvim?'"
+alias psql_log="psql -e -L ${XDG_DATA_HOME}/psql/logs/$(date +%Y_%m_%d).txt"
 alias rsync="echo run as root"
 alias screengrab=import
+alias te="emacsclient -t"
 alias ttree="tree --filelimit 64 -aC -I .git"
 alias vi="echo 'do you mean vim?'"
+alias vim=nvim
+alias yes="echo no"
 alias xo=xdg-open
 
-export EDITOR=vim  # todo: figure out how to use `emacsclient -t`
+bindkey -e  # [Always use emacs-style zsh bindings](https://superuser.com/a/457401/145170)
+
+export EDITOR=nvim
 export LANG=en_US.UTF-8
-export LESS="--RAW-CONTROL-CHARS --quit-if-one-screen"
+export LESS="--quit-if-one-screen --ignore-case --RAW-CONTROL-CHARS --no-init"
 export RIPGREP_CONFIG_PATH=$XDG_CONFIG_HOME/ripgrep/config
 export TZ=UTC
 
@@ -169,3 +220,6 @@ autoload run-help run-help-git
 
 eval "$(zoxide init zsh)"
 eval "$(starship init zsh)"
+
+# direnv
+eval "$(direnv hook zsh)"
