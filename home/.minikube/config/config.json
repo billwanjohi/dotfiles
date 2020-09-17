@@ -1,0 +1,7 @@
+{
+    "WantReportError": true,
+    "coredns": true,
+    "cpus": 3,
+    "memory": 4096,
+    "vm-driver": "hyperkit"
+}

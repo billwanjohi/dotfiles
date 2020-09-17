@@ -1,0 +1,21 @@
+<application>
+  <component name="PropertiesComponent">
+    <property name="DBE.Default.Dialect" value="PostgreSQL" />
+    <property name="DBE.Init.Cfg.1" value="true" />
+    <property name="DBE.Init.DialogShown.Ide" value="true" />
+    <property name="Default.savedEditorTheme" value="_@user_Default" />
+    <property name="MarketplacePluginsSearchHistory" value="vim" />
+    <property name="SettingsSearchHistory" value="size" />
+    <property name="SqlStructureView.filterD.file.structure.state" value="true" />
+    <property name="com.intellij.database.actions.DdlActions$DeleteProvider2$1.previewExpanded" value="true" />
+    <property name="evlsprt3.182" value="15" />
+    <property name="evlsprt3.192" value="19" />
+    <property name="evlsprt3.193" value="11" />
+    <property name="file.gist.reindex.count" value="274" />
+    <property name="ide.memory.adjusted" value="true" />
+    <property name="ide.self.update.started.for.build" value="DB-193.6911.16" />
+    <property name="ideavim.statistics.timestamp" value="1587659167357" />
+    <property name="mt.showStatisticsAgreement" value="true" />
+    <property name="toolwindow.stripes.buttons.info.shown" value="true" />
+  </component>
+</application>

@@ -38,4 +38,3 @@ homesick rc
     *   tab through windows
     *   side swipe doesn't move back
     *   turn on filevault
-

@@ -1,48 +1,72 @@
-*.pid.lock
-*.pyc
-*.swp
-*.un~
+/ignored/
+
+# Tags #
+########
+
+GPATH
+GRTAGS
+GTAGS
+
+# Emacs #
+#########
 .#*
-tags
-tmp/
+flycheck_*
+.tern-port
+.log/
 
-# From https://help.github.com/articles/ignoring-files:
-
-# Compiled source #
-###################
-*.com
-*.class
-*.dll
-*.exe
-*.o
-*.so
-
-# Packages #
-############
-# it's better to unpack these files and commit the raw source
-# git has its own built in compression methods
-*.7z
-*.dmg
-*.gz
-*.iso
-*.jar
-*.rar
-*.tar
-*.zip
-
-# Logs and databases #
+# Visual Studio Code #
 ######################
-*.log
-#*.sql
-*.sqlite
+#.vscode/
 
-# OS generated files #
-######################
-.DS_Store
-.DS_Store?
-._*
-.Spotlight-V100
-.Trashes
-Icon?
-ehthumbs.db
-Thumbs.db
+# IntelliJ #
+# ##########
+# https://intellij-support.jetbrains.com/hc/en-us/articles/206544839-How-to-manage-projects-under-Version-Control-Systems
+*.iml
+.idea/libraries/*.xml
+.idea/shelf/
+.idea/sonarlint
+.idea/tasks.xml
+.idea/usage.statistics.xml
+.idea/workspace.xml
+dictionaries/
+gradle.xml
+
+## https://gist.github.com/octocat/9257657
+
+## Compiled source #
+####################
+#*.com
+#*.class
+#*.dll
+#*.exe
+#*.o
+#*.so
+
+## Packages #
+#############
+## it's better to unpack these files and commit the raw source
+## git has its own built in compression methods
+#*.7z
+#*.dmg
+#*.gz
+#*.iso
+#*.jar
+#*.rar
+#*.tar
+#*.zip
+
+## Logs and databases #
+#######################
+#*.log
+##*.sql
+#*.sqlite
+
+## OS generated files #
+#######################
+#.DS_Store
+#.DS_Store?
+#._*
+#.Spotlight-V100
+#.Trashes
+#ehthumbs.db
+#Thumbs.db

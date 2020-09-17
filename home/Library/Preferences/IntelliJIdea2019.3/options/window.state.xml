@@ -1,0 +1,180 @@
+<application>
+  <component name="DimensionService">
+    <location key="NewModule_or_Project.wizard.0.0.2560.1440" x="0" y="23" />
+    <location key="#Plugins.0.0.2560.1440" x="1280" y="698" />
+    <location key="WELCOME_SCREEN.0.0.2560.1440" x="388" y="253" />
+    <location key="com.intellij.ide.util.TipDialog.0.0.2560.1440" x="1280" y="23" />
+    <location key="#com.intellij.execution.impl.EditConfigurationsDialog.0.0.2560.1440" x="0" y="23" />
+    <location key="SettingsEditor.0.0.2560.1440" x="0" y="23" />
+    <location key="search.everywhere.popup.0.0.2560.1440" x="553" y="484" />
+    <location key="Registry.0.0.2560.1440" x="1706" y="631" />
+    <location key="ProcessPopupWindow.0.0.2560.1440" x="824" y="700" />
+    <location key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate.0.0.2560.1440" x="1677" y="939" />
+    <location key="#Application.0.0.2560.1440" x="1408" y="23" />
+    <location key="#com.intellij.ide.util.TreeClassChooserDialog.0.0.2560.1440" x="1721" y="492" />
+    <location key="run.anything.popup.0.0.2560.1440" x="945" y="329" />
+    <location key="#SonarLint.0.0.2560.1440" x="1408" y="23" />
+    <location key="ANALYSIS_DLG_com.intellij.analysis.BaseAnalysisAction$1.0.0.2560.1440" x="0" y="23" />
+    <location key="IDE.errors.dialog.0.0.2560.1440" x="0" y="23" />
+    <location key="new project wizard.0.0.2560.1440" x="0" y="23" />
+    <location key="MultipleFileMergeDialog.0.0.2560.1440" x="1706" y="699" />
+    <location key="#com.intellij.openapi.updateSettings.impl.PluginUpdateInfoDialog.0.0.2560.1440" x="1280" y="23" />
+    <location key="#xdebugger.evaluate.0.0.2560.1440" x="0" y="23" />
+    <location key="#com.intellij.codeInsight.editorActions.RestoreReferencesDialog.0.0.2560.1440" x="0" y="23" />
+    <location key="#com.intellij.framework.addSupport.AddSupportForSingleFrameworkDialog.0.0.2560.1440" x="1280" y="921" />
+    <location key="#com.intellij.ide.util.projectWizard.JdkChooserPanel.MyDialog.0.0.2560.1440" x="0" y="23" />
+    <location key="find.popup.0.0.2560.1440" x="861" y="405" />
+    <location key="SettingsEditor.0.0.3840.2400@192dpi" x="0" y="46" />
+    <location key="com.intellij.ide.util.TipDialog.0.0.3840.2400@192dpi" x="1920" y="1152" />
+    <location key="search.everywhere.popup.0.0.3840.2400@192dpi" x="1250" y="542" />
+    <location key="ProcessPopupWindow.0.0.3840.2400@192dpi" x="2870" y="2016" />
+    <location key="#Project_Structure.0.0.2560.1440" x="0" y="23" />
+    <location key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog.0.0.2560.1440" x="0" y="23" />
+    <location key="#org.jetbrains.kotlin.idea.refactoring.move.moveDeclarations.ui.MoveKotlinTopLevelDeclarationsDialog.0.0.2560.1440" x="0" y="23" />
+    <location key="NewModule_or_Project.wizard.0.0.3840.2400@192dpi" x="1560" y="828" />
+    <location key="com.intellij.openapi.editor.actions.MultiplePasteAction$ClipboardContentChooser.0.0.3840.2400@192dpi" x="1920" y="46" />
+    <location key="WELCOME_SCREEN.0.0.3840.2400@192dpi" x="776" y="506" />
+    <location key="com.intellij.openapi.editor.actions.MultiplePasteAction$ClipboardContentChooser.0.0.2560.1440" x="1280" y="23" />
+    <location key="#com.intellij.openapi.projectRoots.ui.ProjectJdksEditor.0.0.2560.1440" x="1280" y="696" />
+    <location key="#Updates.0.0.2560.1440" x="1280" y="696" />
+    <location key="CommitChangelistDialog2.0.0.2560.1440" x="1280" y="921" />
+    <location key="#Dockerfile.0.0.2560.1440" x="0" y="23" />
+    <location key="RollbackChangesDialog.0.0.3840.2400@192dpi" x="0" y="46" />
+    <location key="#com.intellij.codeInsight.editorActions.RestoreReferencesDialog.0.0.3840.2400@192dpi" x="0" y="46" />
+    <location key="DiffContextDialog.0.0.2560.1440" x="0" y="23" />
+    <location key="#GOROOT.0.0.2560.1440" x="1280" y="696" />
+    <location key="#Go_Modules_(vgo).0.0.2560.1440" x="1280" y="696" />
+    <location key="#SQL_Dialects.0.0.2560.1440" x="0" y="23" />
+    <location key="FileDocumentManager.FileCacheConflict.0.0.2560.1440" x="1280" y="23" />
+    <location key="refactoring.ChangeSignatureDialog.0.0.2560.1440" x="1280" y="23" />
+    <location key="#GOROOT.0.0.3840.2400@192dpi" x="1920" y="1152" />
+    <location key="Vcs.Push.Dialog.0.0.3840.2400@192dpi" x="0" y="46" />
+    <location key="#com.intellij.openapi.updateSettings.impl.PluginUpdateInfoDialog.0.0.3840.2400@192dpi" x="0" y="46" />
+    <location key="#com.intellij.execution.impl.EditConfigurationsDialog.0.0.3840.2400@192dpi" x="0" y="46" />
+    <location key="#Rust.0.0.3840.2400@192dpi" x="0" y="46" />
+    <location key="com.goide.refactor.move.GoMoveDeclarationDialog.0.0.2560.1440" x="0" y="23" />
+    <location key="#com.intellij.ide.util.MemberChooser.0.0.2560.1440" x="1280" y="23" />
+    <location key="Vcs.Push.Dialog.0.0.2560.1440" x="0" y="23" />
+    <location key="EnvironmentVariablesDialog.0.0.2560.1440" x="1280" y="23" />
+    <location key="#com.intellij.refactoring.rename.AutomaticRenamingDialog.0.0.2560.1440" x="0" y="23" />
+    <location key="org.jetbrains.kotlin.idea.testIntegration.KotlinCreateTestDialog.0.0.2560.1440" x="0" y="23" />
+    <location key="#xdebugger.evaluate.0.0.3840.2400@192dpi" x="1920" y="46" />
+    <location key="#xdebugger.evaluate.0.0.1920.1080" x="0" y="23" />
+    <location key="#com.intellij.debugger.actions.ViewTextAction.0.0.2560.1440" x="1118" y="557" />
+    <size key="NewModule_or_Project.wizard.0.0.2560.1440" width="2560" height="1346" />
+    <size key="#Plugins.0.0.2560.1440" width="1280" height="675" />
+    <size key="com.intellij.ide.util.TipDialog.0.0.2560.1440" width="1280" height="1346" />
+    <size key="#com.intellij.execution.impl.EditConfigurationsDialog.0.0.2560.1440" width="2560" height="1346" />
+    <size key="SettingsEditor.0.0.2560.1440" width="2560" height="1346" />
+    <size key="GridCell.Tab.0.left.0.0.2560.1440" width="1238" height="331" />
+    <size key="GridCell.Tab.0.center.0.0.2560.1440" width="1238" height="331" />
+    <size key="GridCell.Tab.0.right.0.0.2560.1440" width="1238" height="331" />
+    <size key="GridCell.Tab.0.bottom.0.0.2560.1440" width="1238" height="331" />
+    <size key="GridCell.Tab.1.left.0.0.2560.1440" width="1238" height="452" />
+    <size key="GridCell.Tab.1.center.0.0.2560.1440" width="1238" height="452" />
+    <size key="GridCell.Tab.1.right.0.0.2560.1440" width="1238" height="452" />
+    <size key="GridCell.Tab.1.bottom.0.0.2560.1440" width="1238" height="452" />
+    <size key="search.everywhere.popup.0.0.2560.1440" width="670" height="676" />
+    <size key="Registry.0.0.2560.1440" width="853" height="742" />
+    <size key="ProcessPopupWindow.0.0.2560.1440" width="963" height="505" />
+    <size key="#Application.0.0.2560.1440" width="1152" height="1350" />
+    <size key="GridCell.Tab.2.left.0.0.2560.1440" width="1238" height="449" />
+    <size key="GridCell.Tab.2.center.0.0.2560.1440" width="1238" height="449" />
+    <size key="GridCell.Tab.2.right.0.0.2560.1440" width="1238" height="449" />
+    <size key="GridCell.Tab.2.bottom.0.0.2560.1440" width="1238" height="449" />
+    <size key="#SonarLint.0.0.2560.1440" width="1152" height="1350" />
+    <size key="ANALYSIS_DLG_com.intellij.analysis.BaseAnalysisAction$1.0.0.2560.1440" width="2560" height="1350" />
+    <size key="IDE.errors.dialog.0.0.2560.1440" width="2560" height="1347" />
+    <size key="new project wizard.0.0.2560.1440" width="2560" height="1346" />
+    <size key="HiddenNamespacesPopup.0.0.2560.1440" width="234" height="435" />
+    <size key="MultipleFileMergeDialog.0.0.2560.1440" width="853" height="674" />
+    <size key="#com.intellij.openapi.updateSettings.impl.PluginUpdateInfoDialog.0.0.2560.1440" width="1280" height="1346" />
+    <size key="#com.intellij.codeInsight.editorActions.RestoreReferencesDialog.0.0.2560.1440" width="2560" height="1347" />
+    <size key="#xdebugger.evaluate.0.0.2560.1440" width="2560" height="1346" />
+    <size key="find.popup.0.0.2560.1440" width="837" height="582" />
+    <size key="SettingsEditor.0.0.3840.2400@192dpi" width="3840" height="2214" />
+    <size key="com.intellij.ide.util.TipDialog.0.0.3840.2400@192dpi" width="1920" height="1108" />
+    <size key="search.everywhere.popup.0.0.3840.2400@192dpi" width="1340" height="1352" />
+    <size key="GridCell.Tab.0.left.0.0.3840.2400@192dpi" width="3756" height="786" />
+    <size key="GridCell.Tab.0.center.0.0.3840.2400@192dpi" width="3756" height="786" />
+    <size key="GridCell.Tab.0.right.0.0.3840.2400@192dpi" width="3756" height="786" />
+    <size key="GridCell.Tab.0.bottom.0.0.3840.2400@192dpi" width="3756" height="786" />
+    <size key="GridCell.Tab.1.left.0.0.3840.2400@192dpi" width="3756" height="714" />
+    <size key="GridCell.Tab.1.center.0.0.3840.2400@192dpi" width="3756" height="714" />
+    <size key="GridCell.Tab.1.right.0.0.3840.2400@192dpi" width="3756" height="714" />
+    <size key="GridCell.Tab.1.bottom.0.0.3840.2400@192dpi" width="3756" height="714" />
+    <size key="ProcessPopupWindow.0.0.3840.2400@192dpi" width="800" height="248" />
+    <size key="XDebugger.FullValuePopup.0.0.2560.1440" width="1280" height="675" />
+    <size key="#Project_Structure.0.0.2560.1440" width="2560" height="1346" />
+    <size key="#com.intellij.refactoring.safeDelete.UnsafeUsagesDialog.0.0.2560.1440" width="2560" height="1350" />
+    <size key="#org.jetbrains.kotlin.idea.refactoring.move.moveDeclarations.ui.MoveKotlinTopLevelDeclarationsDialog.0.0.2560.1440" width="2560" height="1347" />
+    <size key="com.intellij.openapi.editor.actions.MultiplePasteAction$ClipboardContentChooser.0.0.3840.2400@192dpi" width="1920" height="2220" />
+    <size key="com.intellij.openapi.editor.actions.MultiplePasteAction$ClipboardContentChooser.0.0.2560.1440" width="1280" height="1350" />
+    <size key="#com.intellij.openapi.projectRoots.ui.ProjectJdksEditor.0.0.2560.1440" width="1280" height="674" />
+    <size key="#com.intellij.framework.addSupport.AddSupportForSingleFrameworkDialog.0.0.2560.1440" width="1280" height="449" />
+    <size key="#Updates.0.0.2560.1440" width="1280" height="674" />
+    <size key="CommitChangelistDialog2.0.0.2560.1440" width="1280" height="449" />
+    <size key="#Dockerfile.0.0.2560.1440" width="2560" height="1346" />
+    <size key="RollbackChangesDialog.0.0.3840.2400@192dpi" width="3840" height="2212" />
+    <size key="#com.intellij.codeInsight.editorActions.RestoreReferencesDialog.0.0.3840.2400@192dpi" width="3840" height="2212" />
+    <size key="DiffContextDialog.0.0.2560.1440" width="2560" height="1346" />
+    <size key="#GOROOT.0.0.2560.1440" width="1280" height="674" />
+    <size key="#Go_Modules_(vgo).0.0.2560.1440" width="1280" height="674" />
+    <size key="#SQL_Dialects.0.0.2560.1440" width="2560" height="1346" />
+    <size key="FileDocumentManager.FileCacheConflict.0.0.2560.1440" width="1280" height="1347" />
+    <size key="refactoring.ChangeSignatureDialog.0.0.2560.1440" width="1280" height="1346" />
+    <size key="#GOROOT.0.0.3840.2400@192dpi" width="1920" height="1108" />
+    <size key="Vcs.Push.Dialog.0.0.3840.2400@192dpi" width="3840" height="2212" />
+    <size key="#com.intellij.openapi.updateSettings.impl.PluginUpdateInfoDialog.0.0.3840.2400@192dpi" width="3840" height="2212" />
+    <size key="#com.intellij.execution.impl.EditConfigurationsDialog.0.0.3840.2400@192dpi" width="3840" height="2212" />
+    <size key="#Rust.0.0.3840.2400@192dpi" width="3840" height="2212" />
+    <size key="com.goide.refactor.move.GoMoveDeclarationDialog.0.0.2560.1440" width="2560" height="1346" />
+    <size key="#com.intellij.ide.util.MemberChooser.0.0.2560.1440" width="1280" height="1346" />
+    <size key="Vcs.Push.Dialog.0.0.2560.1440" width="2560" height="1346" />
+    <size key="EnvironmentVariablesDialog.0.0.2560.1440" width="1280" height="1346" />
+    <size key="#com.intellij.refactoring.rename.AutomaticRenamingDialog.0.0.2560.1440" width="2560" height="1347" />
+    <size key="javadoc.popup.new.0.0.2560.1440" width="465" height="76" />
+    <size key="#com.intellij.ide.util.projectWizard.JdkChooserPanel.MyDialog.0.0.2560.1440" width="2560" height="1346" />
+    <size key="org.jetbrains.kotlin.idea.testIntegration.KotlinCreateTestDialog.0.0.2560.1440" width="2560" height="1346" />
+    <size key="#xdebugger.evaluate.0.0.3840.2400@192dpi" width="1920" height="2212" />
+    <size key="#xdebugger.evaluate.0.0.1920.1080" width="1920" height="987" />
+    <size key="run.anything.popup.0.0.2560.1440" width="670" height="675" />
+  </component>
+  <component name="WindowManager">
+    <frame x="0" y="23" width="1280" height="1346" />
+    <layout>
+      <window_info content_ui="combo" id="Project" order="0" weight="0.25" />
+      <window_info id="Structure" order="1" weight="0.25" />
+      <window_info anchor="bottom" id="Message" order="0" />
+      <window_info anchor="bottom" id="Find" order="1" />
+      <window_info anchor="bottom" id="Run" order="2" />
+      <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
+      <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
+      <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
+      <window_info anchor="bottom" id="TODO" order="6" />
+      <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
+      <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
+      <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
+    </layout>
+  </component>
+  <component name="WindowStateApplicationService">
+    <state x="0" y="23" width="2560" height="1346" key="DiffContextDialog" timestamp="1582236763264" />
+    <state x="0" y="23" width="2560" height="1346" key="DiffContextDialog/2560.1440" timestamp="1582236763266" />
+    <state x="0" y="23" width="2560" height="1346" key="DiffContextDialog@2560.1440" timestamp="1582236763266" />
+    <state x="457" y="230" width="1280" height="449" key="NewModule_or_Project.wizard" timestamp="1584376274798">
+      <screen x="0" y="23" width="2560" height="1347" />
+    </state>
+    <state x="457" y="230" width="1280" height="449" key="NewModule_or_Project.wizard/0.23.2560.1347" timestamp="1584376274798" />
+    <state x="1915" y="1186" width="400" height="182" key="ProcessPopupWindow" timestamp="1585072366986">
+      <screen x="0" y="23" width="2560" height="1347" />
+    </state>
+    <state x="1915" y="1186" width="400" height="182" key="ProcessPopupWindow/0.23.2560.1347" timestamp="1585072366986" />
+    <state x="388" y="264" key="WELCOME_SCREEN" timestamp="1589905878250">
+      <screen x="0" y="23" width="2560" height="1347" />
+    </state>
+    <state x="388" y="264" key="WELCOME_SCREEN/0.23.2560.1347" timestamp="1589905878250" />
+    <state x="0" y="46" width="3808" height="2214" maximized="true" key="dock-window-1" timestamp="1582236763266" />
+    <state x="0" y="46" width="3808" height="2214" maximized="true" key="dock-window-1/3840.2400" timestamp="1582236763266" />
+    <state x="0" y="46" width="3808" height="2214" maximized="true" key="dock-window-1@3840.2400@192dpi" timestamp="1582236763266" />
+  </component>
+</application>

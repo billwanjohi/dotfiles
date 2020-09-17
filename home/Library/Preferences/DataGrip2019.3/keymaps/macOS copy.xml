@@ -1,0 +1,10 @@
+<keymap version="1" name="macOS copy" parent="Mac OS X 10.5+">
+  <action id="EditorDecreaseFontSize">
+    <keyboard-shortcut first-keystroke="shift ctrl meta minus" />
+    <mouse-shortcut keystroke="meta button142" />
+  </action>
+  <action id="EditorIncreaseFontSize">
+    <keyboard-shortcut first-keystroke="shift ctrl meta equals" />
+    <mouse-shortcut keystroke="meta button143" />
+  </action>
+</keymap>

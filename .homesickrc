@@ -4,26 +4,4 @@
 
 `
 cp -n $HOME/.config/git/user.example $HOME/.config/git/user
-
-brew update
-
-sh $HOME/.homesick/repos/dotfiles/install_zsh.sh  # requires brew
-brew install pyenv
-pyenv install 2.7.13
-pyenv global 2.7.13
 `
-
-`
-pip install -U cider
-cider restore
-
-# rbenv install
-rbenv install --skip-existing 2.2.0
-rbenv global 2.2.0
-rbenv rehash
-gem update --system
-
-
-brew doctor # pay attention to this output
-`
-
