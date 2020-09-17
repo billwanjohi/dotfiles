@@ -1,15 +1,19 @@
-Library/Preferences
-.ssh
-.config/git
-logs/psql
-.config
-.aws
-.config/qt5ct
-.config/gtk-3.0
-.minikube
-.config/alacritty
-.config/oh-my-zsh
-.config/ripgrep
-Library/Application Support/Code/User
 .SpaceVim.d
+.aws
+.cargo
+.config
+.config/Code/User
+.config/alacritty
+.config/git
+.config/gtk-3.0
 .config/htop
+.config/oh-my-zsh
+.config/qt5ct
+.config/ripgrep
+.kube
+.minikube
+.rustup
+.ssh
+Library/Application Support/Code/User
+Library/Preferences
+logs/psql

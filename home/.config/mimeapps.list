@@ -1,0 +1,23 @@
+[Default Applications]
+x-scheme-handler/http=firefox.desktop;brave.desktop
+x-scheme-handler/https=firefox.desktop;brave.desktop
+x-scheme-handler/ftp=firefox.desktop;brave.desktop
+x-scheme-handler/chrome=firefox.desktop;brave.desktop
+text/html=code-oss.desktop;firefox.desktop;brave.desktop
+application/x-extension-htm=firefox.desktop;brave.desktop
+application/x-extension-html=firefox.desktop;brave.desktop
+application/x-extension-shtml=firefox.desktop;brave.desktop
+application/xhtml+xml=firefox.desktop;brave.desktop
+application/x-extension-xht=firefox.desktop;brave.desktop
+application/x-extension-xhtml=firefox.desktop;brave.desktop
+image/jpeg=viewnior.desktop;gpicview.desktop
+image/png=viewnior.desktop;gpicview.desktop
+text/plain=code-oss.desktop;mousepad.desktop
+x-scheme-handler/mailto=firefox.desktop;brave.desktop
+message/rfc822=userapp-Thunderbird.desktop
+application/pdf=firefox.desktop;epdfview.desktop
+application/x-bittorrent=transmission-gtk.desktop
+
+[Added Associations]
+x-scheme-handler/sgnl=signal-desktop.desktop
+x-scheme-handler/zoommtg=us.zoom.Zoom.desktop

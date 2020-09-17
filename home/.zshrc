@@ -6,6 +6,62 @@ source $ZPLUG_HOME/init.zsh
 # .zshrc - interactive shell configuration
 ##########################################
 
+## Options section
+setopt correct                                                  # Auto correct mistakes
+setopt extendedglob                                             # Extended globbing. Allows using regular expressions with *
+setopt nocaseglob                                               # Case insensitive globbing
+setopt rcexpandparam                                            # Array expension with parameters
+setopt nocheckjobs                                              # Don't warn about running processes when exiting
+setopt numericglobsort                                          # Sort filenames numerically when it makes sense
+setopt nobeep                                                   # No beep
+setopt appendhistory                                            # Immediately append history instead of overwriting
+setopt histignorealldups                                        # If a new command is a duplicate, remove the older one
+setopt autocd                                                   # if only directory path is entered, cd there.
+
+zstyle ':completion:*' matcher-list 'm:{a-zA-Z}={A-Za-z}'       # Case insensitive tab completion
+zstyle ':completion:*' list-colors "${(s.:.)LS_COLORS}"         # Colored completion (different colors for dirs/files/etc)
+zstyle ':completion:*' rehash true                              # automatically find new executables in path
+# Speed up completions
+zstyle ':completion:*' accept-exact '*(N)'
+zstyle ':completion:*' use-cache on
+zstyle ':completion:*' cache-path ~/.zsh/cache
+HISTFILE=~/.zhistory
+HISTSIZE=1000
+SAVEHIST=500
+export EDITOR=/usr/bin/nvim
+#export VISUAL=/usr/bin/nano
+WORDCHARS=${WORDCHARS//\/[&.;]}                                 # Don't consider certain characters part of the word
+
+
+## Keybindings section
+bindkey -e
+bindkey '^[[7~' beginning-of-line                               # Home key
+bindkey '^[[H' beginning-of-line                                # Home key
+if [[ "${terminfo[khome]}" != "" ]]; then
+  bindkey "${terminfo[khome]}" beginning-of-line                # [Home] - Go to beginning of line
+fi
+bindkey '^[[8~' end-of-line                                     # End key
+bindkey '^[[F' end-of-line                                     # End key
+if [[ "${terminfo[kend]}" != "" ]]; then
+  bindkey "${terminfo[kend]}" end-of-line                       # [End] - Go to end of line
+fi
+bindkey '^[[2~' overwrite-mode                                  # Insert key
+bindkey '^[[3~' delete-char                                     # Delete key
+bindkey '^[[C'  forward-char                                    # Right key
+bindkey '^[[D'  backward-char                                   # Left key
+bindkey '^[[5~' history-beginning-search-backward               # Page up key
+bindkey '^[[6~' history-beginning-search-forward                # Page down key
+
+# Navigate words with ctrl+arrow keys
+bindkey '^[Oc' forward-word                                     #
+bindkey '^[Od' backward-word                                    #
+bindkey '^[[1;5D' backward-word                                 #
+bindkey '^[[1;5C' forward-word                                  #
+bindkey '^H' backward-kill-word                                 # delete previous word with ctrl+backspace
+bindkey '^[[Z' undo                                             # Shift+tab undo last action
+
+
+
 # Before plugin load
 ####################
 
@@ -22,60 +78,101 @@ export XDG_CONFIG_HOME=$HOME/.config
 export XDG_DATA_HOME=$HOME/.local/share
 #export XDG_RUNTIME_DIR=
 
-### oh-my-zsh options
-#COMPLETION_WAITING_DOTS="true"
-#DISABLE_AUTO_TITLE="true"  # so tmuxinator names stick
-#DISABLE_CORRECTION="true"
-#DISABLE_UNTRACKED_FILES_DIRTY="false"
-#ZSH_TMUX_AUTOSTART="false"
+## official and custom directories
+ZSH=/usr/share/oh-my-zsh  # ~/.oh-my-zsh for homebrew
+ZSH_CACHE_DIR=$XDG_CACHE_HOME/zsh
+ZSH_CUSTOM=$XDG_CONFIG_HOME/oh-my-zsh
 
-#PURE_CMD_MAX_EXEC_TIME=1
+## oh-my-zsh options
+COMPLETION_WAITING_DOTS="true"
+DISABLE_AUTO_TITLE="true"  # so tmuxinator names stick
+DISABLE_CORRECTION="true"
+DISABLE_UNTRACKED_FILES_DIRTY="false"
+ZSH_TMUX_AUTOSTART="false"
 
-eval "$(starship init zsh)"
+## Themes
+# https://github.com/robbyrussell/oh-my-zsh/wiki/Plugins
+# "random" is fun
+# "robby-lite" is custom and good
+# "kennethreitz" is pretty, and is venv aware
+# "robbyrussell" looks good on it's own, but not with git-prompt
+# "bureau" works with (instead of?) git-prompt
+ZSH_THEME=""  # we're configuring this with starship
 
-#zplug lib/bzr, from:oh-my-zsh
-#zplug lib/correction, from:oh-my-zsh
-#zplug lib/diagnostics, from:oh-my-zsh
-#zplug lib/git, from:oh-my-zsh
-#zplug lib/grep, from:oh-my-zsh
-#zplug lib/misc, from:oh-my-zsh
-#zplug lib/nvm, from:oh-my-zsh
-#zplug lib/prompt_info_functions, from:oh-my-zsh
-#zplug lib/spectrum, from:oh-my-zsh
-#zplug lib/termsupport, from:oh-my-zsh
-#zplug lib/theme-and-appearance, from:oh-my-zsh
-#zplug plugins/archlinux, from:oh-my-zsh
-#zplug sindresorhus/pure, use:pure.zsh, from:github, as:theme
-#zplug plugins/emacs, from:oh-my-zsh
-zplug $HOME/.config/oh-my-zsh, use:spaceship.zsh, from:local
-zplug $HOME/.config/oh-my-zsh, use:spantree.zsh, from:local
-# zplug denysdovhan/spaceship-prompt, use:spaceship.zsh, from:github, as:theme
-zplug lib/clipboard, from:oh-my-zsh
-zplug lib/compfix, from:oh-my-zsh
-zplug lib/completion, from:oh-my-zsh
-zplug lib/directories, from:oh-my-zsh
-zplug lib/functions, from:oh-my-zsh
-zplug lib/history, from:oh-my-zsh
-zplug lib/key-bindings, from:oh-my-zsh   # needed for reverse-menu-complete
-zplug mafredri/zsh-async, from:github
-zplug plugins/brew, from:oh-my-zsh
-zplug plugins/cargo, from:oh-my-zsh
-zplug plugins/colored-man, from:oh-my-zsh
-zplug plugins/colorize, from:oh-my-zsh
-zplug plugins/docker, from:oh-my-zsh
-zplug plugins/docker-compose, from:oh-my-zsh
-zplug plugins/git, from:oh-my-zsh
-zplug plugins/minikube, from:oh-my-zsh
-zplug plugins/osx, from:oh-my-zsh
-zplug plugins/rust, from:oh-my-zsh
-zplug spwhitt/nix-zsh-completions, from:github
-zplug wting/autojump, use:bin/autojump.zsh, from:github
+plugins=()
+plugins+=('archlinux')        # pacman/pacaur
+plugins+=('asdf')
+#plugins+=('brew')              # mac only
+#plugins+=('bundler')           # don't use ruby much anymore
+plugins+=('cargo')
+#plugins+=('colored-man')
+plugins+=('colorize')         # pygments in pager
+#plugins+=('docker')
+#plugins+=('docker-compose')
+plugins+=('emacs')            # aliases
+#plugins+=('emoji')
+plugins+=('git')              # aliases, completion
+#plugins+=('gitfast')
+#plugins+=('github')
+#plugins+=('git-prompt')       # right-side prompt that pulls from remote
+# plugins+=('minikube')         # custom plugin to give me completion
+plugins+=('npm')         # custom plugin to give me completion
+#plugins+=('osx')               # mac only
+#plugins+=('pip')
+plugins+=('pyenv')            # handles initialization
+#plugins+=('python')
+#plugins+=('rbenv')             # don't use ruby much anymore
+#plugins+=('ruby')
+plugins+=('rust')
+#plugins+=('terraform')
+plugins+=('tmux')             # can't remember
+#plugins+=('tmuxinator')
+#plugins+=('vagrant')
+#plugins+=('virtualenv')
+#plugins+=('yarn')
 
-if ! zplug check; then
-    zplug install
-fi
+source $ZSH/oh-my-zsh.sh
 
-zplug load # --verbose
+# #zplug lib/bzr, from:oh-my-zsh
+# #zplug lib/correction, from:oh-my-zsh
+# #zplug lib/diagnostics, from:oh-my-zsh
+# #zplug lib/git, from:oh-my-zsh
+# #zplug lib/grep, from:oh-my-zsh
+# #zplug lib/misc, from:oh-my-zsh
+# #zplug lib/nvm, from:oh-my-zsh
+# #zplug lib/prompt_info_functions, from:oh-my-zsh
+# #zplug lib/spectrum, from:oh-my-zsh
+# #zplug lib/termsupport, from:oh-my-zsh
+# #zplug lib/theme-and-appearance, from:oh-my-zsh
+# #zplug plugins/archlinux, from:oh-my-zsh
+# #zplug sindresorhus/pure, use:pure.zsh, from:github, as:theme
+# #zplug plugins/emacs, from:oh-my-zsh
+# # zplug denysdovhan/spaceship-prompt, use:spaceship.zsh, from:github, as:theme
+# zplug lib/clipboard, from:oh-my-zsh
+# zplug lib/compfix, from:oh-my-zsh
+# zplug lib/completion, from:oh-my-zsh
+# zplug lib/directories, from:oh-my-zsh
+# zplug lib/functions, from:oh-my-zsh
+# zplug lib/history, from:oh-my-zsh
+# zplug lib/key-bindings, from:oh-my-zsh   # needed for reverse-menu-complete
+# zplug mafredri/zsh-async, from:github
+# zplug plugins/brew, from:oh-my-zsh
+# zplug plugins/cargo, from:oh-my-zsh
+# zplug plugins/colored-man, from:oh-my-zsh
+# zplug plugins/colorize, from:oh-my-zsh
+# zplug plugins/docker, from:oh-my-zsh
+# zplug plugins/docker-compose, from:oh-my-zsh
+# zplug plugins/git, from:oh-my-zsh
+# zplug plugins/minikube, from:oh-my-zsh
+# zplug plugins/osx, from:oh-my-zsh
+# zplug plugins/rust, from:oh-my-zsh
+# zplug spwhitt/nix-zsh-completions, from:github
+
+# if ! zplug check; then
+#     zplug install
+# fi
+
+# zplug load # --verbose
 
 ###### User configuration
 
@@ -84,6 +181,9 @@ if [[ $OSTYPE != "linux-gnu" ]]; then
     gnu_prefix=g
 fi
 
+## Alias section
+alias cp="cp -i"                                                # Confirm before overwriting something
+alias df="df -h"
 alias findalias="alias | ag"
 alias gcolt="git switch $(git tag | ${gnu_prefix}sort -V | tail -1)"
 alias glfod="git ls-files --others --directory"
@@ -95,6 +195,7 @@ alias lss="ls -A"
 alias neovim="echo 'do you mean nvim?'"
 alias psql_log="psql -e -L ${XDG_DATA_HOME}/psql/logs/$(date +%Y_%m_%d).txt"
 alias rsync="echo run as root"
+alias screengrab=import
 alias te="emacsclient -t"
 alias ttree="tree --filelimit 64 -aC -I .git"
 alias vi="echo 'do you mean vim?'"
@@ -108,7 +209,6 @@ export EDITOR=nvim
 export LANG=en_US.UTF-8
 export LESS="--quit-if-one-screen --ignore-case --RAW-CONTROL-CHARS --no-init"
 export RIPGREP_CONFIG_PATH=$XDG_CONFIG_HOME/ripgrep/config
-
 export TZ=UTC
 
 # zsh help (for built-in commands) -- invoke with Alt-h
@@ -118,35 +218,8 @@ export TZ=UTC
 unalias run-help 2> /dev/null # in case already unaliased
 autoload run-help run-help-git
 
-# https://github.com/Homebrew/homebrew-cask/issues/52560
-# Affects me because I disabled the path_helper
-export PATH=$PATH:/usr/local/share/dotnet
-source <(aws-okta completion zsh)
-
-# ASDF
-source /usr/local/opt/asdf/asdf.sh
-source /usr/local/etc/bash_completion.d/asdf.bash
+eval "$(zoxide init zsh)"
+eval "$(starship init zsh)"
 
 # direnv
 eval "$(direnv hook zsh)"
-
-# tabtab source for serverless package
-# uninstall by removing these lines or running `tabtab uninstall serverless`
-[[ -f /Users/bill/projects/customers/lincoln/lincolnsec-ics-form-builder/node_modules/tabtab/.completions/serverless.zsh ]] && . /Users/bill/projects/customers/lincoln/lincolnsec-ics-form-builder/node_modules/tabtab/.completions/serverless.zsh
-# tabtab source for sls package
-# uninstall by removing these lines or running `tabtab uninstall sls`
-[[ -f /Users/bill/projects/customers/lincoln/lincolnsec-ics-form-builder/node_modules/tabtab/.completions/sls.zsh ]] && . /Users/bill/projects/customers/lincoln/lincolnsec-ics-form-builder/node_modules/tabtab/.completions/sls.zsh
-# tabtab source for slss package
-# uninstall by removing these lines or running `tabtab uninstall slss`
-[[ -f /Users/bill/projects/customers/lincoln/lincolnsec-ics-form-builder/node_modules/tabtab/.completions/slss.zsh ]] && . /Users/bill/projects/customers/lincoln/lincolnsec-ics-form-builder/node_modules/tabtab/.completions/slss.zsh
-
-export LDFLAGS="-L/usr/local/opt/openssl@1.1/lib"
-export CPPFLAGS="-I/usr/local/opt/openssl@1.1/include"
-
-
-export PATH="/usr/local/opt/ruby/bin:$PATH"
-export PATH=/usr/local/lib/ruby/gems/2.7.0/bin:$PATH
-export PATH="/usr/local/opt/php@7.2/bin:$PATH"
-export PATH="/usr/local/opt/php@7.2/sbin:$PATH"
-
-export PIPENV_VERBOSITY=-1

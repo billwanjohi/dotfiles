@@ -6,17 +6,19 @@
 	undo = reset --soft HEAD^
 
 [color]
-	ui = always
+	ui = auto
 
 [commit]
-#	gpgSign = true
+	#	gpgSign = true
 
 [core]
-	# https://github.com/so-fancy/diff-so-fancy#usage
-	pager = diff-so-fancy | less --tabs=4 -RFX
+	pager = delta
 
 [credential]
-	helper = osxkeychain
+	# helper = osxkeychain
+
+[delta]
+	side-by-side = false
 
 [diff]
 	colorMoved = dimmed_zebra

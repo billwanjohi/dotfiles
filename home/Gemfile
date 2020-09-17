@@ -1,2 +1,0 @@
-gem 'homesick'  # dotfiles management
-gem 'thor', '< 0.19.2' # https://github.com/erikhuda/thor/issues/538
