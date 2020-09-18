@@ -15,7 +15,7 @@ image/png=viewnior.desktop;gpicview.desktop
 text/plain=code-oss.desktop;mousepad.desktop
 x-scheme-handler/mailto=firefox.desktop;brave.desktop
 message/rfc822=userapp-Thunderbird.desktop
-application/pdf=firefox.desktop;epdfview.desktop
+application/pdf=foxitreader.desktop;epdfview.desktop;net.codeindustry.MasterPDFEditor.desktop;firefox.desktop
 application/x-bittorrent=transmission-gtk.desktop
 
 [Added Associations]

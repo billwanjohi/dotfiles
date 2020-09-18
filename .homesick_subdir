@@ -3,14 +3,9 @@
 .cargo
 .config
 .config/Code/User
-.config/alacritty
 .config/git
-.config/gtk-3.0
-.config/htop
-.config/oh-my-zsh
-.config/qt5ct
-.config/ripgrep
 .kube
+.local/share/psql/logs
 .minikube
 .rustup
 .ssh

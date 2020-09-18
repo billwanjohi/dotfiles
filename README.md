@@ -4,8 +4,6 @@ This is a homesick castle.
 You can pull and symlink using that ruby gem,
 or just do so manually.
 
-This is now geared exclusively to OSX.
-
 ## Installation
 
 1.  Type Cmd-Space to reach spotlight
@@ -31,10 +29,12 @@ git submodule foreach git pull origin master
 homesick rc
 ```
 
-## TODO
-*   add source highlight for LESS
-*   other mac tweaks
-    *   show scroll bars: always
-    *   tab through windows
-    *   side swipe doesn't move back
-    *   turn on filevault
+## Configuration
+
+### .homesick_subdir
+
+Directories listed here should be supplemented but not replaced by castle contents
+
+e.g. if there is one public and one secret config
+
+https://github.com/technicalpickles/homesick#homesick_subdir
