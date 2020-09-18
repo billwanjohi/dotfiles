@@ -1,11 +1,11 @@
 # (symlinks)
 --follow
 
-## search .files
-#--hidden
+# search .files
+--hidden
 
-## search git-ignored files
-#--no-ignore
+# don't search git-ignored files
+--no-ignore
 
 # only enforce case when Capitals Exist
 --smart-case

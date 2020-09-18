@@ -1,7 +1,5 @@
 # Which zsh file should I put X?
 # https://unix.stackexchange.com/a/71258/32186
-export ZPLUG_HOME=/usr/local/opt/zplug
-source $ZPLUG_HOME/init.zsh
 
 # .zshrc - interactive shell configuration
 ##########################################
@@ -25,13 +23,13 @@ zstyle ':completion:*' rehash true                              # automatically 
 zstyle ':completion:*' accept-exact '*(N)'
 zstyle ':completion:*' use-cache on
 zstyle ':completion:*' cache-path ~/.zsh/cache
+
 HISTFILE=~/.zhistory
-HISTSIZE=1000
+HISTSIZE=100000
 SAVEHIST=500
 export EDITOR=/usr/bin/nvim
 #export VISUAL=/usr/bin/nano
 WORDCHARS=${WORDCHARS//\/[&.;]}                                 # Don't consider certain characters part of the word
-
 
 ## Keybindings section
 bindkey -e
@@ -133,6 +131,9 @@ plugins+=('tmux')             # can't remember
 
 source $ZSH/oh-my-zsh.sh
 
+# export ZPLUG_HOME=/usr/local/opt/zplug
+# source $ZPLUG_HOME/init.zsh
+#
 # #zplug lib/bzr, from:oh-my-zsh
 # #zplug lib/correction, from:oh-my-zsh
 # #zplug lib/diagnostics, from:oh-my-zsh
@@ -182,10 +183,10 @@ if [[ $OSTYPE != "linux-gnu" ]]; then
 fi
 
 ## Alias section
-alias cp="cp -i"                                                # Confirm before overwriting something
+alias cp="cp -i"  # Confirm before overwriting something
 alias df="df -h"
 alias findalias="alias | ag"
-alias gcolt="git switch $(git tag | ${gnu_prefix}sort -V | tail -1)"
+alias gcolt='git checkout $(git tag | ${gnu_prefix}sort -V | tail -1)'
 alias glfod="git ls-files --others --directory"
 alias gitroot="git rev-parse --show-toplevel"
 alias gdls='git checkout -q master && git for-each-ref refs/heads/ "--format=%(refname:short)" | while read branch; do mergeBase=$(git merge-base master $branch) && [[ $(git cherry master $(git commit-tree $(git rev-parse $branch\^{tree}) -p $mergeBase -m _)) == "-"* ]] && git branch -D $branch; done'
@@ -203,7 +204,8 @@ alias vim=nvim
 alias yes="echo no"
 alias xo=xdg-open
 
-bindkey -e  # [Always use emacs-style zsh bindings](https://superuser.com/a/457401/145170)
+# [Always use emacs-style zsh bindings](https://superuser.com/a/457401/145170)
+bindkey -e
 
 export EDITOR=nvim
 export LANG=en_US.UTF-8
@@ -218,8 +220,6 @@ export TZ=UTC
 unalias run-help 2> /dev/null # in case already unaliased
 autoload run-help run-help-git
 
-eval "$(zoxide init zsh)"
-eval "$(starship init zsh)"
-
-# direnv
 eval "$(direnv hook zsh)"
+eval "$(starship init zsh)"
+eval "$(zoxide init zsh)"
