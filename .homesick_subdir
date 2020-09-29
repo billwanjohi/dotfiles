@@ -5,6 +5,7 @@
 .config/Code/User
 .config/git
 .kube
+.local/bin
 .local/share/psql/logs
 .minikube
 .rustup
