@@ -5,7 +5,7 @@
 --hidden
 
 # don't search git-ignored files
---no-ignore
+--ignore
 
 # only enforce case when Capitals Exist
 --smart-case
