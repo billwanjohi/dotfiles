@@ -226,7 +226,7 @@ for_window [class="qt5ct"] floating enable sticky enable border normal
 for_window [class="Qtconfig-qt4"] floating enable sticky enable border normal
 for_window [class="Simple-scan"] floating enable border normal
 for_window [class="(?i)System-config-printer.py"] floating enable border normal
-for_window [class="Skype"] floating enable border normal
+# for_window [class="Skype"] floating enable border normal
 for_window [class="Timeset-gui"] floating enable border normal
 for_window [class="(?i)virtualbox"] floating enable border normal
 for_window [class="Xfburn"] floating enable
@@ -299,11 +299,13 @@ exec --no-startup-id clipit
 # exec_always --no-startup-id sbxkb
 exec --no-startup-id start_conky_maia
 # exec --no-startup-id start_conky_green
-exec --no-startup-id xautolock -time 15 -locker "i3exit lock"
+exec --no-startup-id xss-lock --transfer-sleep-lock -- i3exit lock
+exec --no-startup-id xautolock -time 15 -detectsleep -locker "i3exit lock"
 # exec --no-startup-id xautolock -time 60 -locker "i3exit suspend"
 exec_always --no-startup-id ff-theme-util
 exec_always --no-startup-id fix_xcursor
 
+exec autorandr --change
 exec opensnitch-ui
 exec com.slack.Slack
 exec us.zoom.Zoom

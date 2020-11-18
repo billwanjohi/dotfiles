@@ -24,7 +24,7 @@ zstyle ':completion:*' accept-exact '*(N)'
 zstyle ':completion:*' use-cache on
 zstyle ':completion:*' cache-path ~/.zsh/cache
 
-HISTFILE=~/.zhistory
+HISTFILE=~/.zsh_history
 HISTSIZE=100000
 SAVEHIST=500
 export EDITOR=/usr/bin/nvim
