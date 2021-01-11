@@ -21,7 +21,8 @@
        (alltodo "" nil))
       nil)))
  '(org-agenda-files '("~/org" "~/org/roam"))
- '(org-agenda-todo-ignore-scheduled 'future))
+ '(org-agenda-todo-ignore-scheduled 'future)
+ '(org-jira-working-dir "~/org/jira"))
 (custom-set-faces
  ;; custom-set-faces was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.

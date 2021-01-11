@@ -191,6 +191,7 @@ alias glfod="git ls-files --others --directory"
 alias gitroot="git rev-parse --show-toplevel"
 alias gdls='git checkout -q master && git for-each-ref refs/heads/ "--format=%(refname:short)" | while read branch; do mergeBase=$(git merge-base master $branch) && [[ $(git cherry master $(git commit-tree $(git rev-parse $branch\^{tree}) -p $mergeBase -m _)) == "-"* ]] && git branch -D $branch; done'
 alias gpfwl="git push --force-with-lease"
+alias grbfom="git rebase --autostash -i $(git merge-base master HEAD)"
 alias gs="echo 'did you mean gss?'"
 alias lss="ls -A"
 alias neovim="echo 'do you mean nvim?'"
