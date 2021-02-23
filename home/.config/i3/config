@@ -60,6 +60,7 @@ exec --no-startup-id volumeicon
 bindsym $mod+Ctrl+m exec $terminal -e 'pulsemixer'
 #exec --no-startup-id pulseaudio
 #exec --no-startup-id pa-applet
+#bindsym $mod+Ctrl+m exec pavucontrol
 
 ################################################################################################
 
@@ -75,11 +76,11 @@ bindsym $mod+Shift+F3 exec pcmanfm_pkexec
 bindsym $mod+F5 exec $terminal -e 'mocp'
 bindsym $mod+t exec --no-startup-id pkill picom
 bindsym $mod+Ctrl+t exec --no-startup-id picom -b
-bindsym $mod+Shift+d --release exec "killall dunst; exec notify-send 'restart dunst'"
+bindsym $mod+Shift+d --release exec --no-startup-id notifications-tripwire
 bindsym Print exec --no-startup-id i3-scrot
 bindsym $mod+Print --release exec --no-startup-id i3-scrot -w
 bindsym $mod+Shift+Print --release exec --no-startup-id i3-scrot -s
-bindsym $mod+Ctrl+h exec xdg-open /usr/share/doc/manjaro/i3_help.pdf
+# bindsym $mod+Ctrl+h exec xdg-open /usr/share/doc/manjaro/i3_help.pdf
 bindsym $mod+Ctrl+x --release exec --no-startup-id xkill
 
 # focus_follows_mouse no
@@ -138,7 +139,7 @@ bindsym $mod+Shift+s sticky toggle
 # focus the parent container
 bindsym $mod+a focus parent
 
-# focus the big output
+# Move between monitors
 bindsym $mod+Shift+x move workspace to output DP1
 bindsym $mod+Shift+z move workspace to output eDP1
 
@@ -151,7 +152,9 @@ bindsym $mod+minus scratchpad show
 
 #navigate workspaces next / previous
 bindsym $mod+Ctrl+Right workspace next
+bindsym $mod+Ctrl+l workspace next
 bindsym $mod+Ctrl+Left workspace prev
+bindsym $mod+Ctrl+h workspace prev
 
 # Workspace names
 # to display names or symbols instead of plain workspace numbers you can use
@@ -260,6 +263,8 @@ mode "$mode_system" {
     bindsym Escape mode "default"
 }
 
+floating_maximum_size 1440 x 1200
+
 # Resize window (you can also use the mouse for that)
 bindsym $mod+r mode "resize"
 mode "resize" {
@@ -268,10 +273,10 @@ mode "resize" {
         # Pressing right will grow the window’s width.
         # Pressing up will shrink the window’s height.
         # Pressing down will grow the window’s height.
-        bindsym j resize shrink width 5 px or 5 ppt
-        bindsym k resize grow height 5 px or 5 ppt
-        bindsym l resize shrink height 5 px or 5 ppt
-        bindsym semicolon resize grow width 5 px or 5 ppt
+        bindsym h resize shrink width 5 px or 5 ppt
+        bindsym j resize grow height 5 px or 5 ppt
+        bindsym k resize shrink height 5 px or 5 ppt
+        bindsym l resize grow width 5 px or 5 ppt
 
         # same bindings, but for the arrow keys
         bindsym Left resize shrink width 10 px or 10 ppt
@@ -303,7 +308,7 @@ exec --no-startup-id xautolock -time 15 -detectsleep -locker "i3exit lock"
 exec_always --no-startup-id ff-theme-util
 exec_always --no-startup-id fix_xcursor
 
-# exec --no-startup-id 'emacsclient -nc'  # this doesn't work
+exec --no-startup-id 'sleep 5; emacsclient -nc'  # this hasn't worked yet
 exec --no-startup-id dex --autostart --environment i3
 
 # Color palette used for the terminal ( ~/.Xresources file )

@@ -182,7 +182,10 @@ if [[ $OSTYPE != "linux-gnu" ]]; then
     gnu_prefix=g
 fi
 
+EMACS_TERM="emacsclient -ta emacs"  # console mode, launches new emacs if daemon not present
+
 ## Alias section
+alias apb='poetry run ansible-playbook -e "ansible_become_pass=$ANSIBLE_BECOME_PASS" -i inventory/'
 alias cp="cp -i"  # Confirm before overwriting something
 alias df="df -h"
 alias findalias="alias | ag"
@@ -191,14 +194,15 @@ alias glfod="git ls-files --others --directory"
 alias gitroot="git rev-parse --show-toplevel"
 alias gdls='git checkout -q master && git for-each-ref refs/heads/ "--format=%(refname:short)" | while read branch; do mergeBase=$(git merge-base master $branch) && [[ $(git cherry master $(git commit-tree $(git rev-parse $branch\^{tree}) -p $mergeBase -m _)) == "-"* ]] && git branch -D $branch; done'
 alias gpfwl="git push --force-with-lease"
-alias grbfom="git rebase --autostash -i $(git merge-base master HEAD)"
+alias grbfom="git rebase --autostash -i $(git merge-base origin/master HEAD)"
 alias gs="echo 'did you mean gss?'"
 alias lss="ls -A"
+alias less="less --quit-if-one-screen --no-init"
 alias neovim="echo 'do you mean nvim?'"
 alias psql_log="psql -e -L ${XDG_DATA_HOME}/psql/logs/$(date +%Y_%m_%d).txt"
 alias rsync="echo run as root"
 alias screengrab=import
-alias te="emacsclient -t"
+alias te=$EMACS_TERM
 alias ttree="tree --filelimit 64 -aC -I .git"
 alias vi="echo 'do you mean vim?'"
 alias vim=nvim
@@ -208,11 +212,12 @@ alias xo=xdg-open
 # [Always use emacs-style zsh bindings](https://superuser.com/a/457401/145170)
 bindkey -e
 
-export EDITOR=nvim
+export EDITOR=$EMACS_TERM
 export LANG=en_US.UTF-8
-export LESS="--quit-if-one-screen --ignore-case --RAW-CONTROL-CHARS --no-init"
+export LESS="--ignore-case --RAW-CONTROL-CHARS"
 export RIPGREP_CONFIG_PATH=$XDG_CONFIG_HOME/ripgrep/config
 export TZ=UTC
+export VISUAL=$EMACS_TERM
 
 # zsh help (for built-in commands) -- invoke with Alt-h
 # http://zshwiki.org/home/builtin/functions/run-help
