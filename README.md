@@ -38,3 +38,7 @@ Directories listed here should be supplemented but not replaced by castle conten
 e.g. if there is one public and one secret config
 
 https://github.com/technicalpickles/homesick#homesick_subdir
+
+## Reasons
+
+- installing postgresql-libs to allow `asdf install php`

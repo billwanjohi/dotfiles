@@ -89,7 +89,11 @@ This function should only modify configuration layer settings."
              python-test-runner 'pytest)
      react
      restclient
-     rust  ;; toml support
+     (rust :variables
+           rust-backend 'lsp
+           rust-format-on-save t
+           lsp-rust-server 'rust-analyzer
+           )
      (ruby :variables
            ruby-backend 'lsp
            )

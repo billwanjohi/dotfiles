@@ -13,6 +13,8 @@
      ("pagure.io" . "pagure")
      ("src.fedoraproject.org" . "pagure")
      ("git.civicactions.net" . "gitlab")))
+ '(lsp-file-watch-ignored-directories
+   '("[/\\\\]\\.git\\'" "[/\\\\]\\.hg\\'" "[/\\\\]\\.bzr\\'" "[/\\\\]_darcs\\'" "[/\\\\]\\.svn\\'" "[/\\\\]_FOSSIL_\\'" "[/\\\\]\\.idea\\'" "[/\\\\]\\.ensime_cache\\'" "[/\\\\]\\.eunit\\'" "[/\\\\]node_modules" "[/\\\\]\\.fslckout\\'" "[/\\\\]\\.tox\\'" "[/\\\\]dist\\'" "[/\\\\]dist-newstyle\\'" "[/\\\\]\\.stack-work\\'" "[/\\\\]\\.bloop\\'" "[/\\\\]\\.metals\\'" "[/\\\\]target\\'" "[/\\\\]\\.ccls-cache\\'" "[/\\\\]\\.vscode\\'" "[/\\\\]\\.deps\\'" "[/\\\\]build-aux\\'" "[/\\\\]autom4te.cache\\'" "[/\\\\]\\.reference\\'" "[/\\\\]bin/Debug\\'" "[/\\\\]obj\\'" "[/\\\\]\\.scrapy\\'"))
  '(org-agenda-custom-commands
    '(("n" "Agenda and all TODOs"
       ((agenda ""
@@ -21,8 +23,12 @@
        (alltodo "" nil))
       nil)))
  '(org-agenda-files '("~/org" "~/org/roam"))
+ '(org-agenda-skip-scheduled-if-deadline-is-shown 'not-today)
+ '(org-agenda-skip-scheduled-if-done t)
  '(org-agenda-todo-ignore-scheduled 'future)
  '(org-jira-working-dir "~/org/jira"))
+ '(org-scheduled-past-days 7)
+ '(todoist-backing-buffer "~/org/todoist.org")
 (custom-set-faces
  ;; custom-set-faces was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.
