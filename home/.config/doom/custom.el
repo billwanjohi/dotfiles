@@ -16,6 +16,7 @@
  '(jiralib-url "https://lincsportal.atlassian.net")
  '(lsp-file-watch-ignored-directories
    '("[/\\\\]\\.git\\'" "[/\\\\]\\.hg\\'" "[/\\\\]\\.bzr\\'" "[/\\\\]_darcs\\'" "[/\\\\]\\.svn\\'" "[/\\\\]_FOSSIL_\\'" "[/\\\\]\\.idea\\'" "[/\\\\]\\.ensime_cache\\'" "[/\\\\]\\.eunit\\'" "[/\\\\]node_modules" "[/\\\\]\\.fslckout\\'" "[/\\\\]\\.tox\\'" "[/\\\\]dist\\'" "[/\\\\]dist-newstyle\\'" "[/\\\\]\\.stack-work\\'" "[/\\\\]\\.bloop\\'" "[/\\\\]\\.metals\\'" "[/\\\\]target\\'" "[/\\\\]\\.ccls-cache\\'" "[/\\\\]\\.vscode\\'" "[/\\\\]\\.deps\\'" "[/\\\\]build-aux\\'" "[/\\\\]autom4te.cache\\'" "[/\\\\]\\.reference\\'" "[/\\\\]bin/Debug\\'" "[/\\\\]obj\\'" "[/\\\\]\\.scrapy\\'"))
+ '(lsp-pyright-venv-path "~/.cache/pypoetry/virtualenvs")
  '(org-agenda-custom-commands
    '(("n" "Agenda and all TODOs"
       ((agenda ""
@@ -28,7 +29,7 @@
  '(org-agenda-skip-scheduled-if-done t)
  '(org-agenda-todo-ignore-scheduled 'future)
  '(org-jira-working-dir "~/org/jira"))
- '(org-scheduled-past-days 7)
+ '(org-scheduled-past-days 4)
  '(todoist-backing-buffer "~/org/todoist.org")
 (custom-set-faces
  ;; custom-set-faces was added by Custom.
