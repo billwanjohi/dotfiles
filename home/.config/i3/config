@@ -16,7 +16,7 @@ default_floating_border normal
 hide_edge_borders none
 
 # change borders
-bindsym $mod+u border none
+# bindsym $mod+u border none
 bindsym $mod+y border pixel 1
 bindsym $mod+n border normal
 
@@ -48,6 +48,9 @@ bindsym $mod+Shift+q kill
 # start program launcher
 bindsym $mod+d exec --no-startup-id rofi -show run
 # bindsym $mod+d exec --no-startup-id "rofi -show run -run-shell-command '{$terminal} -e \\"{cmd}; read -n 1 -s\\"'"
+
+# start unicode picker
+bindsym $mod+Shift+u exec --no-startup-id unipicker --command "rofi -dmenu" --copy
 
 # launch categorized menu
 bindsym $mod+z exec --no-startup-id morc_menu
