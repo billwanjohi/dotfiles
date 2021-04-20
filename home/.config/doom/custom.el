@@ -25,10 +25,17 @@
        (alltodo "" nil))
       nil)))
  '(org-agenda-files '("~/org" "~/org/roam"))
+ '(org-agenda-skip-deadline-prewarning-if-scheduled 'pre-scheduled)
  '(org-agenda-skip-scheduled-if-deadline-is-shown 'not-today)
  '(org-agenda-skip-scheduled-if-done t)
  '(org-agenda-todo-ignore-scheduled 'future)
  '(org-jira-working-dir "~/org/jira"))
+ '(org-priority-faces
+   '((65 . error)
+     (66 . warning)
+     (67 . success)
+     (68 . success)))
+ '(org-priority-lowest 68)
  '(org-scheduled-past-days 4)
  '(todoist-backing-buffer "~/org/todoist.org")
 (custom-set-faces

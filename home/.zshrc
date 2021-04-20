@@ -27,8 +27,6 @@ zstyle ':completion:*' cache-path ~/.zsh/cache
 HISTFILE=~/.zsh_history
 HISTSIZE=100000
 SAVEHIST=500
-export EDITOR=/usr/bin/nvim
-#export VISUAL=/usr/bin/nano
 WORDCHARS=${WORDCHARS//\/[&.;]}                                 # Don't consider certain characters part of the word
 
 ## Keybindings section
@@ -194,14 +192,14 @@ alias glfod="git ls-files --others --directory"
 alias gitroot="git rev-parse --show-toplevel"
 alias gdls='git checkout -q master && git for-each-ref refs/heads/ "--format=%(refname:short)" | while read branch; do mergeBase=$(git merge-base master $branch) && [[ $(git cherry master $(git commit-tree $(git rev-parse $branch\^{tree}) -p $mergeBase -m _)) == "-"* ]] && git branch -D $branch; done'
 alias gpfwl="git push --force-with-lease"
-alias grbfom="git rebase --autostash -i $(git merge-base origin/master HEAD)"
+alias grbfom='git rebase --autostash -i $(git merge-base origin/master HEAD)'
 alias gs="echo 'did you mean gss?'"
 alias ls="lsd"
 alias lss="ls -A"
 alias lt="lsd --tree"
 alias less="less --quit-if-one-screen --no-init"
 alias neovim="echo 'do you mean nvim?'"
-alias psql_log="psql -e -L ${XDG_DATA_HOME}/psql/logs/$(date +%Y_%m_%d).txt"
+alias psql_log='psql -e -L ${XDG_DATA_HOME}/psql/logs/$(date +%Y_%m_%d).txt'
 alias rsync="echo run as root"
 alias screengrab=import
 alias te=$EMACS_TERM
@@ -231,3 +229,5 @@ autoload run-help run-help-git
 eval "$(direnv hook zsh)"
 eval "$(starship init zsh)"
 eval "$(zoxide init zsh)"
+
+source /home/bill/.config/broot/launcher/bash/br

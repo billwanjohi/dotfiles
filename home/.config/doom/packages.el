@@ -8,7 +8,10 @@
 
 ;; To install SOME-PACKAGE from MELPA, ELPA or emacsmirror:
 ;(package! some-package)
+(package! minizinc-mode)
+(add-to-list 'auto-mode-alist '("\\.mzn\\'" . minizinc-mode))
 (package! org-jira)
+(package! todoist)
 
 ;; To install a package directly from a remote git repo, you must specify a
 ;; `:recipe'. You'll find documentation on what `:recipe' accepts here:
