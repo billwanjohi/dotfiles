@@ -1,5 +1,4 @@
 # This file is run on non-interactive shells
-export PATH=~/.emacs.d/bin:$PATH
 export TERMINAL=alacritty
 
 export GOPATH=$HOME/go

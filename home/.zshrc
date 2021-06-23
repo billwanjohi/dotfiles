@@ -212,12 +212,12 @@ alias xo=xdg-open
 # [Always use emacs-style zsh bindings](https://superuser.com/a/457401/145170)
 bindkey -e
 
-export EDITOR=$EMACS_TERM
+export EDITOR=nvim
 export LANG=en_US.UTF-8
 export LESS="--ignore-case --RAW-CONTROL-CHARS"
 export RIPGREP_CONFIG_PATH=$XDG_CONFIG_HOME/ripgrep/config
 export TZ=UTC
-export VISUAL=$EMACS_TERM
+export VISUAL=nvim
 
 # zsh help (for built-in commands) -- invoke with Alt-h
 # http://zshwiki.org/home/builtin/functions/run-help
@@ -226,8 +226,14 @@ export VISUAL=$EMACS_TERM
 unalias run-help 2> /dev/null # in case already unaliased
 autoload run-help run-help-git
 
+# DOOM
+export PATH="$HOME/.emacs.d/bin:$PATH"
+
+export PATH="$HOME/.phpenv/bin:$PATH"
+eval "$(phpenv init -)"
+
 eval "$(direnv hook zsh)"
 eval "$(starship init zsh)"
 eval "$(zoxide init zsh)"
 
-source /home/bill/.config/broot/launcher/bash/br
+source $HOME/.config/broot/launcher/bash/br
