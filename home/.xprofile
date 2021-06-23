@@ -1,0 +1,5 @@
+# https://wiki.archlinux.org/title/Xprofile
+#
+# https://wiki.archlinux.org/title/Xcompmgr#Configuration
+# https://support.zoom.us/hc/en-us/articles/202082128-Black-Screen-During-Screen-Sharing#collapseLinux
+xcompmgr -c -l0 -t0 -r0 -o.00 &

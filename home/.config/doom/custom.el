@@ -29,7 +29,10 @@
  '(org-agenda-skip-scheduled-if-deadline-is-shown 'not-today)
  '(org-agenda-skip-scheduled-if-done t)
  '(org-agenda-todo-ignore-scheduled 'future)
- '(org-jira-working-dir "~/org/jira"))
+ '(org-deadline-warning-days 3)
+ '(org-jira-working-dir "~/org/jira")
+ '(org-log-done 'time)
+ '(org-log-into-drawer t)
  '(org-priority-faces
    '((65 . error)
      (66 . warning)
@@ -37,7 +40,7 @@
      (68 . success)))
  '(org-priority-lowest 68)
  '(org-scheduled-past-days 4)
- '(todoist-backing-buffer "~/org/todoist.org")
+ '(todoist-backing-buffer "~/org/todoist.org"))
 (custom-set-faces
  ;; custom-set-faces was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.
