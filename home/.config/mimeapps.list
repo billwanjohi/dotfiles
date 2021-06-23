@@ -21,3 +21,4 @@ application/x-bittorrent=transmission-gtk.desktop
 [Added Associations]
 x-scheme-handler/sgnl=signal-desktop.desktop
 x-scheme-handler/zoommtg=us.zoom.Zoom.desktop
+application/vnd.openxmlformats-officedocument.wordprocessingml.document=libreoffice-writer.desktop;
