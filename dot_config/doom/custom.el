@@ -11,12 +11,11 @@
      ("gist.github.com" . "gist")
      ("git.sr.ht" . "sourcehut")
      ("pagure.io" . "pagure")
-     ("src.fedoraproject.org" . "pagure")
-     ("git.civicactions.net" . "gitlab")))
- '(jiralib-url "https://lincsportal.atlassian.net")
+     ("src.fedoraproject.org" . "pagure")))
  '(lsp-file-watch-ignored-directories
    '("[/\\\\]\\.git\\'" "[/\\\\]\\.hg\\'" "[/\\\\]\\.bzr\\'" "[/\\\\]_darcs\\'" "[/\\\\]\\.svn\\'" "[/\\\\]_FOSSIL_\\'" "[/\\\\]\\.idea\\'" "[/\\\\]\\.ensime_cache\\'" "[/\\\\]\\.eunit\\'" "[/\\\\]node_modules" "[/\\\\]\\.fslckout\\'" "[/\\\\]\\.tox\\'" "[/\\\\]dist\\'" "[/\\\\]dist-newstyle\\'" "[/\\\\]\\.stack-work\\'" "[/\\\\]\\.bloop\\'" "[/\\\\]\\.metals\\'" "[/\\\\]target\\'" "[/\\\\]\\.ccls-cache\\'" "[/\\\\]\\.vscode\\'" "[/\\\\]\\.deps\\'" "[/\\\\]build-aux\\'" "[/\\\\]autom4te.cache\\'" "[/\\\\]\\.reference\\'" "[/\\\\]bin/Debug\\'" "[/\\\\]obj\\'" "[/\\\\]\\.scrapy\\'"))
  '(lsp-pyright-venv-path "~/.cache/pypoetry/virtualenvs")
+ '(ns-right-alternate-modifier 'meta)
  '(org-agenda-custom-commands
    '(("n" "Agenda and all TODOs"
       ((agenda ""
@@ -25,12 +24,18 @@
        (alltodo "" nil))
       nil)))
  '(org-agenda-files '("~/org" "~/org/roam"))
+ '(org-agenda-prefix-format
+   '((agenda . " %i %-12:c%?-12t%-6e% s")
+     (todo . " %i %-12:c %-6e")
+     (tags . " %i %-12:c")
+     (search . " %i %-12:c")))
  '(org-agenda-skip-deadline-prewarning-if-scheduled 'pre-scheduled)
  '(org-agenda-skip-scheduled-if-deadline-is-shown 'not-today)
  '(org-agenda-skip-scheduled-if-done t)
  '(org-agenda-todo-ignore-scheduled 'future)
+ '(org-agenda-todo-ignore-time-comparison-use-seconds t)
+ '(org-columns-default-format "%25ITEM %TODO %3PRIORITY %TAGS %Effort")
  '(org-deadline-warning-days 3)
- '(org-jira-working-dir "~/org/jira")
  '(org-log-done 'time)
  '(org-log-into-drawer t)
  '(org-priority-faces
@@ -39,8 +44,9 @@
      (67 . success)
      (68 . success)))
  '(org-priority-lowest 68)
- '(org-scheduled-past-days 4)
- '(todoist-backing-buffer "~/org/todoist.org"))
+ '(org-roam-graph-extra-config '(("rankdir" . "LR")))
+ '(org-roam-graph-viewer "/Applications/Firefox.app/Contents/MacOS/firefox")
+ '(org-scheduled-past-days 4))
 (custom-set-faces
  ;; custom-set-faces was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.
