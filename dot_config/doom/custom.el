@@ -32,6 +32,11 @@
  '(org-agenda-skip-deadline-prewarning-if-scheduled 'pre-scheduled)
  '(org-agenda-skip-scheduled-if-deadline-is-shown 'not-today)
  '(org-agenda-skip-scheduled-if-done t)
+ '(org-agenda-sorting-strategy
+   '((agenda habit-down time-up priority-down category-keep)
+     (todo priority-down deadline-up category-keep)
+     (tags priority-down category-keep)
+     (search category-keep)))
  '(org-agenda-todo-ignore-scheduled 'future)
  '(org-agenda-todo-ignore-time-comparison-use-seconds t)
  '(org-columns-default-format "%25ITEM %TODO %3PRIORITY %TAGS %Effort")
@@ -45,6 +50,7 @@
      (68 . success)))
  '(org-priority-lowest 68)
  '(org-roam-graph-extra-config '(("rankdir" . "LR")))
+ '(org-roam-graph-link-hidden-types '("file" "https"))
  '(org-roam-graph-viewer "/Applications/Firefox.app/Contents/MacOS/firefox")
  '(org-scheduled-past-days 4))
 (custom-set-faces

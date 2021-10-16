@@ -8,12 +8,13 @@
 
 ;; To install SOME-PACKAGE from MELPA, ELPA or emacsmirror:
 ;(package! some-package)
+(package! graphviz-dot-mode)
+{{- if has "jira" .enabled }}
+(package! org-jira)
+{{- end }}
 {{- if has "minizinc" .enabled }}
 (package! minizinc-mode)
 (add-to-list 'auto-mode-alist '("\\.mzn\\'" . minizinc-mode))
-{{- end }}
-{{- if has "jira" .enabled }}
-(package! org-jira)
 {{- end }}
 {{- if has "todoist" .enabled }}
 (package! todoist)
