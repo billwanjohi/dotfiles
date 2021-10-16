@@ -1,8 +1,51 @@
-gtk-theme-name="Adapta-Nokto-Eta-Maia"
-gtk-icon-theme-name="Papirus-Adapta-Nokto-Maia"
-gtk-font-name="Noto Sans 10"
+gtk-theme-name="Adapta-Maia"
+gtk-icon-theme-name="Vibrancy-Light-Teal"
+#gtk-icon-theme-name="Vibrancy-Colors"
+gtk-font-name="DejaVu Sans 10"
 gtk-cursor-theme-name="xcursor-breeze"
 gtk-xft-antialias=1
 gtk-xft-hinting=1
 gtk-xft-hintstyle="hintfull"
 gtk-xft-rgba="rgb"
+
+## Evaluated Themes
+# Legibility | Style | Name | Comments
+# n/a | n/a | Adapta-Eta-Maia | space saver
+# 5 | 5 | Adapta-Maia
+# n/a | n/a | Adapta-Nokto-Eta-Maia | space saver
+# 1 | 3 | Adapta-Nokto-Maia | dbeaver hard to read
+# 5 | 3 | Adwaita
+# 1 | 4 | Adwaita-dark
+# 5 | 4 | Arc
+# 2 | 4 | Arc-Dark
+# Arc-Darker | may not work?
+# Default
+# Emacs
+# Firefox
+# HighContrast
+# KvAdapta
+# KvAmbiance
+# KvAmbience
+# Kvantum
+# KvArc
+# KvArcDark
+# KvBeige
+# KvBrown
+# KvCurvesLight
+# KvCyan
+# KvDarkRed
+# KvDynamo
+# KvFlatLight
+# KvGnome
+# KvGnomeDark
+# KvGray
+# KvOxygen
+# KvRoughGlass
+# KvSimplicity
+# KvSimplicityDark
+# Palemoon
+# Raleigh
+# 5 | 4 | Vertex-Maia
+# 1 | 4 | Vertex-Maia-Dark
+# 5 | 3 | Vertex-Maia-Light
+# 5 | 4 | Vertex-Maia-Square

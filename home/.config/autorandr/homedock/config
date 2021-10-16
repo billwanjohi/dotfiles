@@ -7,13 +7,10 @@ off
 output VIRTUAL1
 off
 output eDP1
-crtc 0
-mode 2560x1440
-pos 0x0
-primary
-rate 60.05
+off
 output DP1
 crtc 1
+gamma 1.0:0.833:0.714
 mode 2560x1440
 pos 0x0
 rate 59.95

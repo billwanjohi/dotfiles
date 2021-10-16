@@ -6,8 +6,8 @@
 
 ;; Some functionality uses this to identify you, e.g. GPG configuration, email
 ;; clients, file templates and snippets.
-(setq user-full-name "Bill Wanjohi"
-      user-mail-address "bill.wanjohi@civicactions.com")
+(setq user-full-name "Bill Kaguru Wanjohi"
+      user-mail-address "bill@ka.guru")
 
 ;; Doom exposes five (optional) variables for controlling fonts in Doom. Here
 ;; are the three important ones:
@@ -54,3 +54,10 @@
 ;;
 ;; You can also try 'gd' (or 'C-c c d') to jump to their definition and see how
 ;; they are implemented.
+
+(add-hook! 'lsp-after-initialize-hook
+           (run-hooks (intern (format "%s-lsp-hook" major-mode))))
+(defun python-flycheck-setup ()
+  (flycheck-add-next-checker 'lsp 'python-pylint))
+(add-hook 'python-mode-lsp-hook
+          #'python-flycheck-setup)

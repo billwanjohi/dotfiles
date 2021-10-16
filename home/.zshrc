@@ -229,11 +229,11 @@ autoload run-help run-help-git
 # DOOM
 export PATH="$HOME/.emacs.d/bin:$PATH"
 
-export PATH="$HOME/.phpenv/bin:$PATH"
-eval "$(phpenv init -)"
-
 eval "$(direnv hook zsh)"
 eval "$(starship init zsh)"
 eval "$(zoxide init zsh)"
 
 source $HOME/.config/broot/launcher/bash/br
+
+# added by travis gem
+[ ! -s /home/bill/.travis/travis.sh ] || source /home/bill/.travis/travis.sh

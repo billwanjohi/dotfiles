@@ -2,6 +2,7 @@
 "cargo-edit 0.3.1 (registry+https://github.com/rust-lang/crates.io-index)" = ["cargo-add", "cargo-rm", "cargo-upgrade"]
 "cargo-make 0.32.5 (registry+https://github.com/rust-lang/crates.io-index)" = ["cargo-make", "makers"]
 "cargo-web 0.6.23 (registry+https://github.com/rust-lang/crates.io-index)" = ["cargo-web"]
+"cross 0.2.1 (registry+https://github.com/rust-lang/crates.io-index)" = ["cross"]
 "https 1.4.0 (registry+https://github.com/rust-lang/crates.io-index)" = ["http", "httplz"]
 "nu 0.3.0 (registry+https://github.com/rust-lang/crates.io-index)" = ["nu", "nu_plugin_add", "nu_plugin_binaryview", "nu_plugin_edit", "nu_plugin_embed", "nu_plugin_inc", "nu_plugin_ps", "nu_plugin_skip", "nu_plugin_str", "nu_plugin_sum", "nu_plugin_sys", "nu_plugin_textview"]
 "racer 2.0.13 (registry+https://github.com/rust-lang/crates.io-index)" = ["racer"]
