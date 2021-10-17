@@ -3,8 +3,8 @@
 current_branch=$(git rev-parse --abbrev-ref HEAD)
 
 case ${current_branch} in
-    master|develop|dev)
-        echo "Blocked attempt to push to master. To override, use 'git push --no-verify'."
+    master|develop|dev|trunk|main)
+        echo "Blocked attempt to push to trunk. To override, use 'git push --no-verify'."
         exit 1
         ;;
     *)

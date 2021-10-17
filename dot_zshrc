@@ -1,0 +1,70 @@
+export PATH=$PATH:~/.emacs.d/bin
+
+source /usr/local/opt/zinit/zinit.zsh  # above compinit
+
+setopt extended_history       # record timestamp of command in HISTFILE
+setopt hist_expire_dups_first # delete duplicates first when HISTFILE size exceeds HISTSIZE
+setopt hist_ignore_all_dups   # ignore duplicated commands history list
+setopt hist_ignore_space      # ignore commands that start with space
+setopt hist_verify            # show command with history expansion to user before running it
+setopt inc_append_history     # add commands to HISTFILE in order of execution
+setopt share_history          # share command history data
+setopt always_to_end          # cursor moved to the end in full completion
+setopt hash_list_all          # hash everything before completion
+setopt completealiases        # complete aliases
+setopt always_to_end          # when completing from the middle of a word, move the cursor to the end of the word
+setopt complete_in_word       # allow completion from within a word/phrase
+setopt correct                # spelling correction for commands
+setopt list_ambiguous         # complete as much of a completion until it gets ambiguous.
+setopt nolisttypes
+setopt listpacked
+setopt automenu
+
+# avoid vim mode
+# https://unix.stackexchange.com/a/5486/32186
+bindkey -e
+
+# https://stackoverflow.com/a/10860628/684619
+# Bash-like navigation
+autoload -U select-word-style
+select-word-style bash
+
+# https://github.com/zdharma/zinit/blame/3920cc828958c2a629d5363b698ca40fb3a9986f/README.md#L818-L822
+# Load starship theme
+zinit ice as"command" from"gh-r" \
+    atclone"./starship init zsh > init.zsh; ./starship completions zsh > _starship" \
+    atpull"%atclone" src"init.zsh"
+zinit light starship/starship
+
+# zinit light Aloxaf/fzf-tab
+
+zinit load "asdf-vm/asdf"
+
+zinit ice from"gh-r" as"program"
+zinit load "docker/compose"
+
+# http://zdharma.github.io/zinit/wiki/Example-Oh-My-Zsh-setup/
+zinit wait lucid for \
+    OMZP::git \
+    OMZP::kubectl \
+    OMZP::zoxide
+
+zinit as"program" make'!' atclone'./direnv hook zsh > zhook.zsh' \
+    atpull'%atclone' pick"direnv" src"zhook.zsh" for \
+    direnv/direnv
+
+# should be last
+zinit wait lucid \
+    atinit"
+        zstyle ':completion:*' menu select
+    " \
+    atload"zicompinit; zicdreplay" blockf for \
+    zsh-users/zsh-completions
+
+alias glfod='git ls-files --others --directory'
+alias gpfwl='git push --force-with-lease'
+
+export EDITOR='nvim'
+export FZF_DEFAULT_COMMAND='fd --type f'
+
+[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
