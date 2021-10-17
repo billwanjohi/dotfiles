@@ -1,7 +1,7 @@
 # dotfiles
 
-This is a homesick castle.
-You can pull and symlink using that ruby gem,
+This was a homesick castle, and is in the process of being shifted over to being managed via chezmoi.
+You can pull and symlink using the homesick ruby gem and the chezmoi go package,
 or just do so manually.
 
 ## Installation
@@ -20,25 +20,3 @@ or just do so manually.
 
 1.  edit ~/.config/git/user to include your details
 
-## Update
-
-```bash
-cd $(homesick show_path)
-git pull
-git submodule foreach git pull origin master
-homesick rc
-```
-
-## Configuration
-
-### .homesick_subdir
-
-Directories listed here should be supplemented but not replaced by castle contents
-
-e.g. if there is one public and one secret config
-
-https://github.com/technicalpickles/homesick#homesick_subdir
-
-## Reasons
-
-- installing postgresql-libs to allow `asdf install php`
