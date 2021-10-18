@@ -58,9 +58,12 @@
   (set-company-backend! 'graphviz-dot-mode '(company-graphviz-dot-backend))
   (setq graphviz-dot-indent-width 4))
 
+{{- if has "python" .enabled }}
+
 (add-hook! 'lsp-after-initialize-hook
            (run-hooks (intern (format "%s-lsp-hook" major-mode))))
 (defun python-flycheck-setup ()
   (flycheck-add-next-checker 'lsp 'python-pylint))
 (add-hook 'python-mode-lsp-hook
           #'python-flycheck-setup)
+{{- end }}
