@@ -9,6 +9,9 @@
 ;; To install SOME-PACKAGE from MELPA, ELPA or emacsmirror:
 ;(package! some-package)
 (package! graphviz-dot-mode)
+{{- if has "javascript" .enabled }}
+(package! prettier-js)
+{{- end }}
 {{- if has "jira" .enabled }}
 (package! org-jira)
 {{- end }}

@@ -1,7 +1,11 @@
 [alias]
 	# https://github.com/so-fancy/diff-so-fancy/blob/master/pro-tips.md#raw-patches
 	patch = !git --no-pager diff --no-color
-	undo = reset --soft HEAD^
+
+[blame]
+	ignoreRevsFile = .git-blame-ignore-revs
+	markIgnoredLines = true
+	markUnblamableLines = true
 
 [delta]
 	line-numbers = true

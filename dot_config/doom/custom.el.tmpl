@@ -12,6 +12,8 @@
      ("git.sr.ht" . "sourcehut")
      ("pagure.io" . "pagure")
      ("src.fedoraproject.org" . "pagure")))
+ '(css-indent-offset 2)
+ '(js-indent-level 2)
  '(lsp-file-watch-ignored-directories
    '("[/\\\\]\\.git\\'" "[/\\\\]\\.hg\\'" "[/\\\\]\\.bzr\\'" "[/\\\\]_darcs\\'" "[/\\\\]\\.svn\\'" "[/\\\\]_FOSSIL_\\'" "[/\\\\]\\.idea\\'" "[/\\\\]\\.ensime_cache\\'" "[/\\\\]\\.eunit\\'" "[/\\\\]node_modules" "[/\\\\]\\.fslckout\\'" "[/\\\\]\\.tox\\'" "[/\\\\]dist\\'" "[/\\\\]dist-newstyle\\'" "[/\\\\]\\.stack-work\\'" "[/\\\\]\\.bloop\\'" "[/\\\\]\\.metals\\'" "[/\\\\]target\\'" "[/\\\\]\\.ccls-cache\\'" "[/\\\\]\\.vscode\\'" "[/\\\\]\\.deps\\'" "[/\\\\]build-aux\\'" "[/\\\\]autom4te.cache\\'" "[/\\\\]\\.reference\\'" "[/\\\\]bin/Debug\\'" "[/\\\\]obj\\'" "[/\\\\]\\.scrapy\\'"))
  '(lsp-pyright-venv-path "~/.cache/pypoetry/virtualenvs")
@@ -43,6 +45,7 @@
  '(org-agenda-todo-ignore-time-comparison-use-seconds t)
  '(org-columns-default-format "%25ITEM %TODO %3PRIORITY %TAGS %Effort")
  '(org-deadline-warning-days 3)
+ '(org-hide-emphasis-markers t)
  '(org-log-done 'time)
  '(org-log-into-drawer t)
  '(org-priority-faces
@@ -51,12 +54,14 @@
      (67 . success)
      (68 . success)))
  '(org-priority-lowest 68)
+ '(org-roam-directory "~/org/roam")
  '(org-roam-graph-extra-config '(("rankdir" . "LR")))
  '(org-roam-graph-link-hidden-types '("file" "https"))
 {{- if (eq .chezmoi.os "darwin") }}
  '(org-roam-graph-viewer "/Applications/Firefox.app/Contents/MacOS/firefox")
 {{- end }}
  '(org-scheduled-past-days 4)
+ '(typescript-indent-level 2)
 {{- if has "todoist" .enabled }}
  '(todoist-backing-buffer "~/org/todoist.org")
 {{- end }}

@@ -58,6 +58,13 @@
   (set-company-backend! 'graphviz-dot-mode '(company-graphviz-dot-backend))
   (setq graphviz-dot-indent-width 4))
 
+{{- if has "javascript" .enabled }}
+
+(add-hook 'js2-mode-hook 'prettier-js-mode)
+(add-hook 'web-mode-hook 'prettier-js-mode)
+(add-hook 'rjsx-mode-hook 'prettier-js-mode)
+{{- end }}
+
 {{- if has "python" .enabled }}
 
 (add-hook! 'lsp-after-initialize-hook
