@@ -49,7 +49,7 @@ bindsym $mod+Shift+q kill
 bindsym $mod+d exec --no-startup-id rofi -show run
 # bindsym $mod+d exec --no-startup-id "rofi -show run -run-shell-command '{$terminal} -e \\"{cmd}; read -n 1 -s\\"'"
 
-# start unicode picker
+# start unicode (emoji) picker
 bindsym $mod+Shift+u exec --no-startup-id unipicker --command "rofi -dmenu" --copy
 
 # launch categorized menu
@@ -310,6 +310,8 @@ exec_always --no-startup-id fix_xcursor
 
 exec --no-startup-id 'sleep 5; emacsclient -nc'  # this hasn't worked yet
 exec --no-startup-id dex --autostart --environment i3
+
+exec --no-startup-id i3-battery-popup
 
 # Color palette used for the terminal ( ~/.Xresources file )
 # Colors are gathered based on the documentation:
