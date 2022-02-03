@@ -6,6 +6,7 @@
 
 # don't search git-ignored files
 --ignore
+--iglob=!.git/
 
 # only enforce case when Capitals Exist
 --smart-case

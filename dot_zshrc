@@ -53,6 +53,18 @@ zinit as"program" make'!' atclone'./direnv hook zsh > zhook.zsh' \
     atpull'%atclone' pick"direnv" src"zhook.zsh" for \
     direnv/direnv
 
+# zinit wait lucid \
+#     atinit"
+#         zstyle ':zshzoo:plugins:xdg-basedirs:*' apps \
+#             'docker' \
+#             'gnupg' \
+#             'less' \
+#             'tmux' \
+#             'readline'
+#     " \
+#     atload"export RIPGREP_CONFIG_PATH=$XDG_CONFIG_HOME/ripgreprc" blockf for \
+#     zshzoo/xdg-basedirs
+
 # should be last
 zinit wait lucid \
     atinit"
@@ -89,7 +101,19 @@ alias vim=nvim
 alias yes="echo no"
 alias xo=xdg-open
 
+export XDG_CONFIG_HOME=$HOME/.config
+export XDG_CACHE_HOME=$HOME/.cache
+export XDG_DATA_HOME=$HOME/.local/share
+export XDG_RUNTIME_DIR=$HOME/.xdg
+export XDG_DESKTOP_DIR=$HOME/Desktop
+export XDG_DOCUMENTS_DIR=$HOME/Documents
+export XDG_DOWNLOAD_DIR=$HOME/Downloads
+export XDG_MUSIC_DIR=$HOME/Music
+export XDG_PICTURES_DIR=$HOME/Pictures
+export XDG_PUBLICSHARE_DIR=$HOME/Public
+
 export EDITOR='nvim'
 export FZF_DEFAULT_COMMAND='fd --type f'
+export RIPGREP_CONFIG_PATH=$XDG_CONFIG_HOME/ripgreprc
 
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
