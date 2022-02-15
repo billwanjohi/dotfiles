@@ -1,0 +1,19 @@
+{{ $email := promptString "email" -}}
+{{ $todoist_token := promptString "todoist_token" -}}
+
+[data]
+    email_address = {{ $email | quote }}
+    enabled = [
+        # "minizinc",
+        # "python",
+        # "rust",
+        # "todoist",
+    ]
+    font_family = "Space Mono Nerd Font"
+    font_size = "12.0"
+    full_name = "Bill Kaguru Wanjohi"
+    todoist_token = {{ $email | quote }}
+
+[merge]
+    command = "nvim"
+    args = "-d"
