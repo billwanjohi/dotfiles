@@ -10,3 +10,4 @@ or just do so manually.
 2. [Init from repo](https://www.chezmoi.io/user-guide/setup/#use-a-hosted-repo-to-manage-your-dotfiles-across-multiple-machines)
 
 - default browser
+- Notification grouping: off
