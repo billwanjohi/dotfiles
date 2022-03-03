@@ -11,3 +11,4 @@ or just do so manually.
 
 - default browser
 - Notification grouping: off
+- spacevim install

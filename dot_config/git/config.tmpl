@@ -2,18 +2,23 @@
 	# https://github.com/so-fancy/diff-so-fancy/blob/master/pro-tips.md#raw-patches
 	patch = !git --no-pager diff --no-color
 
+	stash-all = stash save --include-untracked
+
 [blame]
 	ignoreRevsFile = .git-blame-ignore-revs
 	markIgnoredLines = true
 	markUnblamableLines = true
+
+[commit]
+	gpgSign = false
 
 [delta]
 	line-numbers = true
 	side-by-side = false
 
 [init]
-	templateDir = ~/.config/git/template
 	defaultBranch = trunk
+	templateDir = ~/.config/git/template
 
 [magithub]
 	online = false
@@ -36,7 +41,7 @@
 	rebase = true
 
 [user]
-	name = Bill Kaguru Wanjohi
+	name = {{ .full_name }}
 	email = {{ .email_address }}
 
 [url "git@github.com:"]
