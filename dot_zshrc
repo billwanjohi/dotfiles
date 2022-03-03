@@ -1,28 +1,46 @@
-export PATH=$PATH:~/.emacs.d/bin
+# Which zsh file should I put X?
+# https://unix.stackexchange.com/a/71258/32186
+
+# .zshrc - interactive shell configuration
+##########################################
 
 source /usr/local/opt/zinit/zinit.zsh  # above compinit
 
+## Options section
+setopt always_to_end          # when completing from the middle of a word, move the cursor to the end of the word
+setopt automenu
+setopt complete_in_word       # allow completion from within a word/phrase
+setopt completealiases        # complete aliases
+setopt correct                # spelling correction for commands
 setopt extended_history       # record timestamp of command in HISTFILE
+setopt hash_list_all          # hash everything before completion
 setopt hist_expire_dups_first # delete duplicates first when HISTFILE size exceeds HISTSIZE
 setopt hist_ignore_all_dups   # ignore duplicated commands history list
 setopt hist_ignore_space      # ignore commands that start with space
 setopt hist_verify            # show command with history expansion to user before running it
 setopt inc_append_history     # add commands to HISTFILE in order of execution
-setopt share_history          # share command history data
-setopt always_to_end          # cursor moved to the end in full completion
-setopt hash_list_all          # hash everything before completion
-setopt completealiases        # complete aliases
-setopt always_to_end          # when completing from the middle of a word, move the cursor to the end of the word
-setopt complete_in_word       # allow completion from within a word/phrase
-setopt correct                # spelling correction for commands
 setopt list_ambiguous         # complete as much of a completion until it gets ambiguous.
-setopt nolisttypes
 setopt listpacked
-setopt automenu
+setopt nolisttypes
+setopt share_history          # share command history data
 
 # avoid vim mode
 # https://unix.stackexchange.com/a/5486/32186
 bindkey -e
+
+
+export XDG_CACHE_HOME=$HOME/.cache
+#export XDG_CONFIG_DIRS=/etc/xdg
+export XDG_CONFIG_HOME=$HOME/.config
+#export XDG_DATA_DIRS=/usr/local/share/:/usr/share/
+export XDG_DATA_HOME=$HOME/.local/share
+export XDG_DESKTOP_DIR=$HOME/Desktop
+export XDG_DOCUMENTS_DIR=$HOME/Documents
+export XDG_DOWNLOAD_DIR=$HOME/Downloads
+export XDG_MUSIC_DIR=$HOME/Music
+export XDG_PICTURES_DIR=$HOME/Pictures
+export XDG_PUBLICSHARE_DIR=$HOME/Public
+export XDG_RUNTIME_DIR=$HOME/.xdg
 
 # https://stackoverflow.com/a/10860628/684619
 # Bash-like navigation
@@ -73,6 +91,15 @@ zinit wait lucid \
     atload"zicompinit; zicdreplay" blockf for \
     zsh-users/zsh-completions
 
+###### User configuration
+
+# use prefix to specify gnu version of a core utility on OSX
+if [[ $OSTYPE != "linux-gnu" ]]; then
+    gnu_prefix=g
+fi
+
+EMACS_TERM="emacsclient -ta emacs"  # console mode, launches new emacs if daemon not present
+
 ## Alias section
 alias apb='poetry run ansible-playbook -e "ansible_become_pass=$ANSIBLE_BECOME_PASS" -i inventory/'
 alias cp="cp -i"  # Confirm before overwriting something
@@ -101,19 +128,15 @@ alias vim=nvim
 alias yes="echo no"
 alias xo=xdg-open
 
-export XDG_CONFIG_HOME=$HOME/.config
-export XDG_CACHE_HOME=$HOME/.cache
-export XDG_DATA_HOME=$HOME/.local/share
-export XDG_RUNTIME_DIR=$HOME/.xdg
-export XDG_DESKTOP_DIR=$HOME/Desktop
-export XDG_DOCUMENTS_DIR=$HOME/Documents
-export XDG_DOWNLOAD_DIR=$HOME/Downloads
-export XDG_MUSIC_DIR=$HOME/Music
-export XDG_PICTURES_DIR=$HOME/Pictures
-export XDG_PUBLICSHARE_DIR=$HOME/Public
-
-export EDITOR='nvim'
+export EDITOR=nvim
+export LANG=en_US.UTF-8
+export LESS="--ignore-case --RAW-CONTROL-CHARS"
 export FZF_DEFAULT_COMMAND='fd --type f'
 export RIPGREP_CONFIG_PATH=$XDG_CONFIG_HOME/ripgreprc
+export TZ=UTC
+export VISUAL=nvim
 
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
+
+# DOOM
+export PATH="$PATH:$HOME/.emacs.d/bin"
