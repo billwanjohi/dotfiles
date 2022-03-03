@@ -12,3 +12,5 @@ or just do so manually.
 - default browser
 - Notification grouping: off
 - spacevim install
+- turn off automatic rearrangement of spaces
+- turn on ctrl-num shortcuts to switch to space
