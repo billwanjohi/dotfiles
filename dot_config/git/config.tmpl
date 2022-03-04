@@ -32,10 +32,10 @@
 	conflictstyle = diff3
 
 [pager]
-    diff = delta
-    log = delta
-    reflog = delta
-    show = delta
+	diff = delta
+	log = delta
+	reflog = delta
+	show = delta
 
 [pull]
 	rebase = true
@@ -45,4 +45,5 @@
 	email = {{ .email_address }}
 
 [url "git@github.com:"]
-	insteadOf = https://github.com/
+	# can't do this before ssh keys are set up, so breaks chezmoi bootstrap
+	# insteadOf = https://github.com/
