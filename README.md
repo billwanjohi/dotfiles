@@ -24,6 +24,7 @@ or just do so manually.
 - create new account, switch to that
 - sync history
 - change password on old account
+- login to stackoverflow
 
 ### macos changes
 
@@ -38,6 +39,7 @@ https://github.com/kevinSuttle/macOS-Defaults/compare/master...suttle?diff=split
 - keyboard
   - swap command and option
 - edit notifiation widgets
+- two fingerprints
 
 #### Notifications
 
@@ -48,3 +50,10 @@ https://github.com/kevinSuttle/macOS-Defaults/compare/master...suttle?diff=split
 #### teams
 
 - use OS notifications
+
+#### Amethyst
+
+- start at login
+- ignore finder (because of time machine)
+- auto-update
+- enable more layouts

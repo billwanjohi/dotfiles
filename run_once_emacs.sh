@@ -12,13 +12,16 @@ then
 fi
 
 brew install \
+    bashdb \
     fd \
     homebrew/cask-fonts/font-space-mono-nerd-font \
-    ripgrep
+    ripgrep \
+    shellcheck
     # pandoc \
     # plantuml \
     # prettier \
-    # shellcheck
+
+yarn global add bash-language-server
 
 brew install --cask --no-quarantine emacs
 
