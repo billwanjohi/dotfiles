@@ -15,6 +15,7 @@ brew install --cask --no-quarantine \
     alacritty \
     amethyst \
     firefox \
+    keepassxc \
     meetingbar \
     pomotroid \
     # aws-vault \
