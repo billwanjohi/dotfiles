@@ -10,7 +10,7 @@ source /usr/local/opt/zinit/zinit.zsh  # above compinit
 setopt always_to_end          # when completing from the middle of a word, move the cursor to the end of the word
 setopt automenu
 setopt complete_in_word       # allow completion from within a word/phrase
-setopt completealiases        # complete aliases
+unsetopt completealiases        # autocomplete aliases https://unix.stackexchange.com/a/583743
 setopt correct                # spelling correction for commands
 setopt extended_history       # record timestamp of command in HISTFILE
 setopt hash_list_all          # hash everything before completion

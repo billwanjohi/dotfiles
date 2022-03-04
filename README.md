@@ -6,37 +6,45 @@ or just do so manually.
 
 ## Setup
 
-1. [perform one-line binary install](https://www.chezmoi.io/install/#one-line-binary-install)
-2. [Init from repo](https://www.chezmoi.io/user-guide/setup/#use-a-hosted-repo-to-manage-your-dotfiles-across-multiple-machines)
+1. [perform one-line binary install/init](https://www.chezmoi.io/install/#one-line-binary-install)
 
-## all OSes
+   ```bash
+   sh -c "$(curl -fsLS chezmoi.io/get)" -- init --apply billwanjohi
+   ```
 
-- firefox
-  - default browser
-  - sync history
-  - react dev tools
+## Manual steps
+
+### all OSes
+
 - gpg
 
-## macos changes
+### firefox
+
+- sync settings from one account
+- create new account, switch to that
+- sync history
+- change password on old account
+
+### macos changes
 
 https://github.com/kevinSuttle/macOS-Defaults/compare/master...suttle?diff=split
 
 - spacevim install
 - turn off automatic rearrangement of spaces
 - turn on ctrl-num shortcuts to switch to space
-- arrange displays
+- arrange display s
 - move dock to top monitor (left or right)
 - more space on display (high res)
 - keyboard
   - swap command and option
 - edit notifiation widgets
 
-### Notifications
+#### Notifications
 
 - allow notifications from all installed apps
 - Notification grouping: off
 - allow notifications when mirroring (if we're not using extended display)
 
-### teams
+#### teams
 
 - use OS notifications

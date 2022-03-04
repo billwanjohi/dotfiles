@@ -28,6 +28,7 @@ brew install --cask --no-quarantine \
 brew install \
     asdf \
     bat \
+    defaultbrowser \
     gnupg \
     httpie \
     tldr \
@@ -45,3 +46,5 @@ brew install \
     # pandoc \
     # prettier \
     # shellcheck \
+
+defaultbrowser firefox
