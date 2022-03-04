@@ -19,12 +19,24 @@ or just do so manually.
 
 ## macos changes
 
-- Notification grouping: off
+https://github.com/kevinSuttle/macOS-Defaults/compare/master...suttle?diff=split
+
 - spacevim install
 - turn off automatic rearrangement of spaces
 - turn on ctrl-num shortcuts to switch to space
-- arrange display s
+- arrange displays
 - move dock to top monitor (left or right)
 - more space on display (high res)
-- swap command and option
+- keyboard
+  - swap command and option
 - edit notifiation widgets
+
+### Notifications
+
+- allow notifications from all installed apps
+- Notification grouping: off
+- allow notifications when mirroring (if we're not using extended display)
+
+### teams
+
+- use OS notifications

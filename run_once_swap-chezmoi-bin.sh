@@ -11,9 +11,5 @@ then
     /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
 fi
 
-brew install \
-    git-delta \
-    lsd \
-    neovim \
-    zinit \
-    zoxide
+brew install chezmoi
+rm ~/bin/chezmoi
