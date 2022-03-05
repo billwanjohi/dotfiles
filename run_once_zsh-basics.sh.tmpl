@@ -2,6 +2,7 @@
 
 set -Eeuxo pipefail
 
+{{ if eq .chezmoi.os "darwin" -}}
 if ! [ -x "$(command -v brew)" ]
 then
     sudo chown "$(whoami)":admin \
@@ -11,5 +12,19 @@ then
     /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
 fi
 
-brew install chezmoi
-rm ~/bin/chezmoi
+brew install \
+    git-delta \
+    lsd \
+    neovim \
+    zoxide
+
+{{ else -}}
+yay --sync --needed \
+    git-delta \
+    lsd \
+    neovim \
+    zoxide
+
+{{ end -}}
+
+sh -c "$(curl -fsSL https://git.io/zinit-install)"

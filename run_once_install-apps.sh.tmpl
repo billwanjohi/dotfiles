@@ -2,6 +2,7 @@
 
 set -Eeuxo pipefail
 
+{{ if eq .chezmoi.os "darwin" -}}
 if ! [ -x "$(command -v brew)" ]
 then
     sudo chown "$(whoami)":admin \
@@ -11,13 +12,16 @@ then
     /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
 fi
 
+# TODO: switch to brew bundle
+# https://www.chezmoi.io/user-guide/machines/macos/#use-brew-bundle-to-manage-your-brews-and-casks
+
 brew install --cask --no-quarantine \
     alacritty \
     amethyst \
     firefox \
     keepassxc \
     meetingbar \
-    pomotroid \
+    pomotroid
     # aws-vault \
     # docker \
     # google-chrome \
@@ -27,7 +31,6 @@ brew install --cask --no-quarantine \
     # zoom
 
 brew install \
-    asdf \
     bat \
     defaultbrowser \
     gnupg \
@@ -46,6 +49,13 @@ brew install \
     # node@16 \
     # pandoc \
     # prettier \
-    # shellcheck \
+    # _shellcheck \
 
 defaultbrowser firefox
+
+{{ else -}}
+yay --sync --needed \
+    bat \
+    tldr
+
+{{ end -}}

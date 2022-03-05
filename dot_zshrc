@@ -4,29 +4,84 @@
 # .zshrc - interactive shell configuration
 ##########################################
 
-source /usr/local/opt/zinit/zinit.zsh  # above compinit
-
 ## Options section
 setopt always_to_end          # when completing from the middle of a word, move the cursor to the end of the word
+setopt appendhistory                                            # Immediately append history instead of overwriting
+unsetopt autocd                                                   # if only directory path is entered, cd there.
 setopt automenu
 setopt complete_in_word       # allow completion from within a word/phrase
 unsetopt completealiases        # autocomplete aliases https://unix.stackexchange.com/a/583743
 setopt correct                # spelling correction for commands
+setopt extendedglob                                             # Extended globbing. Allows using regular expressions with *
 setopt extended_history       # record timestamp of command in HISTFILE
 setopt hash_list_all          # hash everything before completion
 setopt hist_expire_dups_first # delete duplicates first when HISTFILE size exceeds HISTSIZE
-setopt hist_ignore_all_dups   # ignore duplicated commands history list
+setopt hist_ignore_all_dups   # If a new command is a duplicate, remove the older one
 setopt hist_ignore_space      # ignore commands that start with space
 setopt hist_verify            # show command with history expansion to user before running it
 setopt inc_append_history     # add commands to HISTFILE in order of execution
 setopt list_ambiguous         # complete as much of a completion until it gets ambiguous.
 setopt listpacked
+setopt nobeep                 # No beep
+setopt nocaseglob             # Case insensitive globbing
+unsetopt nocheckjobs            # Don't warn about running processes when exiting
 setopt nolisttypes
+setopt numericglobsort        # Sort filenames numerically when it makes sense
 setopt share_history          # share command history data
+setopt rcexpandparam          # Array expension with parameters
+
+zstyle ':completion:*' matcher-list 'm:{a-zA-Z}={A-Za-z}' # Case insensitive tab completion
+zstyle ':completion:*' list-colors "${(s.:.)LS_COLORS}"   # Colored completion (different colors for dirs/files/etc)
+zstyle ':completion:*' rehash true                        # automatically find new executables in path
+# Speed up completions
+zstyle ':completion:*' accept-exact '*(N)'
+zstyle ':completion:*' use-cache on
+zstyle ':completion:*' cache-path ~/.zsh/cache
+
+HISTFILE=~/.zsh_history
+HISTSIZE=100000
+SAVEHIST=500
+WORDCHARS=${WORDCHARS//\/[&.;]} # Don't consider certain characters part of the word
+
+## Keybindings section
 
 # avoid vim mode
 # https://unix.stackexchange.com/a/5486/32186
 bindkey -e
+
+bindkey '^[[7~' beginning-of-line                               # Home key
+bindkey '^[[H' beginning-of-line                                # Home key
+if [[ "${terminfo[khome]}" != "" ]]; then
+  bindkey "${terminfo[khome]}" beginning-of-line                # [Home] - Go to beginning of line
+fi
+bindkey '^[[8~' end-of-line                                     # End key
+bindkey '^[[F' end-of-line                                     # End key
+if [[ "${terminfo[kend]}" != "" ]]; then
+  bindkey "${terminfo[kend]}" end-of-line                       # [End] - Go to end of line
+fi
+bindkey '^[[2~' overwrite-mode                                  # Insert key
+bindkey '^[[3~' delete-char                                     # Delete key
+bindkey '^[[C'  forward-char                                    # Right key
+bindkey '^[[D'  backward-char                                   # Left key
+bindkey '^[[5~' history-beginning-search-backward               # Page up key
+bindkey '^[[6~' history-beginning-search-forward                # Page down key
+
+# Navigate words with ctrl+arrow keys
+bindkey '^[Oc' forward-word                                     #
+bindkey '^[Od' backward-word                                    #
+bindkey '^[[1;5D' backward-word                                 #
+bindkey '^[[1;5C' forward-word                                  #
+bindkey '^H' backward-kill-word                                 # delete previous word with ctrl+backspace
+bindkey '^[[Z' undo                                             # Shift+tab undo last action
+
+# Before plugin load
+####################
+
+## Specify XDG Base Directories
+# https://specifications.freedesktop.org/basedir-spec/basedir-spec-0.7.html
+# These are all default values, and so technically redundant,
+# but setting them might coerce an app that only has optional support
+# to recognize that this user very much wants it.
 
 export XDG_CACHE_HOME=$HOME/.cache
 #export XDG_CONFIG_DIRS=/etc/xdg
@@ -40,6 +95,31 @@ export XDG_MUSIC_DIR=$HOME/Music
 export XDG_PICTURES_DIR=$HOME/Pictures
 export XDG_PUBLICSHARE_DIR=$HOME/Public
 export XDG_RUNTIME_DIR=$HOME/.xdg
+
+### Added by Zinit's installer
+if [[ ! -f $HOME/.local/share/zinit/zinit.git/zinit.zsh ]]; then
+    print -P "%F{33} %F{220}Installing %F{33}ZDHARMA-CONTINUUM%F{220} Initiative Plugin Manager (%F{33}zdharma-continuum/zinit%F{220})…%f"
+    command mkdir -p "$HOME/.local/share/zinit" && command chmod g-rwX "$HOME/.local/share/zinit"
+    command git clone https://github.com/zdharma-continuum/zinit "$HOME/.local/share/zinit/zinit.git" && \
+        print -P "%F{33} %F{34}Installation successful.%f%b" || \
+        print -P "%F{160} The clone has failed.%f%b"
+fi
+
+source "$HOME/.local/share/zinit/zinit.git/zinit.zsh"
+# https://stackoverflow.com/a/10860628/684619
+# Bash-like navigation
+autoload -Uz _zinit
+(( ${+_comps} )) && _comps[zinit]=_zinit
+
+# Load a few important annexes, without Turbo
+# (this is currently required for annexes)
+zinit light-mode for \
+    zdharma-continuum/zinit-annex-as-monitor \
+    zdharma-continuum/zinit-annex-bin-gem-node \
+    zdharma-continuum/zinit-annex-patch-dl \
+    zdharma-continuum/zinit-annex-rust
+
+### End of Zinit's installer chunk
 
 # https://stackoverflow.com/a/10860628/684619
 # Bash-like navigation
@@ -133,10 +213,11 @@ export LANG=en_US.UTF-8
 export LESS="--ignore-case --RAW-CONTROL-CHARS"
 export FZF_DEFAULT_COMMAND='fd --type f'
 export RIPGREP_CONFIG_PATH=$XDG_CONFIG_HOME/ripgreprc
-export TERMINAL=alacritty
 export TZ=UTC
 export VISUAL=nvim
 
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 
 export PATH="$PATH:$HOME/.emacs.d/bin"  # doom/spacemacs utilities
+
+source $HOME/.config/broot/launcher/bash/br

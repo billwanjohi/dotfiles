@@ -25,7 +25,9 @@
 ;; There are two ways to load a theme. Both assume the theme is installed and
 ;; available. You can either set `doom-theme' or manually load a theme with the
 ;; `load-theme' function. This is the default:
-(setq doom-theme 'wombat)  ;; need visual distinction between spaces and tabs
+;; need visual distinction between spaces and tabs
+;; also: legible ediff colors
+(setq doom-theme 'tango-dark)
 
 ;; If you use `org' and don't want your org files in the default location below,
 ;; change `org-directory'. It must be set before org loads!
@@ -65,6 +67,13 @@
   (global-tree-sitter-mode)
   (add-hook 'tree-sitter-after-on-hook #'tree-sitter-hl-mode))
 
+(add-hook! 'lsp-after-initialize-hook
+           (run-hooks (intern (format "%s-lsp-hook" major-mode))))
+(defun sh-flycheck-setup ()
+  (flycheck-add-next-checker 'lsp 'sh-shellcheck))
+(add-hook 'sh-mode-lsp-hook
+          #'sh-flycheck-setup)
+
 {{- if has "javascript" .enabled }}
 
 (add-hook 'js2-mode-hook 'prettier-js-mode)
@@ -74,8 +83,6 @@
 
 {{- if has "python" .enabled }}
 
-(add-hook! 'lsp-after-initialize-hook
-           (run-hooks (intern (format "%s-lsp-hook" major-mode))))
 (defun python-flycheck-setup ()
   (flycheck-add-next-checker 'lsp 'python-pylint))
 (add-hook 'python-mode-lsp-hook
