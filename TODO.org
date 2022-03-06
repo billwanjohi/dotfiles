@@ -7,3 +7,11 @@ https://www.chezmoi.io/user-guide/advanced/customize-your-source-directory/#use-
 maybe "chezmoi-home", to distinguish from leftover homesick-managed files
 
 Not sure what this does to scripts
+
+* TODO try .chezmoitemplates instead of branching in .chezmoi.toml.tmpl
+
+[[https://www.chezmoi.io/reference/special-files-and-directories/chezmoidata-format/][.chezmoidata.<format>]] does not allow templating, [[https://github.com/twpayne/chezmoi/issues/1663#issuecomment-981071886][by design]],
+so we are instead branching depending on OS in .chezmoi.toml.tmpl.
+
+Another way of accomplishing this would be to put the branching
+logic in templates inside of .chezmoitemplates, and then render those.
