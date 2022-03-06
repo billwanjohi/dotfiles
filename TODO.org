@@ -1,0 +1,9 @@
+#+TITLE: Todo
+
+* TODO move chezmoi-managed config files into one subdirectory
+
+https://www.chezmoi.io/user-guide/advanced/customize-your-source-directory/#use-a-subdirectory-of-your-dotfiles-repo-as-the-root-of-the-source-state
+
+maybe "chezmoi-home", to distinguish from leftover homesick-managed files
+
+Not sure what this does to scripts

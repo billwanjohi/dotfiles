@@ -136,3 +136,7 @@ set searchurls.julia https://www.google.com/search?q=site:http://docs.julialang.
 " Custom
 
 unbind <C-f>
+
+" TODO
+" Search engines:
+"   - aur

@@ -1,4 +1,3 @@
-{{ $font_size := promptString "font size (15.0 for mac)" -}}
 {{ $full_name := promptString "full name" -}}
 {{ $email := promptString "email" -}}
 {{ $todoist_token := promptString "todoist token" -}}
@@ -13,8 +12,20 @@
         # "rust",
         # "todoist",
     ]
-    font_family = "SpaceMono Nerd Font"
-    font_size = {{ $font_size | quote }}
+    font_family = "
+        {{- if eq .chezmoi.os "linux" -}}
+        Space Mono Nerd Font
+        {{- else -}}
+        SpaceMono Nerd Font
+        {{- end -}}
+    "
+    font_size = "
+        {{- if eq .chezmoi.os "linux" -}}
+        12.0
+        {{- else -}}
+        15.0
+        {{- end -}}
+    "
     full_name = {{ $full_name | quote }}
 
     # TODO: consider https://www.chezmoi.io/user-guide/password-managers/
@@ -26,4 +37,4 @@
 
 [merge]
     command = "nvim"
-    args = ["-d", "{{ .Destination }}", "{{ .Source }}", "{{ .Target }}"]
+    args = ["-d"]
