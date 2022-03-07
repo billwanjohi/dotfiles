@@ -37,7 +37,7 @@ https://github.com/kevinSuttle/macOS-Defaults/compare/master...suttle?diff=split
 - move dock to top monitor (left or right)
 - more space on display (high res)
 - keyboard
-  - swap command and option
+  - [x] swap command and option on usb keyboard
 - edit notifiation widgets
 - two fingerprints
 
@@ -53,7 +53,11 @@ https://github.com/kevinSuttle/macOS-Defaults/compare/master...suttle?diff=split
 
 #### Amethyst
 
-- start at login
-- ignore finder (because of time machine)
-- auto-update
-- enable more layouts
+- [x] start at login
+- [ ] ignore finder (because of time machine)
+- [x] auto-update (SUEnableAutomaticChecks)
+- [ ] enable more layouts
+
+#### TODO
+
+- [ ] attend to brew doctor

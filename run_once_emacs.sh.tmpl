@@ -16,14 +16,17 @@ brew install \
     bashdb \
     fd \
     homebrew/cask-fonts/font-space-mono-nerd-font \
+    node@16 \
     pandoc \
     plantuml \
     prettier \
     ripgrep \
     shellcheck
 
-brew install --cask --no-quarantine emacs
+brew link --overwrite node@16
+npm install --global yarn
 yarn global add bash-language-server
+brew install --cask --no-quarantine emacs
 
 {{ else -}}
 yay --sync --needed \

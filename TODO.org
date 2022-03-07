@@ -8,6 +8,9 @@ maybe "chezmoi-home", to distinguish from leftover homesick-managed files
 
 Not sure what this does to scripts
 
+- [ ] manually clean up files that weren't supposed to be in $HOME
+
+
 * TODO try .chezmoitemplates instead of branching in .chezmoi.toml.tmpl
 
 [[https://www.chezmoi.io/reference/special-files-and-directories/chezmoidata-format/][.chezmoidata.<format>]] does not allow templating, [[https://github.com/twpayne/chezmoi/issues/1663#issuecomment-981071886][by design]],
