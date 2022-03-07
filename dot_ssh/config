@@ -1,0 +1,4 @@
+Host confserver
+	Hostname github.com
+	IdentityFile ~/.ssh/workbillkw_ed25519
+	IdentitiesOnly yes
