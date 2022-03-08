@@ -13,12 +13,17 @@ then
 fi
 
 brew install \
+    broot \
+    direnv \
+    fzf \
     git-delta \
     lsd \
     neovim \
     zoxide
 
-{{ else -}}
+broot --install
+
+{{ else }}
 yay --sync --needed \
     git-delta \
     lsd \

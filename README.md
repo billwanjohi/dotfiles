@@ -25,6 +25,7 @@ or just do so manually.
 - sync history
 - change password on old account
 - login to stackoverflow
+- search engine
 
 ### macos changes
 
@@ -46,6 +47,13 @@ https://github.com/kevinSuttle/macOS-Defaults/compare/master...suttle?diff=split
 - allow notifications from all installed apps
 - Notification grouping: off
 - allow notifications when mirroring (if we're not using extended display)
+
+#### zoom
+
+- [x] log in
+- [x] open links with
+- [ ] always show meeting controls
+- [x] blur background
 
 #### teams
 

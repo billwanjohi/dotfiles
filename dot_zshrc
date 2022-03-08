@@ -146,9 +146,17 @@ zinit wait lucid for \
     OMZP::kubectl \
     OMZP::zoxide
 
-zinit as"program" make'!' atclone'./direnv hook zsh > zhook.zsh' \
-    atpull'%atclone' pick"direnv" src"zhook.zsh" for \
-    direnv/direnv
+# Neither of these work, have to use the fast option
+
+# # https://zdharma-continuum.github.io/zinit/wiki/GALLERY/#__code_1
+# zinit ice from"gh-r" as"program" mv"direnv* -> direnv"
+# zinit light direnv/direnv
+
+# zinit as"program" make'!' atclone'./direnv hook zsh > zhook.zsh' \
+#     atpull'%atclone' pick"direnv" src"zhook.zsh" for \
+#     direnv/direnv
+
+eval "$(direnv hook zsh)"
 
 # zinit wait lucid \
 #     atinit"
@@ -180,6 +188,7 @@ fi
 EMACS_TERM="emacsclient -ta emacs"  # console mode, launches new emacs if daemon not present
 
 ## Alias section
+alias allrepos="fd --type d --hidden '.git$' ~"
 alias apb='poetry run ansible-playbook -e "ansible_become_pass=$ANSIBLE_BECOME_PASS" -i inventory/'
 alias cm="chezmoi"
 alias cp="cp -i"  # Confirm before overwriting something

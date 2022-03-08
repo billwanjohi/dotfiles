@@ -12,7 +12,7 @@
         # "rust",
         # "todoist",
     ]
-{{/* TODO: consider .chezmoitemplates instead */ -}}
+{{- /* TODO: consider .chezmoitemplates instead */}}
     font_family = "
         {{- if eq .chezmoi.os "linux" -}}
         Space Mono Nerd Font
@@ -29,6 +29,7 @@
     "
     full_name = {{ $full_name | quote }}
 
+    # TODO: leave unset if empty
     # TODO: consider https://www.chezmoi.io/user-guide/password-managers/
     todoist_token = {{ $todoist_token | quote }}
 
