@@ -20,7 +20,7 @@
 ;; They all accept either a font-spec, font string ("Input Mono-12"), or xlfd
 ;; font string. You generally only need these two:
 (setq doom-font (font-spec :family "{{ .font_family }}" :size 15)
-     doom-variable-pitch-font (font-spec :family "{{ .font_family }}" :size 16))
+      doom-variable-pitch-font (font-spec :family "{{ .font_family }}" :size 16))
 
 ;; There are two ways to load a theme. Both assume the theme is installed and
 ;; available. You can either set `doom-theme' or manually load a theme with the
@@ -68,7 +68,7 @@
   (add-hook 'tree-sitter-after-on-hook #'tree-sitter-hl-mode))
 
 (add-hook! 'lsp-after-initialize-hook
-           (run-hooks (intern (format "%s-lsp-hook" major-mode))))
+  (run-hooks (intern (format "%s-lsp-hook" major-mode))))
 (defun sh-flycheck-setup ()
   (flycheck-add-next-checker 'lsp 'sh-shellcheck))
 (add-hook 'sh-mode-lsp-hook
@@ -79,6 +79,18 @@
 (add-hook 'js2-mode-hook 'prettier-js-mode)
 (add-hook 'web-mode-hook 'prettier-js-mode)
 (add-hook 'rjsx-mode-hook 'prettier-js-mode)
+
+;; https://github.com/flycheck/flycheck/issues/1912
+;; Overwrite existing scss-stylelint checker to not use --syntax
+(flycheck-define-checker scss-stylelint
+  :command ("stylelint"
+            (eval flycheck-stylelint-args)
+            ;; "--syntax" "scss"
+            (option-flag "--quiet" flycheck-stylelint-quiet)
+            (config-file "--config" flycheck-stylelintrc))
+  :standard-input t
+  :error-parser flycheck-parse-stylelint
+  :modes (scss-mode))
 {{- end }}
 
 {{- if has "python" .enabled }}

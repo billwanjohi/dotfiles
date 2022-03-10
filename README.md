@@ -30,10 +30,11 @@ or just do so manually.
 ### macos changes
 
 https://github.com/kevinSuttle/macOS-Defaults/compare/master...suttle?diff=split
+https://gist.github.com/vraravam/5e28ca1720c9dddacdc0e6db61e093fe
 
 - spacevim install
 - turn off automatic rearrangement of spaces
-- turn on ctrl-num shortcuts to switch to space
+- [ ] turn on ctrl-num shortcuts to switch to space
 - arrange display s
 - move dock to top monitor (left or right)
 - more space on display (high res)
@@ -49,6 +50,8 @@ https://github.com/kevinSuttle/macOS-Defaults/compare/master...suttle?diff=split
 - allow notifications when mirroring (if we're not using extended display)
 
 #### zoom
+
+https://support.zoom.us/hc/en-us/articles/115001799006-Mass-deploying-with-preconfigured-settings-for-macOS
 
 - [x] log in
 - [x] open links with
