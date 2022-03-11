@@ -26,6 +26,7 @@ or just do so manually.
 - change password on old account
 - login to stackoverflow
 - search engine
+- [x] disable html cache when devtools open
 
 ### macos changes
 

@@ -19,6 +19,9 @@ brew install \
     git-delta \
     lsd \
     neovim \
+{{- if has "nvm" .enabled }}
+    nvm \
+{{- end }}
     zoxide
 
 broot --install
