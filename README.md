@@ -36,6 +36,7 @@ https://gist.github.com/vraravam/5e28ca1720c9dddacdc0e6db61e093fe
 - spacevim install
 - turn off automatic rearrangement of spaces
 - arrange display s
+- [ ] start week on monday
 - move dock to top monitor (left or right)
 - more space on display (high res)
 - keyboard
