@@ -1,4 +1,7 @@
 [alias]
+	# https://stackoverflow.com/a/31776247/684619
+	local-branches = "!git branch --format '%(refname:short) %(upstream:short)' | awk '{if (!$2) print $1;}'"
+
 	# https://github.com/so-fancy/diff-so-fancy/blob/master/pro-tips.md#raw-patches
 	patch = !git --no-pager diff --no-color
 
@@ -19,6 +22,12 @@
 [delta]
 	line-numbers = true
 	side-by-side = false
+
+[filter "lfs"]
+	clean = git-lfs clean -- %f
+	smudge = git-lfs smudge -- %f
+	process = git-lfs filter-process
+	required = true
 
 [init]
 	defaultBranch = trunk
@@ -44,10 +53,10 @@
 [pull]
 	rebase = true
 
-[user]
-	name = {{ .full_name }}
-	email = {{ .email_address }}
-
 [url "git@github.com:"]
 	# can't do this before ssh keys are set up, so breaks chezmoi bootstrap
 	# insteadOf = https://github.com/
+
+[user]
+	name = {{ .full_name }}
+	email = {{ .email_address }}

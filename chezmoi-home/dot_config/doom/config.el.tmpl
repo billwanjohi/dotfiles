@@ -83,6 +83,7 @@
 ;; https://github.com/flycheck/flycheck/issues/1912
 ;; Overwrite existing scss-stylelint checker to not use --syntax
 (flycheck-define-checker scss-stylelint
+  "A SCSS syntax and style checker using stylelint."
   :command ("stylelint"
             (eval flycheck-stylelint-args)
             ;; "--syntax" "scss"
