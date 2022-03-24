@@ -43,6 +43,7 @@ https://gist.github.com/vraravam/5e28ca1720c9dddacdc0e6db61e093fe
   - [x] swap command and option on usb keyboard
 - edit notifiation widgets
 - two fingerprints
+- show sound in menu bar always
 
 #### Notifications
 
