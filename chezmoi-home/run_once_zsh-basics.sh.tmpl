@@ -28,9 +28,15 @@ broot --install
 
 {{ else }}
 yay --sync --needed \
+    broot \
+    direnv \
+    fzf \
     git-delta \
     lsd \
     neovim \
+{{- if has "nvm" .enabled }}
+    nvm \
+{{- end }}
     zoxide
 
 {{ end -}}

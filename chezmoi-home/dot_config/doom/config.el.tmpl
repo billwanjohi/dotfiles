@@ -67,6 +67,9 @@
   (global-tree-sitter-mode)
   (add-hook 'tree-sitter-after-on-hook #'tree-sitter-hl-mode))
 
+;; https://emacs.stackexchange.com/a/70808/18070
+(add-hook 'org-mode-hook #'auto-revert-mode)
+
 (add-hook! 'lsp-after-initialize-hook
   (run-hooks (intern (format "%s-lsp-hook" major-mode))))
 
