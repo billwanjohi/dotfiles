@@ -1,6 +1,11 @@
 [directory]
 truncate_to_repo = false
 
+[git_commit]
+# only shows annotated tags:
+# https://github.com/starship/starship/issues/2282
+tag_disabled = false
+
 [git_metrics]
 disabled = false
 

@@ -41,6 +41,7 @@ https://gist.github.com/vraravam/5e28ca1720c9dddacdc0e6db61e093fe
 - more space on display (high res)
 - keyboard
   - [x] swap command and option on usb keyboard
+  - [x] disable/remap caps lock on all keyboard
 - edit notifiation widgets
 - two fingerprints
 - show sound in menu bar always
