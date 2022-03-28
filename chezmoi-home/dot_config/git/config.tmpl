@@ -1,4 +1,6 @@
 [alias]
+	cleanup = !git branch -vv | grep ': gone]' | awk '{print $1}' | xargs git branch -D
+
 	# https://stackoverflow.com/a/31776247/684619
 	local-branches = "!git branch --format '%(refname:short) %(upstream:short)' | awk '{if (!$2) print $1;}'"
 

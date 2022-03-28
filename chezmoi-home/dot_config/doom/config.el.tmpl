@@ -69,6 +69,7 @@
 
 (add-hook! 'lsp-after-initialize-hook
   (run-hooks (intern (format "%s-lsp-hook" major-mode))))
+
 (defun sh-flycheck-setup ()
   (flycheck-add-next-checker 'lsp 'sh-shellcheck))
 (add-hook 'sh-mode-lsp-hook
