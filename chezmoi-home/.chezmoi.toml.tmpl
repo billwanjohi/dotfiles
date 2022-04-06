@@ -3,41 +3,48 @@
 {{ $todoist_token := promptString "todoist token" -}}
 
 [data]
-    email_address = {{ $email | quote }}
-    enabled = [
-        "javascript",
-        # "minizinc",
-        # "nvm",
-        # "python",
-        # "ruby",
-        # "rust",
-        # "todoist",
-    ]
+email_address = {{ $email | quote }}
+enabled = [
+  # "javascript",
+  # "minizinc",
+  # "nvm",
+  # "python",
+  # "ruby",
+  # "rust",
+  # "tidyr",
+  # "todoist",
+]
 {{- /* TODO: consider .chezmoitemplates instead */}}
-    font_family = "
-        {{- if eq .chezmoi.os "linux" -}}
-        Space Mono Nerd Font
-        {{- else -}}
-        SpaceMono Nerd Font
-        {{- end -}}
-    "
-    font_size = "
-        {{- if eq .chezmoi.os "linux" -}}
-        12.0
-        {{- else -}}
-        15.0
-        {{- end -}}
-    "
-    full_name = {{ $full_name | quote }}
+font_family = "
+  {{- if eq .chezmoi.os "linux" -}}
+  Space Mono Nerd Font
+  {{- else -}}
+  SpaceMono Nerd Font
+  {{- end -}}
+"
+font_size = "
+  {{- if eq .chezmoi.os "linux" -}}
+  12.0
+  {{- else -}}
+  15.0
+  {{- end -}}
+"
+full_name = {{ $full_name | quote }}
 
-    # TODO: leave unset if empty
-    # TODO: consider https://www.chezmoi.io/user-guide/password-managers/
-    todoist_token = {{ $todoist_token | quote }}
+{{- /*
+# TODO: leave unset if empty
+# TODO: consider https://www.chezmoi.io/user-guide/password-managers/
+*/}}
+todoist_token = {{ $todoist_token | quote }}
+
+[[data.ssh_hosts]]
+host = "confserver"
+identity_file = "~/.ssh/id_ed25519"
 
 [diff]
-    # setting PAGER or GIT_PAGER doesn't do it
-    pager = "delta"
+# setting PAGER or GIT_PAGER env var doesn't cut it
+pager = "delta"
 
 [merge]
-    command = "nvim"
-    args = ["-d"]
+command = "nvim"
+args = ["-d"]
