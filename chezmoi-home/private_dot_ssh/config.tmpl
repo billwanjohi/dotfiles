@@ -1,0 +1,37 @@
+# Since the first obtained value for each parameter is used,
+# more host-specific declarations should be given near the beginning of the file,
+# and general defaults at the end.
+
+{{/*
+We don't need this because we are using chezmoi template
+
+# It is recommended that IgnoreUnknown be listed early in the configuration file
+# as it will not be applied to unknown options that appear before it.
+Host *
+  IgnoreUnknown UseKeychain
+*/ -}}
+
+{{ range $host := .ssh_hosts -}}
+Host {{ $host.host }}
+{{- if hasKey $host "hostname" }}
+  Hostname {{ $host.hostname }}
+{{- end }}
+  IdentitiesOnly yes
+  IdentityFile {{ $host.identity_file }}
+{{- if hasKey $host "user" }}
+  User {{ $host.user }}
+{{- end }}
+
+{{ end -}}
+
+Host *
+  AddKeysToAgent yes
+
+{{- /*
+  # We don't need this because we are using chezmoi template
+  Include local
+*/}}
+
+{{- if eq .chezmoi.os "darwin" }}
+  UseKeychain yes
+{{- end }}

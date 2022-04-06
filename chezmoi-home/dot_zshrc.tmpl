@@ -149,8 +149,8 @@ zinit wait lucid for \
 # Neither of these work, have to use the fast option
 
 # # https://zdharma-continuum.github.io/zinit/wiki/GALLERY/#__code_1
-# zinit ice from"gh-r" as"program" mv"direnv* -> direnv"
-# zinit light direnv/direnv
+zinit ice from"gh-r" as"program" mv"direnv* -> direnv"
+zinit light direnv/direnv
 
 # zinit as"program" make'!' atclone'./direnv hook zsh > zhook.zsh' \
 #     atpull'%atclone' pick"direnv" src"zhook.zsh" for \
@@ -170,13 +170,15 @@ eval "$(direnv hook zsh)"
 #     atload"export RIPGREP_CONFIG_PATH=$XDG_CONFIG_HOME/ripgreprc" blockf for \
 #     zshzoo/xdg-basedirs
 
-# should be last
-zinit wait lucid \
-    atinit"
-        zstyle ':completion:*' menu select
-    " \
-    atload"zicompinit; zicdreplay" blockf for \
-    zsh-users/zsh-completions
+# (should be last)
+# https://github.com/zdharma-continuum/fast-syntax-highlighting#zinit
+zinit wait lucid for \
+ atinit"ZINIT[COMPINIT_OPTS]=-C; zicompinit; zicdreplay" \
+    zdharma-continuum/fast-syntax-highlighting \
+ blockf \
+    zsh-users/zsh-completions \
+ atload"!_zsh_autosuggest_start" \
+    zsh-users/zsh-autosuggestions
 
 ###### User configuration
 
@@ -197,9 +199,9 @@ alias findalias="alias | ag"
 alias gcolt='git checkout $(git tag | ${gnu_prefix}sort -V | tail -1)'
 alias glfod="git ls-files --others --directory"
 alias gitroot="git rev-parse --show-toplevel"
-alias gdls='git checkout -q main && git for-each-ref refs/heads/ "--format=%(refname:short)" | while read branch; do mergeBase=$(git merge-base main $branch) && [[ $(git cherry main $(git commit-tree $(git rev-parse $branch\^{tree}) -p $mergeBase -m _)) == "-"* ]] && git branch -D $branch; done'
+alias gdls='git checkout -q $(git_main_branch) && git for-each-ref refs/heads/ "--format=%(refname:short)" | while read branch; do mergeBase=$(git merge-base $(git_main_branch) $branch) && [[ $(git cherry $(git_main_branch) $(git commit-tree $(git rev-parse $branch\^{tree}) -p $mergeBase -m _)) == "-"* ]] && git branch -D $branch; done'
 alias gpfwl="git push --force-with-lease"
-alias grbfom='git fetch && git rebase --autostash -i $(git merge-base origin/main HEAD)'
+alias grbfom='git fetch && git rebase --autostash -i $(git merge-base origin/$(git_main_branch) HEAD)'
 alias gs="echo 'did you mean gss?'"
 alias ls="lsd"
 alias lsa="ls -alh"
