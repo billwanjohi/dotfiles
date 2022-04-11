@@ -16,5 +16,8 @@ up_to_date = "✔️"
 [hostname]
 ssh_only = false
 
+[status]
+disabled = false
+
 [username]
 show_always = true
