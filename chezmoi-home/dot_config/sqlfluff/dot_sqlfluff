@@ -1,0 +1,7 @@
+[sqlfluff]
+exclude_rules = L014
+
+[sqlfluff:rules]
+comma_style = leading
+max_line_length = 80
+templater = placeholder

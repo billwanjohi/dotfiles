@@ -44,6 +44,7 @@ non_casks=(
     curl  # for asdf php 5.6.40
     defaultbrowser
     editorconfig
+    fzf
     git
     git-lfs
     gnupg
@@ -57,6 +58,7 @@ non_casks=(
     prettier
     shellcheck
     shfmt
+    sqlfluff
     tldr
     tig
     tmux
@@ -64,6 +66,8 @@ non_casks=(
 )
 
 brew install ${non_casks[*]}
+
+$(brew --prefix)/opt/fzf/install
 
 defaultbrowser firefox
 {{- else -}}
