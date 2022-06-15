@@ -26,7 +26,7 @@ brew install \
 brew link --overwrite node@16
 npm install --global yarn
 yarn global add bash-language-server
-brew install --cask --no-quarantine emacs
+brew install emacs-plus --with-native-comp
 
 {{ else -}}
 yay --sync --needed \

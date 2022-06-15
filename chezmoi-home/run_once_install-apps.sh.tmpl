@@ -3,6 +3,7 @@
 set -Eeuxo pipefail
 
 {{ if eq .chezmoi.os "darwin" -}}
+# TODO: move this installation into an earlier run-once script
 if ! [ -x "$(command -v brew)" ]
 then
     sudo chown "$(whoami)":admin \
@@ -15,57 +16,62 @@ fi
 # TODO: switch to brew bundle
 # https://www.chezmoi.io/user-guide/machines/macos/#use-brew-bundle-to-manage-your-brews-and-casks
 
-brew install --cask --no-quarantine \
-    alacritty \
-    amethyst \
-    docker \
-    figma \
-    firefox \
-    keepassxc \
-    meetingbar \
-    pomotroid
-    # aws-vault \
-    # docker \
-    # google-chrome \
-    # jetbrains-toolbox \
-    # microsoft-teams \
-    # vscodium \
-    # zoom
+casks=(
+  alacritty
+  amethyst
+  aws-vault
+  docker
+  firefox
+  google-chrome
+  jetbrains-toolbox
+  meetingbar
+  microsoft-teams
+  pomotroid
+  temurin
+  vscodium
+  zoom
+)
 
-brew install \
-    adr-tools \
-    bat \
-    bottom \
-    coreutils \
-    defaultbrowser \
-    editorconfig \
-    git-lfs \
-    gnupg \
-    graphviz \
-    node@16 \
-    httpie \
-    pandoc \
-    prettier \
-    tldr \
-    tig \
+brew install --cask --no-quarantine ${casks[*]}
+
+non_casks=(
+    adr-tools
+    awscli
+    bat
+    bison  # for asdf php 5.6.40
+    bottom
+    coreutils
+    curl  # for asdf php 5.6.40
+    defaultbrowser
+    editorconfig
+    git
+    git-lfs
+    gnupg
+    graphviz
+    lazydocker
+    lazygit
+    libsodium  # for asdf php 5.6.40
+    node@16
+    httpie
+    pandoc
+    prettier
+    shellcheck
+    shfmt
+    tldr
+    tig
     tmux
-    # awscli \
-    # fzf \
-    # git \
-    # jmespath/jmespath/jp \
-    # lazydocker \
-    # lazygit \
-    # node@16 \
-    # pandoc \
-    # prettier \
-    # _shellcheck \
+    zlib  # for asdf php 5.6.40
+)
+
+brew install ${non_casks[*]}
 
 defaultbrowser firefox
-
-{{ else -}}
+{{- else -}}
 yay --sync --needed \
     bat \
     tldr
+{{- end }}
 
 {{ end -}}
 curl -sLf https://spacevim.org/install.sh | bash
+gem install bundler-audit

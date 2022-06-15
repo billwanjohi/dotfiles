@@ -1,0 +1,18 @@
+#!/usr/bin/env bash
+
+set -Eeuxo pipefail
+
+# TODO needs to be placed after the installation/configuration of these package managers
+
+{{ if eq .chezmoi.os "darwin" -}}
+mas upgrade
+brew upgrade --ignore-pinned
+{{- else -}}
+# nix
+# yay
+# flatpak
+# drivers
+{{- end }}
+
+doom upgrade
+gem update
