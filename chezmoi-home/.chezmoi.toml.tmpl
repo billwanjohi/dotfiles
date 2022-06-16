@@ -5,6 +5,7 @@
 [data]
 email_address = {{ $email | quote }}
 enabled = [
+  # "ansible",
   # "javascript",
   # "minizinc",
   # "nvm",
@@ -30,6 +31,8 @@ font_size = "
   {{- end -}}
 "
 full_name = {{ $full_name | quote }}
+ssh_config_includes = [
+]
 
 {{- /*
 # TODO: leave unset if empty
@@ -39,6 +42,7 @@ todoist_token = {{ $todoist_token | quote }}
 
 [[data.ssh_hosts]]
 host = "confserver"
+hostname = "github.com"
 identity_file = "~/.ssh/id_ed25519"
 
 [diff]

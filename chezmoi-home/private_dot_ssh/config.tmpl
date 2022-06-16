@@ -26,12 +26,9 @@ Host {{ $host.host }}
 
 Host *
   AddKeysToAgent yes
-
-{{- /*
-  # We don't need this because we are using chezmoi template
-  Include local
-*/}}
-
 {{- if eq .chezmoi.os "darwin" }}
   UseKeychain yes
+{{- end }}
+{{- range $include := .ssh_config_includes }}
+  Include config.d/{{ $include }}
 {{- end }}
