@@ -1,4 +1,5 @@
 " From https://github.com/tridactyl/tridactyl/blob/master/.tridactylrc
+" Install the native messenger (:installnative in Tridactyl
 " Run :source to get it in the browser, or just restart.
 
 " Binds
@@ -135,6 +136,7 @@ set searchurls.julia https://www.google.com/search?q=site:http://docs.julialang.
 
 " Custom
 
+set searchurls.bgg https://boardgamegeek.com/geeksearch.php?action=search&q=%s&objecttype=boardgame
 unbind <C-f>
 
 " TODO

@@ -31,11 +31,13 @@ brew install emacs-plus --with-native-comp
 {{ else -}}
 yay --sync --needed \
     bash-language-server \
-    emacs \
+    emacs-nativecomp \
     fd \
     nerd-fonts-space-mono \
     ripgrep \
     shellcheck
+
+yay --sync --needed python-jsbeautifier  # for `web` layer
 
 {{ end -}}
 

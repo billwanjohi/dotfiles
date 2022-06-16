@@ -2,17 +2,20 @@
 
 set -Eeuxo pipefail
 
-# TODO needs to be placed after the installation/configuration of these package managers
+# TODO need to confirm this always runs after run_once scripts
 
 {{ if eq .chezmoi.os "darwin" -}}
 mas upgrade
 brew upgrade --ignore-pinned
 {{- else -}}
-# nix
-# yay
-# flatpak
-# drivers
+flatpak update
+
+yay
+
+# fwupdmgr refresh
+# fwupdmgr update
 {{- end }}
 
 doom upgrade
+git -C ~/.SpaceVim pull
 gem update

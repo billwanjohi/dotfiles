@@ -84,8 +84,9 @@
 (add-hook 'web-mode-hook 'prettier-js-mode)
 (add-hook 'rjsx-mode-hook 'prettier-js-mode)
 
-;; https://github.com/flycheck/flycheck/issues/1912
 ;; Overwrite existing scss-stylelint checker to not use --syntax
+;; https://github.com/flycheck/flycheck/issues/1912
+;; TODO: use https://github.com/raxod502/el-patch
 (flycheck-define-checker scss-stylelint
   "A SCSS syntax and style checker using stylelint."
   :command ("stylelint"
