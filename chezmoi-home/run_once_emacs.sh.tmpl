@@ -14,6 +14,7 @@ fi
 
 brew install \
     bashdb \
+    black \
     fd \
     homebrew/cask-fonts/font-space-mono-nerd-font \
     node@16 \
@@ -40,6 +41,8 @@ yay --sync --needed \
 yay --sync --needed python-jsbeautifier  # for `web` layer
 
 {{ end -}}
+
+gem install rubocop
 
 EMACS_DIR=$HOME/.emacs.d
 

@@ -33,9 +33,8 @@ or just do so manually.
 https://github.com/kevinSuttle/macOS-Defaults/compare/master...suttle?diff=split
 https://gist.github.com/vraravam/5e28ca1720c9dddacdc0e6db61e093fe
 
-- spacevim install
 - turn off automatic rearrangement of spaces
-- arrange display s
+- arrange displays
 - [ ] start week on monday
 - move dock to top monitor (left or right)
 - more space on display (high res)
@@ -58,7 +57,7 @@ https://support.zoom.us/hc/en-us/articles/115001799006-Mass-deploying-with-preco
 
 - [x] log in
 - [x] open links with
-- [ ] always show meeting controls
+- [x] always show meeting controls
 - [x] blur background
 
 #### teams
