@@ -136,9 +136,8 @@ set searchurls.julia https://www.google.com/search?q=site:http://docs.julialang.
 
 " Custom
 
+set searchurls.aur https://aur.archlinux.org/packages?O=0&K=%s
 set searchurls.bgg https://boardgamegeek.com/geeksearch.php?action=search&q=%s&objecttype=boardgame
-unbind <C-f>
+set searchurls.ccc https://camelcamelcamel.com/search?sq=%s
 
-" TODO
-" Search engines:
-"   - aur
+unbind <C-f>
