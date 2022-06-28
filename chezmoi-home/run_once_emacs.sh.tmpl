@@ -28,8 +28,7 @@ brew link --overwrite node@16
 npm install --global yarn
 yarn global add bash-language-server
 brew install emacs-plus --with-native-comp
-
-{{ else -}}
+{{- else -}}
 yay --sync --needed \
     bash-language-server \
     emacs-nativecomp \
@@ -39,10 +38,11 @@ yay --sync --needed \
     shellcheck
 
 yay --sync --needed python-jsbeautifier  # for `web` layer
+{{- end }}
 
-{{ end -}}
-
-gem install rubocop
+{{- if has "ruby" .enabled }}
+gem install rubocop typeprof
+{{- end }}
 
 EMACS_DIR=$HOME/.emacs.d
 

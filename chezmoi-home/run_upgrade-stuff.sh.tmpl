@@ -18,4 +18,6 @@ fwupdmgr update
 
 doom upgrade
 git -C ~/.SpaceVim pull
+{{- if has "ruby" .enabled }}
 gem update
+{{- end }}
