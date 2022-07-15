@@ -136,8 +136,8 @@ set searchurls.julia https://www.google.com/search?q=site:http://docs.julialang.
 
 " Custom
 
+blacklistadd mail.google.com/mail
 set searchurls.aur https://aur.archlinux.org/packages?O=0&K=%s
 set searchurls.bgg https://boardgamegeek.com/geeksearch.php?action=search&q=%s&objecttype=boardgame
 set searchurls.ccc https://camelcamelcamel.com/search?sq=%s
-
 unbind <C-f>

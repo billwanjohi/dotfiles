@@ -1,6 +1,6 @@
 {
   "dependencies": {
-    "bash-language-server": "^3.0.3",
+    "bash-language-server": "^3.0.4",
     "js-beautify": "^1.14.1",
     "stylelint": "^14.6.1"
   }

@@ -4,4 +4,5 @@ exclude_rules = L014
 [sqlfluff:rules]
 comma_style = leading
 max_line_length = 80
+tab_space_size = 2
 templater = placeholder
