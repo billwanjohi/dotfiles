@@ -5,30 +5,38 @@
 ##########################################
 
 ## Options section
-setopt always_to_end          # when completing from the middle of a word, move the cursor to the end of the word
-setopt appendhistory                                            # Immediately append history instead of overwriting
-unsetopt autocd                                                   # if only directory path is entered, cd there.
-setopt automenu
-setopt complete_in_word       # allow completion from within a word/phrase
+  setopt always_to_end          # when completing from the middle of a word, move the cursor to the end of the word
+  setopt appendhistory          # Immediately append history instead of overwriting
+unsetopt autocd                 # if only directory path is entered, cd there.
+  setopt automenu
+# setopt bang_hist              # Treat the '!' character specially during expansion.
+  setopt complete_in_word       # allow completion from within a word/phrase
 unsetopt completealiases        # autocomplete aliases https://unix.stackexchange.com/a/583743
-setopt correct                # spelling correction for commands
-setopt extendedglob                                             # Extended globbing. Allows using regular expressions with *
-setopt extended_history       # record timestamp of command in HISTFILE
-setopt hash_list_all          # hash everything before completion
-setopt hist_expire_dups_first # delete duplicates first when HISTFILE size exceeds HISTSIZE
-setopt hist_ignore_all_dups   # If a new command is a duplicate, remove the older one
-setopt hist_ignore_space      # ignore commands that start with space
-setopt hist_verify            # show command with history expansion to user before running it
-setopt inc_append_history     # add commands to HISTFILE in order of execution
-setopt list_ambiguous         # complete as much of a completion until it gets ambiguous.
-setopt listpacked
-setopt nobeep                 # No beep
-setopt nocaseglob             # Case insensitive globbing
+  setopt correct                # spelling correction for commands
+  setopt extendedglob           # Extended globbing. Allows using regular expressions with *
+  setopt extended_history       # record timestamp of command in HISTFILE
+# setopt hist_beep              # Beep when accessing nonexistent history.
+  setopt hash_list_all          # hash everything before completion
+  setopt hist_expire_dups_first # delete duplicates first when HISTFILE size exceeds HISTSIZE
+  setopt hist_find_no_dups      # Do not display a line previously found.
+  setopt hist_ignore_all_dups   # If a new command is a duplicate, remove the older one
+  setopt hist_ignore_dups       # Don't record an entry that was just recorded again
+  setopt hist_ignore_space      # ignore commands that start with space
+# setopt hist_reduce_blanks     # Remove superfluous blanks before recording entry.
+  setopt hist_save_no_dups      # Don't write duplicate entries in the history file.
+  setopt hist_verify            # show command with history expansion to user before running it
+  setopt inc_append_history     # add commands to HISTFILE in order of execution
+  setopt list_ambiguous         # complete as much of a completion until it gets ambiguous.
+  setopt listpacked
+  setopt nobeep                 # No beep
+  setopt nocaseglob             # Case insensitive globbing
 unsetopt nocheckjobs            # Don't warn about running processes when exiting
-setopt nolisttypes
-setopt numericglobsort        # Sort filenames numerically when it makes sense
-setopt share_history          # share command history data
-setopt rcexpandparam          # Array expension with parameters
+  setopt nolisttypes
+# setopt nomatch
+# setopt notify
+  setopt numericglobsort        # Sort filenames numerically when it makes sense
+  setopt share_history          # share command history data
+  setopt rcexpandparam          # Array expension with parameters
 
 zstyle ':completion:*' matcher-list 'm:{a-zA-Z}={A-Za-z}' # Case insensitive tab completion
 zstyle ':completion:*' list-colors "${(s.:.)LS_COLORS}"   # Colored completion (different colors for dirs/files/etc)

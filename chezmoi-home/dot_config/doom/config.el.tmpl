@@ -108,3 +108,21 @@
 (add-hook 'python-mode-lsp-hook
           #'python-flycheck-setup)
 {{- end }}
+
+;;; https://emacs.stackexchange.com/a/29838/18070
+;;; Entry in `org-agenda-custom-commands':
+;;  (org-agenda-skip-function '(org-agenda-skip-if-scheduled-later))
+(defun org-agenda-skip-if-scheduled-later ()
+"If this function returns nil, the current match should not be skipped.
+Otherwise, the function must return a position from where the search
+should be continued."
+  (ignore-errors
+    (let ((subtree-end (save-excursion (org-end-of-subtree t)))
+          (scheduled-seconds
+           (time-to-seconds
+            (org-time-string-to-time
+             (org-entry-get nil "SCHEDULED"))))
+          (now (time-to-seconds (current-time))))
+      (and scheduled-seconds
+           (>= scheduled-seconds now)
+           subtree-end))))

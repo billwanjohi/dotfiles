@@ -4,6 +4,13 @@ set -Eeuxo pipefail
 
 # TODO need to confirm this always runs after run_once scripts
 
+doom upgrade
+git -C ~/.SpaceVim pull
+{{- if has "ruby" .enabled }}
+## too much unnecessary stuff for now
+# gem update
+{{- end }}
+
 {{ if eq .chezmoi.os "darwin" -}}
 mas upgrade
 brew upgrade --ignore-pinned
@@ -16,11 +23,4 @@ yay
 
 fwupdmgr refresh
 fwupdmgr update
-{{- end }}
-
-doom upgrade
-git -C ~/.SpaceVim pull
-{{- if has "ruby" .enabled }}
-## too much unnecessary stuff for now
-# gem update
 {{- end }}
