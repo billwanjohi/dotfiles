@@ -61,12 +61,6 @@
   (set-company-backend! 'graphviz-dot-mode '(company-graphviz-dot-backend))
   (setq graphviz-dot-indent-width 4))
 
-(use-package! tree-sitter
-  :config
-  (require 'tree-sitter-langs)
-  (global-tree-sitter-mode)
-  (add-hook 'tree-sitter-after-on-hook #'tree-sitter-hl-mode))
-
 ;; TODO https://github.com/mcandre/vimrc-mode
 
 ;; https://emacs.stackexchange.com/a/70808/18070
@@ -126,3 +120,24 @@ should be continued."
       (and scheduled-seconds
            (>= scheduled-seconds now)
            subtree-end))))
+
+{{- if has "copilot" .enabled }}
+;; accept completion from copilot and fallback to company
+(defun my-tab ()
+  (interactive)
+  (or (copilot-accept-completion)
+      (company-indent-or-complete-common nil)))
+
+(use-package! copilot
+  :hook (prog-mode . copilot-mode)
+  :bind (("C-TAB" . 'copilot-accept-completion-by-word)
+         ("C-<tab>" . 'copilot-accept-completion-by-word)
+         :map company-active-map
+         ("<tab>" . 'my-tab)
+         ("TAB" . 'my-tab)
+         :map company-mode-map
+         ("<tab>" . 'my-tab)
+         ("TAB" . 'my-tab)))
+{{- end }}
+
+(setq ob-mermaid-cli-path "/usr/local/bin/mmdc")

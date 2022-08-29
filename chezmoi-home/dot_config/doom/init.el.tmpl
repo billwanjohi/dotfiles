@@ -109,7 +109,7 @@
        terraform           ; infrastructure as code
 {{- end }}
        ;;tmux              ; an API for interacting with tmux
-       ;;tree-sitter       ; syntax and parsing, sitting in a tree...  ;; TODO configure
+       tree-sitter         ; syntax and parsing, sitting in a tree...  ;; TODO configure
        ;;upload            ; map local to remote projects via ssh/ftp
 
        :os
@@ -143,15 +143,17 @@
        ;;fsharp            ; ML stands for Microsoft's Language
        ;;fstar             ; (dependent) types and (monadic) effects and Z3
        ;;gdscript          ; the language you waited for
-       ;;(go +lsp)         ; the hipster dialect
+{{- if has "golang" .enabled }}
+       (go +lsp)         ; the hipster dialect
+{{- end }}
        ;;(graphql +lsp)    ; Give queries a REST
        ;;(haskell +lsp)    ; a language that's lazier than I am
        ;;hy                ; readability of scheme w/ speed of python
        ;;idris             ; a language you can depend on
-       json                ; At least it ain't XML
+       (json +lsp +tree-sitter)   ; At least it ain't XML
        ;;(java +lsp)       ; the poster child for carpal tunnel syndrome
 {{- if has "javascript" .enabled }}
-       (javascript +lsp)   ; all(hope(abandon(ye(who(enter(here))))))
+       (javascript +lsp +tree-sitter)   ; all(hope(abandon(ye(who(enter(here))))))
 {{- end }}
        ;;julia             ; a better, faster MATLAB
        ;;kotlin            ; a better, slicker Java(Script)
@@ -188,7 +190,7 @@
        ;;solidity          ; do you need a blockchain? No.
        ;;swift             ; who asked for emoji variables?
        ;;terra             ; Earth and Moon in alignment for performance.
-       web                 ; the tubes
+       (web +lsp +tree-sitter)  ; the tubes
        (yaml +lsp)         ; JSON, but readable
        ;;zig               ; C, but simpler
 

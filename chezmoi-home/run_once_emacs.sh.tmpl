@@ -12,17 +12,23 @@ then
     /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
 fi
 
-brew install \
-    bashdb \
-    black \
-    fd \
-    homebrew/cask-fonts/font-space-mono-nerd-font \
-    node@16 \
-    pandoc \
-    plantuml \
-    prettier \
-    ripgrep \
-    shellcheck
+non_casks=(
+  bashdb
+  black
+{{- if has "cue" .enabled }}
+  cue-lang/tap/cue
+{{- end }}
+  fd
+  homebrew/cask-fonts/font-space-mono-nerd-font
+  node@16
+  pandoc
+  plantuml
+  prettier
+  ripgrep
+  shellcheck
+)
+
+brew install ${non_casks[*]}
 
 brew link --overwrite node@16
 npm install --global yarn
