@@ -13,14 +13,13 @@ defaults write NSGlobalDomain com.apple.swipescrolldirection -bool false
 defaults write ZoomChat ZMEnableShowUserName -bool true
 defaults write ZoomChat ZoomAccessibilityNotAllowAutoHidden -bool true
 defaults write ZoomChat ZoomEnableShow49WallViewKey -int 1
-defaults write ZoomChat ZoomEnterFullscreenWhenDualMonitorSetted -bool true  # seems backward but works?
+defaults write ZoomChat ZoomEnterFullscreenWhenDualMonitorSetted -bool false
 defaults write ZoomChat ZoomEnterFullscreenWhenViewShare -int 0
 defaults write ZoomChat ZoomEnterMaxWndWhenViewShare -bool false
 defaults write ZoomChat ZoomShouldShowSharingWithSplitView -bool true
+defaults write us.zoom.xos kZMSettingVBHaveGreenScreen -int 0
+defaults write us.zoom.xos kZMUserDefaultMainWindowCompressed -int 0
 defaults write us.zoom.xos kZMUserDefaultMeetingStartWithVideo -int 0
-
-
-# no idea what this means: ZoomAccessibilityNotAllowAutoHidden = true;
 
 # enable ^+[number] shortcuts to switch to corresponding desktop
 for i in {118..125}

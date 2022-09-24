@@ -134,11 +134,11 @@ zinit light-mode for \
 autoload -U select-word-style
 select-word-style bash
 
-# https://github.com/zdharma/zinit/blame/3920cc828958c2a629d5363b698ca40fb3a9986f/README.md#L818-L822
+# https://github.com/zdharma-continuum/zinit/blame/c3d1bb586c77a98566c552358fd9aee084e30da8/README.md#L210-L214
 # Load starship theme
 zinit ice as"command" from"gh-r" \
-    atclone"./starship init zsh > init.zsh; ./starship completions zsh > _starship" \
-    atpull"%atclone" src"init.zsh"
+          atclone"./starship init zsh > init.zsh; ./starship completions zsh > _starship" \
+          atpull"%atclone" src"init.zsh"
 zinit light starship/starship
 
 # zinit light Aloxaf/fzf-tab

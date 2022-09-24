@@ -4,6 +4,7 @@ set -Eeuxo pipefail
 
 # TODO need to confirm this always runs after run_once scripts
 
+zinit update --all
 doom upgrade
 git -C ~/.SpaceVim pull
 {{- if has "ruby" .enabled }}
