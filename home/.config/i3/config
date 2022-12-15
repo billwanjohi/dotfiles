@@ -311,7 +311,7 @@ exec_always --no-startup-id fix_xcursor
 exec --no-startup-id 'sleep 5; emacsclient -nc'  # this hasn't worked yet
 exec --no-startup-id dex --autostart --environment i3
 
-exec --no-startup-id i3-battery-popup
+exec --no-startup-id i3-battery-popup -n -L 20
 
 # Color palette used for the terminal ( ~/.Xresources file )
 # Colors are gathered based on the documentation:
