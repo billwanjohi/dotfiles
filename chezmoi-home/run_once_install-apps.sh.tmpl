@@ -39,10 +39,8 @@ non_casks=(
     adr-tools
     awscli
     bat
-    bison  # for asdf php 5.6.40
     bottom
     coreutils
-    curl  # for asdf php 5.6.40
     defaultbrowser
     editorconfig
     fzf
@@ -53,10 +51,9 @@ non_casks=(
     httpie
     lazydocker
     lazygit
-    libsodium  # for asdf php 5.6.40
     neofetch  # beautiful system deets
     node@16
-    onefetch
+    onefetch  # beautiful repo deets
     pandoc
     prettier
     shellcheck
@@ -66,7 +63,6 @@ non_casks=(
     tig
     tmux
     xsv
-    zlib  # for asdf php 5.6.40
 )
 
 brew install ${non_casks[*]}
@@ -79,5 +75,3 @@ yay --sync --needed \
     bat \
     tldr
 {{- end }}
-
-curl -sLf https://spacevim.org/install.sh | bash

@@ -1,0 +1,10 @@
+[".config/alacritty/colors"]
+    type = "git-repo"
+    url = "https://github.com/catppuccin/alacritty.git"
+    refreshPeriod = "168h"
+    # include = "catppuccin*.yml"
+
+# [".config/nvim"]
+#     type = "git-repo"
+#     url = "https://github.com/NvChad/NvChad.git"
+#     refreshPeriod = "168h"

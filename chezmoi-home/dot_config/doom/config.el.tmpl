@@ -27,7 +27,7 @@
 ;; `load-theme' function. This is the default:
 ;; need visual distinction between spaces and tabs
 ;; also: legible ediff colors
-(setq doom-theme 'tango-dark)
+(setq doom-theme 'catppuccin)
 
 ;; If you use `org' and don't want your org files in the default location below,
 ;; change `org-directory'. It must be set before org loads!
@@ -55,6 +55,8 @@
 ;; You can also try 'gd' (or 'C-c c d') to jump to their definition and see how
 ;; they are implemented.
 (set-time-zone-rule "America/New_York")
+
+(global-activity-watch-mode t)
 
 (use-package! graphviz-dot-mode
   :config
@@ -141,3 +143,10 @@ should be continued."
 {{- end }}
 
 (setq ob-mermaid-cli-path "/usr/local/bin/mmdc")
+
+;; https://www.reddit.com/r/DoomEmacs/comments/jl6p9x/comment/gaoem6z/?utm_source=reddit&utm_medium=web2x&context=3
+(defun bh:see-all-whitespace () (interactive)
+       (setq whitespace-style (default-value 'whitespace-style))
+       (setq whitespace-display-mappings (default-value 'whitespace-display-mappings))
+       (whitespace-mode 'toggle))
+(global-set-key (kbd "C-<f4>") 'bh:see-all-whitespace)

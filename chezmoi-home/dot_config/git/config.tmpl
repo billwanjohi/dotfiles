@@ -1,4 +1,6 @@
 [alias]
+	dft = difftool
+
 	cleanup = !git branch -vv | grep ': gone]' | awk '{print $1}' | xargs -p git branch -D
 
 	# https://stackoverflow.com/a/31776247/684619
@@ -25,6 +27,15 @@
 	line-numbers = true
 	side-by-side = false
 
+[diff]
+	tool = difftastic
+
+[difftool]
+	prompt = false
+
+[difftool "difftastic"]
+	cmd = difft "$LOCAL" "$REMOTE"
+
 [filter "lfs"]
 	clean = git-lfs clean -- %f
 	smudge = git-lfs smudge -- %f
@@ -32,7 +43,7 @@
 	required = true
 
 [init]
-	defaultBranch = trunk
+	defaultBranch = main
 	templateDir = ~/.config/git/template
 
 [magithub]
@@ -48,6 +59,7 @@
 
 [pager]
 	diff = delta
+	difftool = true
 	log = delta
 	reflog = delta
 	show = delta

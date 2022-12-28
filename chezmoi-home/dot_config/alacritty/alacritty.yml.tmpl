@@ -1,0 +1,478 @@
+---
+font:
+  normal:
+    family: {{ .font_family }}
+    style: Regular
+  bold:
+    family: {{ .font_family }}
+    style: Bold
+  italic:
+    family: {{ .font_family }}
+    style: Italic
+  bold_italic:
+    family: {{ .font_family }}
+    style: Bold Italic
+  size: {{ .font_size }}
+
+# https://github.com/alacritty/alacritty/wiki/Color-schemes
+schemes:
+  gruvbox_light:
+    # Default colors
+    primary:
+      # hard contrast: background = '#f9f5d7'
+      background: "#fbf1c7"
+      # soft contrast: background = '#f2e5bc'
+      foreground: "#3c3836"
+
+    # Normal colors
+    normal:
+      black: "#fbf1c7"
+      red: "#cc241d"
+      green: "#98971a"
+      yellow: "#d79921"
+      blue: "#458588"
+      magenta: "#b16286"
+      cyan: "#689d6a"
+      white: "#7c6f64"
+
+    # Bright colors
+    bright:
+      black: "#928374"
+      red: "#9d0006"
+      green: "#79740e"
+      yellow: "#b57614"
+      blue: "#076678"
+      magenta: "#8f3f71"
+      cyan: "#427b58"
+      white: "#3c3836"
+  gruvbox_dark:
+    primary:
+      # hard contrast background - '#1d2021'
+      background: &gruvbox_dark_bg "#282828"
+      # soft contrast background - '#32302f'
+      foreground: "#ebdbb2"
+      bright_foreground: "#fbf1c7"
+      dim_foreground: "#a89984"
+    cursor:
+      text: CellBackground
+      cursor: CellForeground
+    vi_mode_cursor:
+      text: CellBackground
+      cursor: CellForeground
+    # search:
+    #   matches:
+    #     foreground: '#000000'
+    #     background: '#ffffff'
+    #   focused_match:
+    #    foreground: CellBackground
+    #    background: CellForeground
+    #   bar:
+    #     background: ''
+    #     foreground: ''
+    # line_indicator:
+    #   foreground: None
+    #   background: None
+    selection:
+      text: CellBackground
+      background: CellForeground
+    bright:
+      black: "#928374"
+      red: "#fb4934"
+      green: "#b8bb26"
+      yellow: "#fabd2f"
+      blue: "#83a598"
+      magenta: "#d3869b"
+      cyan: "#8ec07c"
+      white: "#ebdbb2"
+    normal:
+      black: *gruvbox_dark_bg
+      red: "#cc241d"
+      green: "#98971a"
+      yellow: "#d79921"
+      blue: "#458588"
+      magenta: "#b16286"
+      cyan: "#689d6a"
+      white: "#a89984"
+    dim:
+      black: "#32302f"
+      red: "#9d0006"
+      green: "#79740e"
+      yellow: "#b57614"
+      blue: "#076678"
+      magenta: "#8f3f71"
+      cyan: "#427b58"
+      white: "#928374"
+    # indexed_colors: []
+
+  catppuccin-frappe:
+    &frappe # https://github.com/catppuccin/alacritty/blob/main/catppuccin-frappe.yml
+    primary:
+      background: "#303446" # base
+      foreground: "#C6D0F5" # text
+      # Bright and dim foreground colors
+      dim_foreground: "#C6D0F5" # text
+      bright_foreground: "#C6D0F5" # text
+
+    # Cursor colors
+    cursor:
+      text: "#303446" # base
+      cursor: "#F2D5CF" # rosewater
+    vi_mode_cursor:
+      text: "#303446" # base
+      cursor: "#BABBF1" # lavender
+
+    # Search colors
+    search:
+      matches:
+        foreground: "#303446" # base
+        background: "#A5ADCE" # subtext0
+      focused_match:
+        foreground: "#303446" # base
+        background: "#A6D189" # green
+      footer_bar:
+        foreground: "#303446" # base
+        background: "#A5ADCE" # subtext0
+
+    # Keyboard regex hints
+    hints:
+      start:
+        foreground: "#303446" # base
+        background: "#E5C890" # yellow
+      end:
+        foreground: "#303446" # base
+        background: "#A5ADCE" # subtext0
+
+    # Selection colors
+    selection:
+      text: "#303446" # base
+      background: "#F2D5CF" # rosewater
+
+    # Normal colors
+    normal:
+      black: "#51576D" # surface1
+      red: "#E78284" # red
+      green: "#A6D189" # green
+      yellow: "#E5C890" # yellow
+      blue: "#8CAAEE" # blue
+      magenta: "#F4B8E4" # pink
+      cyan: "#81C8BE" # teal
+      white: "#B5BFE2" # subtext1
+
+    # Bright colors
+    bright:
+      black: "#626880" # surface2
+      red: "#E78284" # red
+      green: "#A6D189" # green
+      yellow: "#E5C890" # yellow
+      blue: "#8CAAEE" # blue
+      magenta: "#F4B8E4" # pink
+      cyan: "#81C8BE" # teal
+      white: "#A5ADCE" # subtext0
+
+    # Dim colors
+    dim:
+      black: "#51576D" # surface1
+      red: "#E78284" # red
+      green: "#A6D189" # green
+      yellow: "#E5C890" # yellow
+      blue: "#8CAAEE" # blue
+      magenta: "#F4B8E4" # pink
+      cyan: "#81C8BE" # teal
+      white: "#B5BFE2" # subtext1
+
+    indexed_colors:
+      - { index: 16, color: "#EF9F76" }
+      - { index: 17, color: "#F2D5CF" }
+
+  catppuccin-latte: &latte
+    # https://github.com/catppuccin/alacritty/blob/main/catppuccin-latte.yml
+    # Default colors
+    primary:
+      background: "#EFF1F5" # base
+      foreground: "#4C4F69" # text
+      # Bright and dim foreground colors
+      dim_foreground: "#4C4F69" # text
+      bright_foreground: "#4C4F69" # text
+
+    # Cursor colors
+    cursor:
+      text: "#EFF1F5" # base
+      cursor: "#DC8A78" # rosewater
+    vi_mode_cursor:
+      text: "#EFF1F5" # base
+      cursor: "#7287FD" # lavender
+
+    # Search colors
+    search:
+      matches:
+        foreground: "#EFF1F5" # base
+        background: "#6C6F85" # subtext0
+      focused_match:
+        foreground: "#EFF1F5" # base
+        background: "#40A02B" # green
+      footer_bar:
+        foreground: "#EFF1F5" # base
+        background: "#6C6F85" # subtext0
+
+    # Keyboard regex hints
+    hints:
+      start:
+        foreground: "#EFF1F5" # base
+        background: "#DF8E1D" # yellow
+      end:
+        foreground: "#EFF1F5" # base
+        background: "#6C6F85" # subtext0
+
+    # Selection colors
+    selection:
+      text: "#EFF1F5" # base
+      background: "#DC8A78" # rosewater
+
+    # Normal colors
+    normal:
+      black: "#5C5F77" # subtext1
+      red: "#D20F39" # red
+      green: "#40A02B" # green
+      yellow: "#DF8E1D" # yellow
+      blue: "#1E66F5" # blue
+      magenta: "#EA76CB" # pink
+      cyan: "#179299" # teal
+      white: "#ACB0BE" # surface2
+
+    # Bright colors
+    bright:
+      black: "#6C6F85" # subtext0
+      red: "#D20F39" # red
+      green: "#40A02B" # green
+      yellow: "#DF8E1D" # yellow
+      blue: "#1E66F5" # blue
+      magenta: "#EA76CB" # pink
+      cyan: "#179299" # teal
+      white: "#BCC0CC" # surface1
+
+    # Dim colors
+    dim:
+      black: "#5C5F77" # subtext1
+      red: "#D20F39" # red
+      green: "#40A02B" # green
+      yellow: "#DF8E1D" # yellow
+      blue: "#1E66F5" # blue
+      magenta: "#EA76CB" # pink
+      cyan: "#179299" # teal
+      white: "#ACB0BE" # surface2
+
+    indexed_colors:
+      - { index: 16, color: "#FE640B" }
+      - { index: 17, color: "#DC8A78" }
+
+  catppuccin-macchiato: &macchiato
+    # https://github.com/catppuccin/alacritty/blob/main/catppuccin-macchiato.yml
+    # Default colors
+    primary:
+      background: "#24273A" # base
+      foreground: "#CAD3F5" # text
+      # Bright and dim foreground colors
+      dim_foreground: "#CAD3F5" # text
+      bright_foreground: "#CAD3F5" # text
+
+    # Cursor colors
+    cursor:
+      text: "#24273A" # base
+      cursor: "#F4DBD6" # rosewater
+    vi_mode_cursor:
+      text: "#24273A" # base
+      cursor: "#B7BDF8" # lavender
+
+    # Search colors
+    search:
+      matches:
+        foreground: "#24273A" # base
+        background: "#A5ADCB" # subtext0
+      focused_match:
+        foreground: "#24273A" # base
+        background: "#A6DA95" # green
+      footer_bar:
+        foreground: "#24273A" # base
+        background: "#A5ADCB" # subtext0
+
+    # Keyboard regex hints
+    hints:
+      start:
+        foreground: "#24273A" # base
+        background: "#EED49F" # yellow
+      end:
+        foreground: "#24273A" # base
+        background: "#A5ADCB" # subtext0
+
+    # Selection colors
+    selection:
+      text: "#24273A" # base
+      background: "#F4DBD6" # rosewater
+
+    # Normal colors
+    normal:
+      black: "#494D64" # surface1
+      red: "#ED8796" # red
+      green: "#A6DA95" # green
+      yellow: "#EED49F" # yellow
+      blue: "#8AADF4" # blue
+      magenta: "#F5BDE6" # pink
+      cyan: "#8BD5CA" # teal
+      white: "#B8C0E0" # subtext1
+
+    # Bright colors
+    bright:
+      black: "#5B6078" # surface2
+      red: "#ED8796" # red
+      green: "#A6DA95" # green
+      yellow: "#EED49F" # yellow
+      blue: "#8AADF4" # blue
+      magenta: "#F5BDE6" # pink
+      cyan: "#8BD5CA" # teal
+      white: "#A5ADCB" # subtext0
+
+    # Dim colors
+    dim:
+      black: "#494D64" # surface1
+      red: "#ED8796" # red
+      green: "#A6DA95" # green
+      yellow: "#EED49F" # yellow
+      blue: "#8AADF4" # blue
+      magenta: "#F5BDE6" # pink
+      cyan: "#8BD5CA" # teal
+      white: "#B8C0E0" # subtext1
+
+    indexed_colors:
+      - { index: 16, color: "#F5A97F" }
+      - { index: 17, color: "#F4DBD6" }
+
+  catppuccin-mocha:
+    &mocha # https://github.com/catppuccin/alacritty/blob/main/catppuccin-mocha.yml
+    primary:
+      background: "#1E1E2E" # base
+      foreground: "#CDD6F4" # text
+      # Bright and dim foreground colors
+      dim_foreground: "#CDD6F4" # text
+      bright_foreground: "#CDD6F4" # text
+
+    # Cursor colors
+    cursor:
+      text: "#1E1E2E" # base
+      cursor: "#F5E0DC" # rosewater
+    vi_mode_cursor:
+      text: "#1E1E2E" # base
+      cursor: "#B4BEFE" # lavender
+
+    # Search colors
+    search:
+      matches:
+        foreground: "#1E1E2E" # base
+        background: "#A6ADC8" # subtext0
+      focused_match:
+        foreground: "#1E1E2E" # base
+        background: "#A6E3A1" # green
+      footer_bar:
+        foreground: "#1E1E2E" # base
+        background: "#A6ADC8" # subtext0
+
+    # Keyboard regex hints
+    hints:
+      start:
+        foreground: "#1E1E2E" # base
+        background: "#F9E2AF" # yellow
+      end:
+        foreground: "#1E1E2E" # base
+        background: "#A6ADC8" # subtext0
+
+    # Selection colors
+    selection:
+      text: "#1E1E2E" # base
+      background: "#F5E0DC" # rosewater
+
+    # Normal colors
+    normal:
+      black: "#45475A" # surface1
+      red: "#F38BA8" # red
+      green: "#A6E3A1" # green
+      yellow: "#F9E2AF" # yellow
+      blue: "#89B4FA" # blue
+      magenta: "#F5C2E7" # pink
+      cyan: "#94E2D5" # teal
+      white: "#BAC2DE" # subtext1
+
+    # Bright colors
+    bright:
+      black: "#585B70" # surface2
+      red: "#F38BA8" # red
+      green: "#A6E3A1" # green
+      yellow: "#F9E2AF" # yellow
+      blue: "#89B4FA" # blue
+      magenta: "#F5C2E7" # pink
+      cyan: "#94E2D5" # teal
+      white: "#A6ADC8" # subtext0
+
+    # Dim colors
+    dim:
+      black: "#45475A" # surface1
+      red: "#F38BA8" # red
+      green: "#A6E3A1" # green
+      yellow: "#F9E2AF" # yellow
+      blue: "#89B4FA" # blue
+      magenta: "#F5C2E7" # pink
+      cyan: "#94E2D5" # teal
+      white: "#BAC2DE" # subtext1
+
+    indexed_colors:
+      - { index: 16, color: "#FAB387" }
+      - { index: 17, color: "#F5E0DC" }
+
+colors: *mocha
+
+{{- if (eq .chezmoi.os "darwin") }}
+
+key_bindings:
+  # (Windows, Linux, and BSD only)
+  #- { key: V,              mods: Control|Shift, mode: ~Vi,        action: Paste            }
+  #- { key: C,              mods: Control|Shift,                   action: Copy             }
+  #- { key: F,              mods: Control|Shift, mode: ~Search,    action: SearchForward    }
+  #- { key: B,              mods: Control|Shift, mode: ~Search,    action: SearchBackward   }
+  #- { key: C,              mods: Control|Shift, mode: Vi|~Search, action: ClearSelection   }
+  #- { key: Insert,         mods: Shift,                           action: PasteSelection   }
+  #- { key: Key0,           mods: Control,                         action: ResetFontSize    }
+  #- { key: Equals,         mods: Control,                         action: IncreaseFontSize }
+  #- { key: Plus,           mods: Control,                         action: IncreaseFontSize }
+  #- { key: NumpadAdd,      mods: Control,                         action: IncreaseFontSize }
+  #- { key: Minus,          mods: Control,                         action: DecreaseFontSize }
+  #- { key: NumpadSubtract, mods: Control,                         action: DecreaseFontSize }
+
+  # (Windows only)
+  #- { key: Return,   mods: Alt,           action: ToggleFullscreen }
+
+  # (macOS only)
+  - { key: K, mods: Command, mode: ~Vi|~Search, chars: "\x0c" }
+  - { key: K, mods: Command, mode: ~Vi|~Search, action: ClearHistory }
+  - { key: Key0, mods: Command, action: ResetFontSize }
+  - { key: Equals, mods: Command, action: IncreaseFontSize }
+  - { key: Plus, mods: Command, action: IncreaseFontSize }
+  - { key: NumpadAdd, mods: Command, action: IncreaseFontSize }
+  - { key: Minus, mods: Command, action: DecreaseFontSize }
+  - { key: NumpadSubtract, mods: Command, action: DecreaseFontSize }
+  - { key: V, mods: Command, action: Paste }
+  - { key: C, mods: Command, action: Copy }
+  - { key: C, mods: Command, mode: Vi|~Search, action: ClearSelection }
+  - { key: H, mods: Command, action: Hide }
+  - { key: H, mods: Command|Alt, action: HideOtherApplications }
+  - { key: M, mods: Command, action: Minimize }
+  - { key: Q, mods: Command, action: Quit }
+  - { key: W, mods: Command, action: Quit }
+  - { key: N, mods: Command, action: SpawnNewInstance }
+  - { key: F, mods: Command|Control, action: ToggleFullscreen }
+  - { key: F, mods: Command, mode: ~Search, action: SearchForward }
+  - { key: B, mods: Command, mode: ~Search, action: SearchBackward }
+
+  # https://github.com/jwilm/alacritty/issues/93#issuecomment-334790547
+  - { key: F, mods: Alt, chars: "\x1bf" }
+  - { key: B, mods: Alt, chars: "\x1bb" }
+  # https://github.com/jwilm/alacritty/issues/93#issuecomment-427592040
+  - { key: D, mods: Alt, chars: "\x1bd" }
+{{- end }}

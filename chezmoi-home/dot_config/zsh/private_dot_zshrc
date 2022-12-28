@@ -158,7 +158,7 @@ unsetopt nocheckjobs            # Don't warn about running processes when exitin
   setopt share_history          # share command history data
   setopt rcexpandparam          # Array expension with parameters
 
-HISTFILE=~/.zsh_history
+HISTFILE="${XDG_STATE_HOME}/zsh_history"
 HISTSIZE=100000
 SAVEHIST=100000
 WORDCHARS=${WORDCHARS//\/[&.;]} # Don't consider certain characters part of the word
@@ -255,7 +255,5 @@ alias yes="echo no"
 alias xo="xdg-open"
 
 export PATH="$PATH:$HOME/.emacs.d/bin"  # doom/spacemacs utilities
-
-source $HOME/.config/broot/launcher/bash/br
 
 source "${XDG_CONFIG_HOME:-$HOME/.config}/asdf-direnv/zshrc"

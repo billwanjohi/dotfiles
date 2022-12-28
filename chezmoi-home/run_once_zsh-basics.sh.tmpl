@@ -13,7 +13,6 @@ then
 fi
 
 brew install \
-    broot \
     direnv \
     fzf \
     git-delta \
@@ -24,11 +23,8 @@ brew install \
 {{- end }}
     zoxide
 
-broot --install
-
 {{ else -}}
 yay --sync --needed \
-    broot \
     direnv \
     fzf \
     git-delta \
@@ -41,5 +37,8 @@ yay --sync --needed \
 
 {{ end -}}
 
-asdf plugin-add direnv
+if ! [ "$(asdf plugin-list | grep -x direnv)" ]
+then
+  asdf plugin-add direnv
+fi
 asdf direnv setup --shell zsh --version latest

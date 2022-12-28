@@ -4,9 +4,10 @@ set -Eeuxo pipefail
 
 # TODO need to confirm this always runs after run_once scripts
 
-zinit update --all
-doom upgrade
-git -C ~/.SpaceVim pull
+zsh -ic 'zimfw upgrade'
+zsh -ic 'zimfw update'
+
+# doom upgrade
 {{- if has "ruby" .enabled }}
 ## too much unnecessary stuff for now
 # gem update

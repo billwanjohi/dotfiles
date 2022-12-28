@@ -22,10 +22,11 @@ export XDG_RUNTIME_DIR=$HOME/.xdg
 export XDG_STATE_HOME=$HOME/.local/state
 
 
-## https://github.com/aws/aws-sdk/issues/30#issuecomment-1258050076
-# AWS_CONFIG_FILE=$XDG_CONFIG_HOME/aws/config
-# AWS_SHARED_CREDENTIALS_FILE=$XDG_CONFIG_HOME/aws/credentials
+# https://github.com/aws/aws-sdk/issues/30#issuecomment-1258050076
+AWS_CONFIG_FILE=$XDG_CONFIG_HOME/aws/config
+AWS_SHARED_CREDENTIALS_FILE=$XDG_CONFIG_HOME/aws/credentials
 
+ANDROID_HOME="${XDG_DATA_HOME}/android"
 ASDF_DATA_DIR=$XDG_DATA_HOME/asdf
 DOCKER_CONFIG="$XDG_CONFIG_HOME"/docker
 EDITOR=nvim
@@ -38,6 +39,7 @@ PGSERVICEFILE="$XDG_CONFIG_HOME/pg/pg_service.conf"
 PSQLRC="$XDG_CONFIG_HOME/pg/psqlrc"
 PSQL_HISTORY="$XDG_STATE_HOME/psql_history"
 RIPGREP_CONFIG_PATH=$XDG_CONFIG_HOME/ripgreprc
+SHELL_SESSIONS_DISABLE=1
 TERMINAL=alacritty
 TZ=UTC
 VAGRANT_ALIAS_FILE="$XDG_DATA_HOME"/vagrant/aliases
