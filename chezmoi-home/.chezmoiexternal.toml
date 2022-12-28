@@ -2,8 +2,9 @@
     type = "git-repo"
     url = "https://github.com/catppuccin/alacritty.git"
     refreshPeriod = "168h"
-    # include = "catppuccin*.yml"
+    include = ["catppuccin*.yml"]
 
+# Unable to do this automatically _and_ edit files within
 # [".config/nvim"]
 #     type = "git-repo"
 #     url = "https://github.com/NvChad/NvChad.git"
