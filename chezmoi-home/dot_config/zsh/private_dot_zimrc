@@ -13,7 +13,6 @@ zmodule archive
 # # this would be ideal, but doesn't play nicely with asdf-direnv
 # export ASDF_DATA_DIR=$XDG_DATA_HOME/asdf
 # export ASDF_DIR=$XDG_DATA_HOME/asdf
-zmodule direnv/direnv
 zmodule asdf
 
 zmodule environment # Sets sane Zsh built-in environment options.
