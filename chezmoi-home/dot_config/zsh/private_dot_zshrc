@@ -1,3 +1,123 @@
+# Start configuration added by Zim install {{{
+#
+# User configuration sourced by interactive shells
+#
+
+# -----------------
+# Zsh configuration
+# -----------------
+
+#
+# Input/output
+#
+
+# Set editor default keymap to emacs (`-e`) or vi (`-v`)
+bindkey -e
+
+# Prompt for spelling correction of commands.
+#setopt CORRECT
+
+# Customize spelling correction prompt.
+#SPROMPT='zsh: correct %F{red}%R%f to %F{green}%r%f [nyae]? '
+
+# -----------------
+# Zim configuration
+# -----------------
+
+# Use degit instead of git as the default tool to install and update modules.
+zstyle ':zim:zmodule' use 'degit'
+
+# --------------------
+# Module configuration
+# --------------------
+
+#
+# git
+#
+
+# Set a custom prefix for the generated aliases. The default prefix is 'G'.
+#zstyle ':zim:git' aliases-prefix 'g'
+
+#
+# input
+#
+
+# Append `../` to your input for each `.` you type after an initial `..`
+#zstyle ':zim:input' double-dot-expand yes
+
+#
+# termtitle
+#
+
+# Set a custom terminal title format using prompt expansion escape sequences.
+# See http://zsh.sourceforge.net/Doc/Release/Prompt-Expansion.html#Simple-Prompt-Escapes
+# If none is provided, the default '%n@%m: %~' is used.
+#zstyle ':zim:termtitle' format '%1~'
+
+#
+# zsh-autosuggestions
+#
+
+# Disable automatic widget re-binding on each precmd. This can be set when
+# zsh-users/zsh-autosuggestions is the last module in your ~/.zimrc.
+ZSH_AUTOSUGGEST_MANUAL_REBIND=1
+
+# Customize the style that the suggestions are shown with.
+# See https://github.com/zsh-users/zsh-autosuggestions/blob/master/README.md#suggestion-highlight-style
+#ZSH_AUTOSUGGEST_HIGHLIGHT_STYLE='fg=242'
+
+#
+# zsh-syntax-highlighting
+#
+
+# Set what highlighters will be used.
+# See https://github.com/zsh-users/zsh-syntax-highlighting/blob/master/docs/highlighters.md
+ZSH_HIGHLIGHT_HIGHLIGHTERS=(main brackets)
+
+# Customize the main highlighter styles.
+# See https://github.com/zsh-users/zsh-syntax-highlighting/blob/master/docs/highlighters/main.md#how-to-tweak-it
+#typeset -A ZSH_HIGHLIGHT_STYLES
+#ZSH_HIGHLIGHT_STYLES[comment]='fg=242'
+
+# ------------------
+# Initialize modules
+# ------------------
+
+ZIM_HOME=${XDG_CACHE_HOME}/zim
+# Download zimfw plugin manager if missing.
+if [[ ! -e ${ZIM_HOME}/zimfw.zsh ]]; then
+  if (( ${+commands[curl]} )); then
+    curl -fsSL --create-dirs -o ${ZIM_HOME}/zimfw.zsh \
+        https://github.com/zimfw/zimfw/releases/latest/download/zimfw.zsh
+  else
+    mkdir -p ${ZIM_HOME} && wget -nv -O ${ZIM_HOME}/zimfw.zsh \
+        https://github.com/zimfw/zimfw/releases/latest/download/zimfw.zsh
+  fi
+fi
+# Install missing modules, and update ${ZIM_HOME}/init.zsh if missing or outdated.
+if [[ ! ${ZIM_HOME}/init.zsh -nt ${ZDOTDIR:-${HOME}}/.zimrc ]]; then
+  source ${ZIM_HOME}/zimfw.zsh init -q
+fi
+# Initialize modules.
+source ${ZIM_HOME}/init.zsh
+
+# ------------------------------
+# Post-init module configuration
+# ------------------------------
+
+#
+# zsh-history-substring-search
+#
+
+zmodload -F zsh/terminfo +p:terminfo
+# Bind ^[[A/^[[B manually so up/down works both before and after zle-line-init
+for key ('^[[A' '^P' ${terminfo[kcuu1]}) bindkey ${key} history-substring-search-up
+for key ('^[[B' '^N' ${terminfo[kcud1]}) bindkey ${key} history-substring-search-down
+for key ('k') bindkey -M vicmd ${key} history-substring-search-up
+for key ('j') bindkey -M vicmd ${key} history-substring-search-down
+unset key
+# }}} End configuration added by Zim install
+
 # In which zsh file should I put X?
 # https://unix.stackexchange.com/a/71258/32186
 
@@ -38,14 +158,6 @@ unsetopt nocheckjobs            # Don't warn about running processes when exitin
   setopt share_history          # share command history data
   setopt rcexpandparam          # Array expension with parameters
 
-zstyle ':completion:*' matcher-list 'm:{a-zA-Z}={A-Za-z}' # Case insensitive tab completion
-zstyle ':completion:*' list-colors "${(s.:.)LS_COLORS}"   # Colored completion (different colors for dirs/files/etc)
-zstyle ':completion:*' rehash true                        # automatically find new executables in path
-# Speed up completions
-zstyle ':completion:*' accept-exact '*(N)'
-zstyle ':completion:*' use-cache on
-zstyle ':completion:*' cache-path ~/.zsh/cache
-
 HISTFILE=~/.zsh_history
 HISTSIZE=100000
 SAVEHIST=100000
@@ -85,108 +197,22 @@ bindkey '^[[Z' undo                                             # Shift+tab undo
 # Before plugin load
 ####################
 
-## Specify XDG Base Directories
-# https://specifications.freedesktop.org/basedir-spec/basedir-spec-0.7.html
-# These are all default values, and so technically redundant,
-# but setting them might coerce an app that only has optional support
-# to recognize that this user very much wants it.
-
-export XDG_CACHE_HOME=$HOME/.cache
-#export XDG_CONFIG_DIRS=/etc/xdg
-export XDG_CONFIG_HOME=$HOME/.config
-#export XDG_DATA_DIRS=/usr/local/share/:/usr/share/
-export XDG_DATA_HOME=$HOME/.local/share
-export XDG_DESKTOP_DIR=$HOME/Desktop
-export XDG_DOCUMENTS_DIR=$HOME/Documents
-export XDG_DOWNLOAD_DIR=$HOME/Downloads
-export XDG_MUSIC_DIR=$HOME/Music
-export XDG_PICTURES_DIR=$HOME/Pictures
-export XDG_PUBLICSHARE_DIR=$HOME/Public
-export XDG_RUNTIME_DIR=$HOME/.xdg
-
-### Added by Zinit's installer
-if [[ ! -f $HOME/.local/share/zinit/zinit.git/zinit.zsh ]]; then
-    print -P "%F{33} %F{220}Installing %F{33}ZDHARMA-CONTINUUM%F{220} Initiative Plugin Manager (%F{33}zdharma-continuum/zinit%F{220})…%f"
-    command mkdir -p "$HOME/.local/share/zinit" && command chmod g-rwX "$HOME/.local/share/zinit"
-    command git clone https://github.com/zdharma-continuum/zinit "$HOME/.local/share/zinit/zinit.git" && \
-        print -P "%F{33} %F{34}Installation successful.%f%b" || \
-        print -P "%F{160} The clone has failed.%f%b"
-fi
-
-source "$HOME/.local/share/zinit/zinit.git/zinit.zsh"
-# https://stackoverflow.com/a/10860628/684619
-# Bash-like navigation
-autoload -Uz _zinit
-(( ${+_comps} )) && _comps[zinit]=_zinit
-
-# Load a few important annexes, without Turbo
-# (this is currently required for annexes)
-zinit light-mode for \
-    zdharma-continuum/zinit-annex-as-monitor \
-    zdharma-continuum/zinit-annex-bin-gem-node \
-    zdharma-continuum/zinit-annex-patch-dl \
-    zdharma-continuum/zinit-annex-rust
-
-### End of Zinit's installer chunk
-
 # https://stackoverflow.com/a/10860628/684619
 # Bash-like navigation
 autoload -U select-word-style
 select-word-style bash
 
-# https://github.com/zdharma-continuum/zinit/blame/c3d1bb586c77a98566c552358fd9aee084e30da8/README.md#L210-L214
-# Load starship theme
-zinit ice as"command" from"gh-r" \
-          atclone"./starship init zsh > init.zsh; ./starship completions zsh > _starship" \
-          atpull"%atclone" src"init.zsh"
-zinit light starship/starship
-
-# zinit light Aloxaf/fzf-tab
-
-zinit load "asdf-vm/asdf"
-
-zinit ice from"gh-r" as"program"
-zinit load "docker/compose"
-
-# http://zdharma.github.io/zinit/wiki/Example-Oh-My-Zsh-setup/
-zinit wait lucid for \
-    OMZP::git \
-    OMZP::kubectl \
-    OMZP::zoxide
-
-# Neither of these work, have to use the fast option
-
-# # https://zdharma-continuum.github.io/zinit/wiki/GALLERY/#__code_1
-zinit ice from"gh-r" as"program" mv"direnv* -> direnv"
-zinit light direnv/direnv
-
-# zinit as"program" make'!' atclone'./direnv hook zsh > zhook.zsh' \
-#     atpull'%atclone' pick"direnv" src"zhook.zsh" for \
-#     direnv/direnv
-
-eval "$(direnv hook zsh)"
-
-# zinit wait lucid \
-#     atinit"
-#         zstyle ':zshzoo:plugins:xdg-basedirs:*' apps \
-#             'docker' \
-#             'gnupg' \
-#             'less' \
-#             'tmux' \
-#             'readline'
-#     " \
-#     atload"export RIPGREP_CONFIG_PATH=$XDG_CONFIG_HOME/ripgreprc" blockf for \
-#     zshzoo/xdg-basedirs
-
-# (should be last)
-# https://github.com/zdharma-continuum/fast-syntax-highlighting#zinit
-zinit wait lucid for \
- atinit"ZINIT[COMPINIT_OPTS]=-C; zicompinit; zicdreplay" \
-    zdharma-continuum/fast-syntax-highlighting \
- blockf \
-    zsh-users/zsh-completions \
- atload"!_zsh_autosuggest_start" \
-    zsh-users/zsh-autosuggestions
+# # zinit wait lucid \
+# #     atinit"
+# #         zstyle ':zshzoo:plugins:xdg-basedirs:*' apps \
+# #             'docker' \
+# #             'gnupg' \
+# #             'less' \
+# #             'tmux' \
+# #             'readline'
+# #     " \
+# #     atload"export RIPGREP_CONFIG_PATH=$XDG_CONFIG_HOME/ripgreprc" blockf for \
+# #     zshzoo/xdg-basedirs
 
 ###### User configuration
 
@@ -204,15 +230,16 @@ alias cm="chezmoi"
 alias cp="cp -i"  # Confirm before overwriting something
 alias df="df -h"
 alias findalias="alias | ag"
-alias gcolt='git checkout $(git tag | ${gnu_prefix}sort -V | tail -1)'
+alias gcolt='git switch $(git tag | ${gnu_prefix}sort -V | tail -1)'
 alias glfod="git ls-files --others --directory"
 alias gitroot="git rev-parse --show-toplevel"
-alias gdls='git checkout -q $(git_main_branch) && git for-each-ref refs/heads/ "--format=%(refname:short)" | while read branch; do mergeBase=$(git merge-base $(git_main_branch) $branch) && [[ $(git cherry $(git_main_branch) $(git commit-tree $(git rev-parse $branch\^{tree}) -p $mergeBase -m _)) == "-"* ]] && git branch -D $branch; done'
+alias gdls='git switch -q $(git_main_branch) && git for-each-ref refs/heads/ "--format=%(refname:short)" | while read branch; do mergeBase=$(git merge-base $(git_main_branch) $branch) && [[ $(git cherry $(git_main_branch) $(git commit-tree $(git rev-parse $branch\^{tree}) -p $mergeBase -m _)) == "-"* ]] && git branch -D $branch; done'
 alias gpfwl="git push --force-with-lease"
 alias grbfom='git fetch && git rebase --autostash -i $(git merge-base origin/$(git_main_branch) HEAD)'
 alias gs="echo 'did you mean gss?'"
 alias ls="lsd"
 alias lsa="ls -alh"
+alias lsat="ls -alh --tree"
 alias lss="ls -A"
 alias lt="lsd --tree"
 alias less="less --quit-if-one-screen --no-init"
@@ -227,23 +254,8 @@ alias vim="echo 'did you mean nvim?'"
 alias yes="echo no"
 alias xo="xdg-open"
 
-export EDITOR=nvim
-export LANG=en_US.UTF-8
-export LESS="--ignore-case --RAW-CONTROL-CHARS"
-export FZF_DEFAULT_COMMAND='fd --type f'
-export RIPGREP_CONFIG_PATH=$XDG_CONFIG_HOME/ripgreprc
-export TZ=UTC
-export VISUAL=nvim
-
-[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
-
 export PATH="$PATH:$HOME/.emacs.d/bin"  # doom/spacemacs utilities
 
 source $HOME/.config/broot/launcher/bash/br
 
-{{- if has "nvm" .enabled }}
-
-export NVM_DIR="$HOME/.nvm"
-[ -s "/usr/local/opt/nvm/nvm.sh" ] && \. "/usr/local/opt/nvm/nvm.sh"  # This loads nvm
-[ -s "/usr/local/opt/nvm/etc/bash_completion.d/nvm" ] && \. "/usr/local/opt/nvm/etc/bash_completion.d/nvm"  # This loads nvm bash_completion
-{{- end }}
+source "${XDG_CONFIG_HOME:-$HOME/.config}/asdf-direnv/zshrc"

@@ -1,0 +1,81 @@
+# Start configuration added by Zim install {{{
+#
+# This is not sourced during shell startup, and it's only used to configure the
+# zimfw plugin manager.
+#
+
+#
+# Modules (https://zimfw.sh/docs/modules/)
+#
+
+zmodule archive
+
+# # this would be ideal, but doesn't play nicely with asdf-direnv
+# export ASDF_DATA_DIR=$XDG_DATA_HOME/asdf
+# export ASDF_DIR=$XDG_DATA_HOME/asdf
+zmodule direnv/direnv
+zmodule asdf
+
+zmodule environment # Sets sane Zsh built-in environment options.
+zmodule fzf
+# zmodule git
+zmodule homebrew
+zmodule input # Applies correct bindkeys for input events.
+zmodule joke/zim-chezmoi
+zmodule kiesman99/zim-zoxide
+# zmodule macunha1/zsh-terraform --source terraform.zsh  # doesn't work
+zmodule ruby
+zmodule ssh
+zmodule termtitle # Sets a custom terminal title.
+zmodule utility # Utility aliases and functions. Adds colour to ls, grep and less.
+
+
+#
+# Prompt
+#
+
+zmodule joke/zim-starship
+
+# TODO? move back to spaceship to get async rendering
+# https://spaceship-prompt.sh/config/prompt/
+# zmodule spaceship-prompt/spaceship-prompt --name spaceship --no-submodules
+
+zmodule ${XDG_CONFIG_HOME}/zsh/modules/work
+
+################
+# Completion
+# https://github.com/zimfw/completion/blob/master/README.md#settings
+
+# this is only working sporadically for me so far
+zstyle ':zim:completion' dumpfile ${XDG_CACHE_HOME}/zsh/zcompdump
+
+# Additional completion definitions for Zsh.
+zmodule zsh-users/zsh-completions --fpath src
+
+# Enables and configures smart and extensive tab completion.
+# completion must be sourced after all modules that add completion definitions.
+zmodule completion
+
+# needs compdef
+# specifically unaliasing `checkout` commands in favor of restore and switch
+zmodule ohmyzsh/ohmyzsh \
+        --use degit \
+        --fpath plugins/git \
+        --source plugins/git/git.plugin.zsh \
+        --cmd 'unalias gcb gcd gcm gco gcor' \
+        ;
+
+#
+# Modules that must be initialized last
+#
+
+# Fish-like syntax highlighting for Zsh.
+# zsh-users/zsh-syntax-highlighting must be sourced after completion
+zmodule zsh-users/zsh-syntax-highlighting
+# Fish-like history search (up arrow) for Zsh.
+# zsh-users/zsh-history-substring-search must be sourced after zsh-users/zsh-syntax-highlighting
+zmodule zsh-users/zsh-history-substring-search
+# Fish-like autosuggestions for Zsh.
+zmodule zsh-users/zsh-autosuggestions
+# }}} End configuration added by Zim install
+

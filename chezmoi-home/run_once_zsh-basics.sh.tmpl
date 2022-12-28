@@ -41,4 +41,5 @@ yay --sync --needed \
 
 {{ end -}}
 
-sh -c "$(curl -fsSL https://git.io/zinit-install)"
+asdf plugin-add direnv
+asdf direnv setup --shell zsh --version latest
