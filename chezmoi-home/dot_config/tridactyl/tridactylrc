@@ -131,9 +131,6 @@ set searchurls.julia https://www.google.com/search?q=site:http://docs.julialang.
 " " set auconcreatecontainer true
 " " autocontain facebook\.com facebook
 
-" For syntax highlighting see https://github.com/tridactyl/vim-tridactyl
-" vim: set filetype=tridactyl
-
 " Custom
 
 blacklistadd mail.google.com/mail
@@ -141,3 +138,7 @@ set searchurls.aur https://aur.archlinux.org/packages?O=0&K=%s
 set searchurls.bgg https://boardgamegeek.com/geeksearch.php?action=search&q=%s&objecttype=boardgame
 set searchurls.ccc https://camelcamelcamel.com/search?sq=%s
 unbind <C-f>
+
+" For syntax highlighting see https://github.com/tridactyl/vim-tridactyl
+" Must be last line:
+" vim: set filetype=tridactyl

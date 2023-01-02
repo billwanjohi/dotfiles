@@ -1,11 +1,35 @@
+[".cache/catppuccin-rofi"]
+    type = "git-repo"
+    url = "https://github.com/catppuccin/rofi"
+    refreshPeriod = "168h"
+
 [".config/alacritty/colors"]
     type = "git-repo"
     url = "https://github.com/catppuccin/alacritty.git"
     refreshPeriod = "168h"
     include = ["catppuccin*.yml"]
 
+[".config/doom/themes"]
+    type = "git-repo"
+    url = "https://github.com/catppuccin/emacs.git"
+    refreshPeriod = "168h"
+    include = ["*/*-theme.el"]
+
+[".config/i3/catppuccin"]
+    type = "git-repo"
+    url = "https://github.com/catppuccin/i3.git"
+    refreshPeriod = "1s"
+    include = ["*/themes/*"]
+    stripComponents = 1
+
 # Unable to do this automatically _and_ edit files within
 # [".config/nvim"]
 #     type = "git-repo"
 #     url = "https://github.com/NvChad/NvChad.git"
 #     refreshPeriod = "168h"
+
+[".config/qt5ct/colors"]
+    type = "git-repo"
+    url = "https://github.com/catppuccin/qt5ct.git"
+    refreshPeriod = "168h"
+
