@@ -37,7 +37,7 @@ key_bindings:
   - { key: Minus,          mods: Control,                         action: DecreaseFontSize }
   - { key: NumpadSubtract, mods: Control,                         action: DecreaseFontSize }
 {{- if (eq .chezmoi.os "windows") }}
-   (Windows only)
+  # (Windows only)
   - { key: Return,   mods: Alt,           action: ToggleFullscreen }
 {{- end }}
 {{- else }}

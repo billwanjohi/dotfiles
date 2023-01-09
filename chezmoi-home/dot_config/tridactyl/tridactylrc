@@ -139,6 +139,11 @@ set searchurls.bgg https://boardgamegeek.com/geeksearch.php?action=search&q=%s&o
 set searchurls.ccc https://camelcamelcamel.com/search?sq=%s
 unbind <C-f>
 
+" unintentionally supplying anything I have in my clipboard to my default search engine
+" is both a pain in the ass and a security risk
+unbind p
+unbind P
+
 " For syntax highlighting see https://github.com/tridactyl/vim-tridactyl
 " Must be last line:
 " vim: set filetype=tridactyl
