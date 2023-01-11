@@ -77,6 +77,9 @@ bindsym $mod+d exec --no-startup-id rofi -show drun
 # start window picker
 bindsym $mod+g exec --no-startup-id rofi -show window
 
+# start rofi-calc
+bindsym $mod+c exec --no-startup-id rofi -show calc -modi calc -no-show-match -no-sort -calc-command "echo -n '{result}' | xsel -ib"
+
 # start unicode (emoji) picker
 bindsym $mod+Shift+u exec --no-startup-id unipicker --command "rofi -dmenu" --copy
 

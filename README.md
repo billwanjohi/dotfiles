@@ -74,3 +74,6 @@ https://support.zoom.us/hc/en-us/articles/115001799006-Mass-deploying-with-preco
 #### TODO
 
 - [ ] attend to brew doctor
+- [ ] keep hacking away at xdg
+  - https://wiki.archlinux.org/title/XDG_Base_Directory#Supported
+  - xdg-ninja
