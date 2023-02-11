@@ -10,16 +10,18 @@ defaults write NSGlobalDomain NSAutomaticPeriodSubstitutionEnabled -bool false
 defaults write NSGlobalDomain NSAutomaticQuoteSubstitutionEnabled -bool false
 defaults write NSGlobalDomain NSAutomaticSpellingCorrectionEnabled -bool false
 defaults write NSGlobalDomain com.apple.swipescrolldirection -bool false
-defaults write ZoomChat ZMEnableShowUserName -bool true
-defaults write ZoomChat ZoomAccessibilityNotAllowAutoHidden -bool true
-defaults write ZoomChat ZoomEnableShow49WallViewKey -int 1
-defaults write ZoomChat ZoomEnterFullscreenWhenDualMonitorSetted -bool false
-defaults write ZoomChat ZoomEnterFullscreenWhenViewShare -int 0
-defaults write ZoomChat ZoomEnterMaxWndWhenViewShare -bool false
-defaults write ZoomChat ZoomShouldShowSharingWithSplitView -bool true
-defaults write us.zoom.xos kZMSettingVBHaveGreenScreen -int 0
-defaults write us.zoom.xos kZMUserDefaultMainWindowCompressed -int 0
-defaults write us.zoom.xos kZMUserDefaultMeetingStartWithVideo -int 0
+
+# editing these seems to backfire every time I do it
+# # defaults write ZoomChat ZMEnableShowUserName -bool true # did the opposite!
+# # defaults write ZoomChat ZoomAccessibilityNotAllowAutoHidden -bool true # did the opposite!
+# defaults write ZoomChat ZoomEnableShow49WallViewKey -int 1
+# defaults write ZoomChat ZoomEnterFullscreenWhenDualMonitorSetted -bool false
+# defaults write ZoomChat ZoomEnterFullscreenWhenViewShare -int 0
+# defaults write ZoomChat ZoomEnterMaxWndWhenViewShare -bool false
+# defaults write ZoomChat ZoomShouldShowSharingWithSplitView -bool true
+# defaults write us.zoom.xos kZMSettingVBHaveGreenScreen -int 0
+# defaults write us.zoom.xos kZMUserDefaultMainWindowCompressed -int 0
+# defaults write us.zoom.xos kZMUserDefaultMeetingStartWithVideo -int 0
 
 # enable ^+[number] shortcuts to switch to corresponding desktop
 for i in {118..125}
@@ -30,5 +32,4 @@ do
 done
 
 sudo launchctl limit maxfiles 2048 unlimited
-
 {{- end }}

@@ -14,8 +14,8 @@
  '(org-agenda-custom-commands
    '(("n" "Agenda and all TODOs"
       ((agenda ""
-               ((org-agenda-skip-function
-                 '(org-agenda-skip-if-scheduled-later))))
+        ((org-agenda-skip-function
+          '(org-agenda-skip-if-scheduled-later))))
        (alltodo "" nil))
       nil)))
  '(org-agenda-files '("~/org" "~/org/roam"))
@@ -54,6 +54,7 @@
  '(org-roam-graph-viewer "/Applications/Firefox.app/Contents/MacOS/firefox")
 {{- end }}
  '(org-scheduled-past-days 4)
+ '(scroll-margin 10)
  '(typescript-indent-level 2)
 {{- if has "todoist" .enabled }}
  '(todoist-backing-buffer "~/org/todoist.org")

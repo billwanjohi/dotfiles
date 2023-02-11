@@ -1,3 +1,4 @@
+{{ if eq .chezmoi.os "linux" -}}
 # i3 config file (v4)
 # Please see http://i3wm.org/docs/userguide.html for a complete reference!
 
@@ -474,3 +475,4 @@ mode "$mode_gaps_outer" {
         bindsym Return mode "default"
         bindsym Escape mode "default"
 }
+{{- end }}

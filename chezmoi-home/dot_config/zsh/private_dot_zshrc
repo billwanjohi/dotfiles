@@ -255,3 +255,4 @@ alias yes="echo no"
 alias xo="xdg-open"
 
 export PATH="$PATH:$HOME/.emacs.d/bin"  # doom/spacemacs utilities
+source "${XDG_CONFIG_HOME:-$HOME/.config}/asdf-direnv/zshrc"
