@@ -49,7 +49,7 @@ zmodule ${XDG_CONFIG_HOME}/zsh/modules/work
 zstyle ':zim:completion' dumpfile ${XDG_CACHE_HOME}/zsh/zcompdump
 
 # Additional completion definitions for Zsh.
-zmodule zsh-users/zsh-completions --fpath src
+zmodule zsh-users/zsh-completions
 
 # Enables and configures smart and extensive tab completion.
 # completion must be sourced after all modules that add completion definitions.

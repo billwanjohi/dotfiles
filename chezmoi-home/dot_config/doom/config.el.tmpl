@@ -78,10 +78,6 @@
 
 {{- if has "javascript" .enabled }}
 
-(add-hook 'js2-mode-hook 'prettier-js-mode)
-(add-hook 'web-mode-hook 'prettier-js-mode)
-(add-hook 'rjsx-mode-hook 'prettier-js-mode)
-
 ;; Overwrite existing scss-stylelint checker to not use --syntax
 ;; https://github.com/flycheck/flycheck/issues/1912
 ;; TODO: use https://github.com/raxod502/el-patch
@@ -99,10 +95,7 @@
 
 {{- if has "python" .enabled }}
 
-(defun python-flycheck-setup ()
-  (flycheck-add-next-checker 'lsp 'python-pylint))
-(add-hook 'python-mode-lsp-hook
-          #'python-flycheck-setup)
+(load! "+flycheck-ruff")
 {{- end }}
 
 ;;; https://emacs.stackexchange.com/a/29838/18070

@@ -9,8 +9,10 @@
 ;; To install SOME-PACKAGE from MELPA, ELPA or emacsmirror:
 ;(package! some-package)
 (package! activity-watch-mode)
+(package! chezmoi)
 (package! graphviz-dot-mode)
 (package! nginx-mode)
+(package! jsonnet-mode)
 (package! ob-mermaid)
 {{- if has "cue" .enabled }}
 (package! cue-mode)
@@ -29,6 +31,15 @@
 {{- if has "todoist" .enabled }}
 (package! todoist)
 {{- end }}
+
+;; https://emacs.stackexchange.com/a/75836/18070
+(package! transient
+      :pin "c2bdf7e12c530eb85476d3aef317eb2941ab9440"
+      :recipe (:host github :repo "magit/transient"))
+
+(package! with-editor
+          :pin "bbc60f68ac190f02da8a100b6fb67cf1c27c53ab"
+          :recipe (:host github :repo "magit/with-editor"))
 
 ;; To install a package directly from a remote git repo, you must specify a
 ;; `:recipe'. You'll find documentation on what `:recipe' accepts here:

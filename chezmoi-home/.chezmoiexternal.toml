@@ -19,9 +19,14 @@
 [".config/i3/catppuccin"]
     type = "git-repo"
     url = "https://github.com/catppuccin/i3.git"
-    refreshPeriod = "1s"
+    refreshPeriod = "168h"
     include = ["*/themes/*"]
     stripComponents = 1
+
+[".config/i3blocks"]
+    type = "git-repo"
+    url = "https://github.com/vivien/i3blocks-contrib.git"
+    refreshPeriod = "168h"
 
 # Unable to do this automatically _and_ edit files within
 # [".config/nvim"]

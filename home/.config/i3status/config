@@ -26,7 +26,7 @@ order += "battery all"
 order += "time"
 order += "tztime eastern"
 order += "tztime utc"
-order += "tztime nairobi"
+# order += "tztime nairobi"
 # order += "ipv6"
 
 cpu_usage {
@@ -75,7 +75,7 @@ cpu_temperature 0 {
 }
 
 memory {
-       format = "RAM: %available"
+       format = "RAM: %available avail"
 }
 
 time {

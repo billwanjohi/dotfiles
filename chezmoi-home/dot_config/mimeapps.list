@@ -1,0 +1,29 @@
+# https://wiki.archlinux.org/title/XDG_MIME_Applications#Format
+# find potential matches in /usr/share/applications/mimeinfo.cache
+
+[Default Applications]
+application/octet-stream=emacs.desktop;
+application/pdf=org.gnome.Evince.desktop
+application/vnd.openxmlformats-officedocument.wordprocessingml.document=libreoffice-writer.desktop;
+application/x-bittorrent=transmission-gtk.desktop
+application/x-extension-htm=firefox.desktop
+application/x-extension-html=firefox.desktop
+application/x-extension-shtml=firefox.desktop
+application/x-extension-xht=firefox.desktop
+application/x-extension-xhtml=firefox.desktop
+application/xhtml+xml=firefox.desktop
+image/jpeg=viewnior.desktop;gpicview.desktop
+image/png=viewnior.desktop;gpicview.desktop
+message/rfc822=userapp-Thunderbird.desktop
+text/calendar=firefox.desktop
+text/csv=libreoffice-calc.desktop
+text/html=code-oss.desktop;firefox.desktop
+text/plain=code-oss.desktop;mousepad.desktop
+x-scheme-handler/chrome=firefox.desktop;brave.desktop
+x-scheme-handler/discord-402572971681644545=discord-402572971681644545.desktop
+x-scheme-handler/ftp=firefox.desktop
+x-scheme-handler/http=firefox.desktop
+x-scheme-handler/https=firefox.desktop
+x-scheme-handler/mailto=firefox.desktop
+x-scheme-handler/sgnl=signal-desktop.desktop
+x-scheme-handler/zoommtg=us.zoom.Zoom.desktop
