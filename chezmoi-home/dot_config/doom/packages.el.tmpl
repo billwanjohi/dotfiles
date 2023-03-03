@@ -47,6 +47,8 @@
 ;(package! another-package
 ;  :recipe (:host github :repo "username/repo"))
 {{- if has "copilot" .enabled }}
+
+;; https://github.com/zerolfx/copilot.el#example-for-doom-emacs
 (package! copilot
   :recipe (:host github :repo "zerolfx/copilot.el" :files ("*.el" "dist")))
 {{- end }}

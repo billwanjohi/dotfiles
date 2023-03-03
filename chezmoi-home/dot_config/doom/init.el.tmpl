@@ -21,7 +21,11 @@
        ;;layout            ; auie,ctsrnm is the superior home row
 
        :completion
+{{- if has "copilot" .enabled }}
+       (company +childframe) ; the ultimate code completion backend
+{{- else }}
        (company -childframe) ; the ultimate code completion backend
+{{- end }}
        ;;helm              ; the *other* search engine for love and life
        ;;ido               ; the other *other* search engine...
        ;;ivy               ; a search engine for love and life
