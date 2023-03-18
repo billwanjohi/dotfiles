@@ -1,0 +1,28 @@
+/* adapted from catppuccin/rofi basic */
+
+configuration{
+    modi: "run,drun,window";
+    icon-theme: "Papirus-Dark";
+    show-icons: true;
+    terminal: "alacritty";
+    drun-display-format: "{icon} {name}";
+    location: 0;
+    disable-history: false;
+    hide-scrollbar: true;
+    display-drun: "   Apps ";
+    display-run: "   Run ";
+    display-window: " 﩯  Window";
+    display-Network: " 󰤨  Network";
+    sidebar-mode: true;
+
+    kb-accept-entry: "Control+m,Return,KP_Enter";
+    kb-remove-to-eol: "";
+    kb-row-up: "Up,Control+p,Control+k";
+    kb-row-down: "Down,Control+n,Control+j";
+}
+
+@theme "catppuccin-mocha"
+
+* {
+    font: "Space Mono Nerd Font 12";
+}
