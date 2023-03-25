@@ -21,9 +21,15 @@ brew install \
 {{- if has "nvm" .enabled }}
     nvm \
 {{- end }}
+    starship
     zoxide
 
 {{ else -}}
+
+if [ "$SHELL" != "/bin/zsh" ]; then
+    chsh -s /bin/zsh
+fi
+
 yay --sync --needed \
     direnv \
     fzf \
@@ -33,7 +39,8 @@ yay --sync --needed \
 {{- if has "nvm" .enabled }}
     nvm \
 {{- end }}
-    zoxide
+    starship \
+    zoxide \
 
 {{ end -}}
 
@@ -41,4 +48,4 @@ if ! [ "$(asdf plugin-list | grep -x direnv)" ]
 then
   asdf plugin-add direnv
 fi
-asdf direnv setup --shell zsh --version latest
+asdf direnv setup --shell zsh --version system

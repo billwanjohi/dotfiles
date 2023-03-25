@@ -39,3 +39,13 @@
     url = "https://github.com/catppuccin/qt5ct.git"
     refreshPeriod = "168h"
 
+[".config/tmux/plugins/tpm"]
+    type = "git-repo"
+    url = "https://github.com/tmux-plugins/tpm.git"
+    refreshPeriod = "168h"
+
+["Pictures/wallpapers/catppuccin"]
+    type = "git-repo"
+    url = "https://github.com/catppuccin/wallpapers.git"
+    refreshPeriod = "168h"
+

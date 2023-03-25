@@ -32,18 +32,28 @@ brew install ${non_casks[*]}
 
 brew link --overwrite node@16
 npm install --global yarn
-yarn global add bash-language-server
+yarn global add bash-language-server marked
 brew install emacs-plus --with-native-comp
 {{- else -}}
-yay --sync --needed \
-    bash-language-server \
-    emacs-nativecomp \
-    fd \
-    nerd-fonts-space-mono \
-    ripgrep \
-    shellcheck
 
-yay --sync --needed python-jsbeautifier  # for `web` layer
+yay_packages=(
+    bash-language-server
+    emacs-nativecomp
+    editorconfig-checker
+    fd
+    pandoc-cli
+    python-jsbeautifier  # for `web` layer
+    ripgrep
+    shellcheck
+    shfmt
+    ttf-all-the-icons
+    ttf-space-mono-nerd
+)
+
+yay --sync --needed ${yay_packages[*]}
+
+# yarn global add marked
+
 {{- end }}
 
 {{- if has "ruby" .enabled }}

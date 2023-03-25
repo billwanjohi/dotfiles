@@ -83,8 +83,23 @@ symbol = "🅢 "
 [rust]
 symbol = " "
 
+[shell]
+disabled = false
+zsh_indicator = ""
+format = '[$indicator]($style)' # removed trailing space
+
+[shlvl]
+disabled = false
+threshold = 3
+symbol = '↕'
+
 [status]
 disabled = false
+
+[sudo]
+disabled = false
+symbol = '🚔 '
+format = '[$symbol]($style)'
 
 [username]
 show_always = true

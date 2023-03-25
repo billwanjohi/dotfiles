@@ -81,6 +81,9 @@ bindsym $mod+g exec --no-startup-id rofi -show window
 # start rofi-calc
 bindsym $mod+c exec --no-startup-id rofi -show calc -modi calc -no-show-match -no-sort -calc-command "echo -n '{result}' | xsel -ib"
 
+# start rofi-bitwarden
+bindsym $mod+p exec --no-startup-id bwmenu
+
 # start unicode (emoji) picker
 bindsym $mod+Shift+u exec --no-startup-id unipicker --command "rofi -dmenu" --copy
 
@@ -103,8 +106,8 @@ bindsym $mod+Ctrl+m exec $terminal -e 'pulsemixer'
 ################################################################################################
 
 # Screen brightness controls
-# bindsym XF86MonBrightnessUp exec "xbacklight -inc 10; notify-send 'brightness up'"
-# bindsym XF86MonBrightnessDown exec "xbacklight -dec 10; notify-send 'brightness down'"
+bindsym XF86MonBrightnessUp exec "brightnessctl s +10% && notify-send 'brightness up'"
+bindsym XF86MonBrightnessDown exec "brightnessctl s 10%- && notify-send 'brightness down'"
 
 # Start Applications
 bindsym $mod+Ctrl+b exec $terminal -e 'bmenu'
@@ -336,14 +339,13 @@ mode "resize" {
 exec --no-startup-id nitrogen --restore  # ; sleep 1; picom -b
 exec --no-startup-id pamac-tray
 exec --no-startup-id greenclip daemon
-exec --no-startup-id feh --no-fehbg --bg-fill ~/Pictures/catppuccin-gradient-bkg3_bkg5.png
+exec --no-startup-id feh --no-fehbg --bg-fill ~/Pictures/wallpapers/catppuccin/gradients/bkg3_bkg5.png
 # exec --no-startup-id blueman-applet
 # exec_always --no-startup-id sbxkb
 # exec --no-startup-id autorandr --change && start_conky_maia
 # exec --no-startup-id start_conky_green
 exec --no-startup-id xss-lock --transfer-sleep-lock -- i3exit lock  # subscribes to systemd suspend event
 exec --no-startup-id xautolock -time 15 -detectsleep -locker "i3exit lock"
-# exec --no-startup-id xautolock -time 60 -locker "i3exit suspend"
 exec_always --no-startup-id ff-theme-util
 exec_always --no-startup-id fix_xcursor
 
@@ -386,7 +388,7 @@ set_from_resource $term_color15    color15
 # Start i3bar to display a workspace bar (plus the system information i3status if available)
 bar {
 	i3bar_command i3bar
-	status_command i3status
+	status_command i3status-rs
 	position bottom
 
 ## please set your primary output first. Example: 'xrandr --output eDP1 --primary'

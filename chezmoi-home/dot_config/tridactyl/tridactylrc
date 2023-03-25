@@ -1,5 +1,5 @@
 " From https://github.com/tridactyl/tridactyl/blob/master/.tridactylrc
-" Install the native messenger (:installnative in Tridactyl
+" Install the native messenger (:nativeinstall in Tridactyl)
 " Run :source to get it in the browser, or just restart.
 
 " Binds

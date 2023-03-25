@@ -2,7 +2,7 @@
 # find potential matches in /usr/share/applications/mimeinfo.cache
 
 [Default Applications]
-application/octet-stream=emacs.desktop;
+application/octet-stream=nvim.desktop;emacs.desktop;
 application/pdf=org.gnome.Evince.desktop
 application/vnd.openxmlformats-officedocument.wordprocessingml.document=libreoffice-writer.desktop;
 application/x-bittorrent=transmission-gtk.desktop

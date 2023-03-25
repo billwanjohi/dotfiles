@@ -1,3 +1,0 @@
-{{- if has "nvm" .enabled -}}
-Needed for nvm to work? Can't really remember.
-{{- end -}}

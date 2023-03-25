@@ -11,7 +11,6 @@
 zmodule archive
 
 export ASDF_DATA_DIR=$XDG_DATA_HOME/asdf
-source "${XDG_CONFIG_HOME:-$HOME/.config}/asdf-direnv/zshrc"
 # export ASDF_DIR=$XDG_DATA_HOME/asdf # this gets overridden anyway
 zmodule asdf
 
@@ -39,7 +38,7 @@ zmodule joke/zim-starship
 # https://spaceship-prompt.sh/config/prompt/
 # zmodule spaceship-prompt/spaceship-prompt --name spaceship --no-submodules
 
-zmodule ${XDG_CONFIG_HOME}/zsh/modules/work
+#zmodule ${XDG_CONFIG_HOME}/zsh/modules/work
 
 ################
 # Completion
