@@ -10,6 +10,9 @@ symbol = " "
 [conda]
 symbol = " "
 
+[cmd_duration]
+show_milliseconds = false
+
 [dart]
 symbol = " "
 
@@ -44,14 +47,20 @@ up_to_date = "✔️"
 [golang]
 symbol = " "
 
+[guix_shell]
+symbol = " "
+
 [haskell]
 symbol = " "
+
+[haxe]
+symbol = "⌘ "
 
 [hg_branch]
 symbol = " "
 
 [hostname]
-ssh_only = false
+ssh_only = true
 
 [java]
 symbol = " "
@@ -59,17 +68,64 @@ symbol = " "
 [julia]
 symbol = " "
 
+[lua]
+symbol = " "
+
 [memory_usage]
 symbol = " "
+
+[meson]
+symbol = "喝 "
 
 [nim]
 symbol = " "
 
 [nix_shell]
-symbol = " "
+symbol = " "
 
 [nodejs]
 symbol = " "
+
+[os]
+disabled = true
+
+[os.symbols]
+Alpine = " "
+Amazon = " "
+Android = " "
+Arch = " "
+CentOS = " "
+Debian = " "
+DragonFly = " "
+Emscripten = " "
+EndeavourOS = " "
+Fedora = " "
+FreeBSD = " "
+Garuda = "﯑ "
+Gentoo = " "
+HardenedBSD = "ﲊ "
+Illumos = " "
+Linux = " "
+Macos = " "
+Manjaro = " "
+Mariner = " "
+MidnightBSD = " "
+Mint = " "
+NetBSD = " "
+NixOS = " "
+OpenBSD = " "
+openSUSE = " "
+OracleLinux = " "
+Pop = " "
+Raspbian = " "
+Redhat = " "
+RedHatEnterprise = " "
+Redox = " "
+Solus = "ﴱ "
+SUSE = " "
+Ubuntu = " "
+Unknown = " "
+Windows = " "
 
 [package]
 symbol = " "
@@ -77,11 +133,20 @@ symbol = " "
 [python]
 symbol = " "
 
-[spack]
-symbol = "🅢 "
+[rlang]
+symbol = "ﳒ "
+
+[ruby]
+symbol = " "
 
 [rust]
 symbol = " "
+
+[scala]
+symbol = " "
+
+[spack]
+symbol = "🅢 "
 
 [shell]
 disabled = false

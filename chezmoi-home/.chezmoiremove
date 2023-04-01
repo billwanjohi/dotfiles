@@ -1,4 +1,9 @@
-{{ if eq .chezmoi.os "linux" }}
+.bash_profile
+.dir_colors
+.profile
+.zshrc
+
+{{- if eq .chezmoi.os "linux" }}
 # created by flatpak
 MEGAsync Downloads
-{{ end }}
+{{- end }}
