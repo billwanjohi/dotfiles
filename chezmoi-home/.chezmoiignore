@@ -3,4 +3,7 @@
 Brewfile
 Library/**
 macos_defaults.sh
+{{ else if ne .chezmoi.os "linux" }}
+.config/autostart
+.local/share/applications
 {{ end }}

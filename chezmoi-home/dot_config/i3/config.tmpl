@@ -43,7 +43,7 @@ default_floating_border normal
 hide_edge_borders none
 
 # change borders
-# bindsym $mod+u border none
+bindsym $mod+u border none
 bindsym $mod+y border pixel 1
 bindsym $mod+n border normal
 
@@ -336,7 +336,8 @@ mode "resize" {
 ########################
 # Autostart applications
 ########################
-exec --no-startup-id nitrogen --restore  # ; sleep 1; picom -b
+exec --no-startup-id /usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1
+exec --no-startup-id nitrogen --restore; sleep 1; picom -b
 exec --no-startup-id pamac-tray
 exec --no-startup-id greenclip daemon
 exec --no-startup-id feh --no-fehbg --bg-fill ~/Pictures/wallpapers/catppuccin/gradients/bkg3_bkg5.png
@@ -414,12 +415,6 @@ bar {
         urgent_workspace   #16a085 #FDF6E3 #E5201D
     }
 }
-
-# bar {
-#     status_command i3blocks
-# 	tray_output none
-#     position top
-# }
 
 # hide/unhide i3status bar
 bindsym $mod+m bar mode toggle

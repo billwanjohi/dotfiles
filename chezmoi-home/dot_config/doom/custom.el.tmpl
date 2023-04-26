@@ -9,6 +9,9 @@
    '("[/\\\\]\\.git\\'" "[/\\\\]\\.hg\\'" "[/\\\\]\\.bzr\\'" "[/\\\\]_darcs\\'" "[/\\\\]\\.svn\\'" "[/\\\\]_FOSSIL_\\'" "[/\\\\]\\.idea\\'" "[/\\\\]\\.ensime_cache\\'" "[/\\\\]\\.eunit\\'" "[/\\\\]node_modules" "[/\\\\]\\.fslckout\\'" "[/\\\\]\\.tox\\'" "[/\\\\]dist\\'" "[/\\\\]dist-newstyle\\'" "[/\\\\]\\.stack-work\\'" "[/\\\\]\\.bloop\\'" "[/\\\\]\\.metals\\'" "[/\\\\]target\\'" "[/\\\\]\\.ccls-cache\\'" "[/\\\\]\\.vscode\\'" "[/\\\\]\\.deps\\'" "[/\\\\]build-aux\\'" "[/\\\\]autom4te.cache\\'" "[/\\\\]\\.reference\\'" "[/\\\\]bin/Debug\\'" "[/\\\\]obj\\'" "[/\\\\]\\.scrapy\\'"))
 {{- if (eq .chezmoi.os "darwin") }}
  '(ns-right-alternate-modifier 'meta)
+ '(ob-mermaid-cli-path "/usr/local/bin/mmdc")
+{{- else }}
+ '(ob-mermaid-cli-path "/usr/bin/mmdc")
 {{- end }}
  '(org-agenda-custom-commands
    '(("n" "Agenda and all TODOs"
@@ -54,10 +57,10 @@
 {{- end }}
  '(org-scheduled-past-days 4)
  '(scroll-margin 10)
- '(typescript-indent-level 2)
 {{- if has "todoist" .enabled }}
  '(todoist-backing-buffer "~/org/todoist.org")
 {{- end }}
+ '(typescript-indent-level 2)
  )
 (custom-set-faces
  ;; custom-set-faces was added by Custom.

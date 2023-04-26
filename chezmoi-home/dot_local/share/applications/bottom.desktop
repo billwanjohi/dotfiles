@@ -1,0 +1,8 @@
+[Desktop Entry]
+Type=Application
+Name=Bottom (btm)
+Comment=A graphical process/system monitor
+Exec=btm
+StartupNotify=false
+Terminal=true
+Categories=System;Monitor;
