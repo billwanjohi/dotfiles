@@ -12,17 +12,18 @@ then
     /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
 fi
 
-brew install \
-    direnv \
-    fzf \
-    git-delta \
-    lsd \
-    neovim \
-{{- if has "nvm" .enabled }}
-    nvm \
-{{- end }}
-    starship
-    zoxide
+
+non_casks=(
+  direnv
+  fzf
+  git-delta
+  lsd
+  neovim
+  starship
+  zoxide
+)
+
+brew install ${non_casks[*]}
 
 {{ else -}}
 
@@ -30,18 +31,17 @@ if [ "$SHELL" != "/bin/zsh" ]; then
     chsh -s /bin/zsh
 fi
 
-yay --sync --needed \
-    direnv \
-    fzf \
-    git-delta \
-    lsd \
-    neovim \
-{{- if has "nvm" .enabled }}
-    nvm \
-{{- end }}
-    starship \
-    zoxide \
+pacman_packages=(
+  direnv
+  fzf
+  git-delta
+  lsd
+  neovim
+  starship
+  zoxide
+)
 
+yay --sync --needed ${pacman_packages[*]}
 {{ end -}}
 
 if ! [ "$(asdf plugin-list | grep -x direnv)" ]

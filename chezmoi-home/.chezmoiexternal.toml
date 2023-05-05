@@ -44,6 +44,7 @@
     url = "https://github.com/tmux-plugins/tpm.git"
     refreshPeriod = "168h"
 
+# Repository was deleted(!)
 # ["Pictures/wallpapers/catppuccin"]
 #     type = "git-repo"
 #     url = "https://github.com/catppuccin/wallpapers.git"

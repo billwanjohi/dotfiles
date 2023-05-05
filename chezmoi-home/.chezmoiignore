@@ -1,9 +1,22 @@
 {{ if ne .chezmoi.os "darwin" }}
-.config/yarn
 Brewfile
 Library/**
 macos_defaults.sh
 {{ else if ne .chezmoi.os "linux" }}
 .config/autostart
 .local/share/applications
+{{ end }}
+{{ if ne .chezmoi.os "linux" }}
+.config/i3status
+.config/i3status-rust
+.config/i3status-rust/config.toml
+.config/i3status/config
+.config/mimeapps.list
+.config/rofi
+.config/rofi/config.rasi
+.local/share/rofi
+.local/share/rofi/themes
+Pictures
+Pictures/wallpapers
+Pictures/wallpapers/catppuccin
 {{ end }}

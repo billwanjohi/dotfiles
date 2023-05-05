@@ -38,7 +38,7 @@ zmodule joke/zim-starship
 # https://spaceship-prompt.sh/config/prompt/
 # zmodule spaceship-prompt/spaceship-prompt --name spaceship --no-submodules
 
-#zmodule ${XDG_CONFIG_HOME}/zsh/modules/work
+zmodule ${XDG_CONFIG_HOME}/zsh/modules/local
 
 ################
 # Completion

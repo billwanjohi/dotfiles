@@ -47,7 +47,6 @@ non_casks=(
     git
     git-lfs
     gnupg
-    graphviz
     httpie
     lazydocker
     lazygit
@@ -56,8 +55,6 @@ non_casks=(
     onefetch  # beautiful repo deets
     pandoc
     prettier
-    rofi # i3
-    rofi-calc # i3
     shellcheck
     shfmt
     sqlfluff
@@ -65,7 +62,6 @@ non_casks=(
     tig
     tmux
     xsv
-    xsel # i3
 )
 
 brew install ${non_casks[*]}
@@ -74,7 +70,14 @@ $(brew --prefix)/opt/fzf/install
 
 defaultbrowser firefox
 {{- else -}}
-yay --sync --needed \
-    bat \
-    tealdeer
+
+pacman_packages=(
+  bat
+  rofi # i3
+  rofi-calc # i3
+  tealdeer
+  xsel # i3
+)
+
+yay --sync --needed ${pacman_packages[*]}
 {{- end }}

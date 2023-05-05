@@ -12,7 +12,9 @@
 	stash-all = stash save --include-untracked
 
 [blame]
-	# ignoreRevsFile = .git-blame-ignore-revs  # breaks repositories without this
+	# https://stackoverflow.com/questions/70435937/git-blame-with-optional-ignorerevsfile
+	# ignoreRevsFile = .git-blame-ignore-revs
+
 	markIgnoredLines = true
 	markUnblamableLines = true
 
@@ -70,10 +72,6 @@
 
 [push]
 	autoSetupRemote = true
-
-[url "git@github.com:"]
-	# can't do this before ssh keys are set up, so breaks chezmoi bootstrap
-	# insteadOf = https://github.com/
 
 [user]
 	name = {{ .full_name }}
