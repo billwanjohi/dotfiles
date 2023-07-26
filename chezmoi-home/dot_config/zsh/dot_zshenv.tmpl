@@ -6,11 +6,15 @@
 # but setting them might coerce an app that only has optional support
 # to recognize that this user very much wants it.
 
-## Set already
+## Set already in linux
 # XDG_CURRENT_DESKTOP
 # XDG_DATA_DIRS
 # XDG_GREETER_DATA_DIR
+{{ if eq .chezmoi.os "darwin" -}}
+export XDG_RUNTIME_DIR="/tmp/${UID}-runtime-dir"
+{{ else -}}
 # XDG_RUNTIME_DIR
+{{ end -}}
 # XDG_SEAT
 # XDG_SEAT_PATH
 # XDG_SESSION_CLASS
@@ -42,6 +46,7 @@ export AWS_SHARED_CREDENTIALS_FILE=$XDG_CONFIG_HOME/aws/credentials
 export ANDROID_HOME="${XDG_DATA_HOME}/android"
 export ASDF_DIR="$XDG_DATA_HOME/asdf"
 export ASDF_DATA_DIR="$XDG_DATA_HOME/asdf"
+export BUNDLE_USER_CACHE="$XDG_CACHE_HOME/bundle"
 export BROWSER=firefox
 export CARGO_HOME="$XDG_DATA_HOME/cargo"
 export DIFFPROG="nvim -d"
@@ -49,21 +54,31 @@ export DOCKER_CONFIG="$XDG_CONFIG_HOME/docker"
 export EDITOR=nvim
 export FZF_DEFAULT_COMMAND='fd --type f'
 export ICEAUTHORITY="$XDG_CACHE_HOME/ICEauthority"
+export GRADLE_USER_HOME="$XDG_DATA_HOME/gradle"
+export GNUPGHOME="$XDG_DATA_HOME/gnupg"
+export GOPATH="$XDG_DATA_HOME/go"
 export LANG=en_US.UTF-8
 export LESS="--ignore-case --RAW-CONTROL-CHARS --tabs=x3"
 export LESSHISTFILE="$XDG_STATE_HOME/less_history"
 export MYSQL_HISTFILE="$XDG_STATE_HOME/mysql_history"
+export NPM_CONFIG_USERCONFIG="$XDG_CONFIG_HOME/npm/npmrc"
+export NODE_REPL_HISTORY="$XDG_STATE_HOME/node_repl_history"
 export NVM_DIR="$XDG_DATA_HOME/nvm"
 export QT_QPA_PLATFORMTHEME="qt5ct"
 export PGPASSFILE="$XDG_CONFIG_HOME/pg/pgpass"
 export PGSERVICEFILE="$XDG_CONFIG_HOME/pg/pg_service.conf"
 export PSQLRC="$XDG_CONFIG_HOME/pg/psqlrc"
 export PSQL_HISTORY="$XDG_STATE_HOME/psql_history"
+export QT_QPA_PLATFORMTHEME="qt5ct"
+export REDISCLI_HISTFILE="$XDG_STATE_HOME/rediscli_history"
 export RIPGREP_CONFIG_PATH=$XDG_CONFIG_HOME/ripgreprc
 export RUSTUP_HOME="$XDG_DATA_HOME/rustup"
 export RXVT_SOCKET="$XDG_RUNTIME_DIR/urxvtd"
 export SHELL_SESSIONS_DISABLE=1
+export SOLARGRAPH_CACHE="$XDG_CACHE_HOME/solargraph"
 export TERMINAL=alacritty
+export TERMINFO="$XDG_DATA_HOME/terminfo"
+export TERMINFO_DIRS="$XDG_DATA_HOME/terminfo:/usr/share/terminfo"
 export TZ=UTC
 export VAGRANT_ALIAS_FILE="$XDG_DATA_HOME/vagrant/aliases"
 export VAGRANT_HOME="$XDG_DATA_HOME/vagrant"

@@ -1,22 +1,27 @@
+# Intentionally untracked
+.*_history
+**/.DS_Store
+.Trash
+.ansible
+.config/asdf-direnv/zshrc
+.config/zsh/.zcomp*
+.local/state/*_history
+.ssh/id_*
+
 {{ if ne .chezmoi.os "darwin" }}
+.CFUserTextEncoding
 Brewfile
 Library/**
 macos_defaults.sh
+
 {{ else if ne .chezmoi.os "linux" }}
 .config/autostart
-.local/share/applications
-{{ end }}
-{{ if ne .chezmoi.os "linux" }}
-.config/i3status
-.config/i3status-rust
-.config/i3status-rust/config.toml
-.config/i3status/config
+.config/i3*
 .config/mimeapps.list
 .config/rofi
-.config/rofi/config.rasi
+.config/systemd
+.local/share/applications
 .local/share/rofi
-.local/share/rofi/themes
-Pictures
-Pictures/wallpapers
-Pictures/wallpapers/catppuccin
+.mozilla
+
 {{ end }}

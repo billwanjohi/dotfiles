@@ -2,6 +2,11 @@
 # more host-specific declarations should be given near the beginning of the file,
 # and general defaults at the end.
 
+{{- if eq .chezmoi.os "darwin" }}
+
+Include /Users/billkw/.colima/ssh_config
+{{- end }}
+
 {{/*
 We don't need this because we are using chezmoi template
 
