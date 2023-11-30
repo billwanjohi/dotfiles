@@ -68,6 +68,9 @@ symbol = " "
 [julia]
 symbol = " "
 
+[kubernetes]
+disabled = false
+
 [lua]
 symbol = " "
 

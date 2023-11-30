@@ -7,6 +7,7 @@
  '(js-indent-level 2)
  '(lsp-file-watch-ignored-directories
    '("[/\\\\]\\.git\\'" "[/\\\\]\\.hg\\'" "[/\\\\]\\.bzr\\'" "[/\\\\]_darcs\\'" "[/\\\\]\\.svn\\'" "[/\\\\]_FOSSIL_\\'" "[/\\\\]\\.idea\\'" "[/\\\\]\\.ensime_cache\\'" "[/\\\\]\\.eunit\\'" "[/\\\\]node_modules" "[/\\\\]\\.fslckout\\'" "[/\\\\]\\.tox\\'" "[/\\\\]dist\\'" "[/\\\\]dist-newstyle\\'" "[/\\\\]\\.stack-work\\'" "[/\\\\]\\.bloop\\'" "[/\\\\]\\.metals\\'" "[/\\\\]target\\'" "[/\\\\]\\.ccls-cache\\'" "[/\\\\]\\.vscode\\'" "[/\\\\]\\.deps\\'" "[/\\\\]build-aux\\'" "[/\\\\]autom4te.cache\\'" "[/\\\\]\\.reference\\'" "[/\\\\]bin/Debug\\'" "[/\\\\]obj\\'" "[/\\\\]\\.scrapy\\'"))
+ '(mermaid-output-format ".svg")
 {{- if (eq .chezmoi.os "darwin") }}
  '(ns-right-alternate-modifier 'meta)
  '(ob-mermaid-cli-path "/usr/local/bin/mmdc")
@@ -57,6 +58,7 @@
 {{- end }}
  '(org-scheduled-past-days 4)
  '(scroll-margin 5)
+ '(typescript-indent-level 2)
 {{- if has "todoist" .enabled }}
  '(todoist-backing-buffer "~/org/todoist.org")
 {{- end }}

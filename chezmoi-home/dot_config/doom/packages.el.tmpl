@@ -10,8 +10,8 @@
 ;(package! some-package)
 (package! activity-watch-mode)
 (package! chezmoi)
-(package! nginx-mode)
 (package! jsonnet-mode)
+(package! mermaid-mode)
 (package! ob-mermaid)
 {{- if has "cue" .enabled }}
 (package! cue-mode)
@@ -25,6 +25,9 @@
 {{- if has "minizinc" .enabled }}
 (package! minizinc-mode)
 (add-to-list 'auto-mode-alist '("\\.mzn\\'" . minizinc-mode))
+{{- end }}
+{{- if has "nginx" .enabled }}
+(package! nginx-mode)
 {{- end }}
 {{- if has "todoist" .enabled }}
 (package! todoist)
