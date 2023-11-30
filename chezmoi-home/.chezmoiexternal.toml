@@ -1,8 +1,19 @@
+[".cache/catppuccin-rofi"]
+    type = "git-repo"
+    url = "https://github.com/catppuccin/rofi"
+    refreshPeriod = "168h"
+    pull.args = ['--autostash']
+
 [".config/alacritty/colors"]
     type = "git-repo"
     url = "https://github.com/catppuccin/alacritty.git"
     refreshPeriod = "168h"
     include = ["catppuccin*.yml"]
+
+[".config/bat/themes"]
+    type = "git-repo"
+    url = "https://github.com/catppuccin/rofi"
+    refreshPeriod = "168h"
 
 [".config/doom/themes"]
     type = "git-repo"
@@ -23,11 +34,10 @@
 
 {{ if eq .chezmoi.os "linux" }}
 
-[".cache/catppuccin-rofi"]
+[".config/aconfmgr"]
     type = "git-repo"
-    url = "https://github.com/catppuccin/rofi"
+    url = "git@github.com:billwanjohi/archfiles.git"
     refreshPeriod = "168h"
-    pull.args = ['--autostash']
 
 [".config/i3/catppuccin"]
     type = "git-repo"

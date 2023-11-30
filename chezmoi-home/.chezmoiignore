@@ -1,6 +1,8 @@
 # Intentionally untracked
-.*_history
 **/.DS_Store
+.config/**/GPUCache
+.config/chezmoi
+.*_history
 .Trash
 .ansible
 .config/asdf-direnv/zshrc

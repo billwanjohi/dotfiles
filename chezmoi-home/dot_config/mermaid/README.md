@@ -1,5 +1,7 @@
 # Mermaid Config
 
+[All of the options](https://github.com/mermaid-js/mermaid/blob/v10.1.0/packages/mermaid/src/defaultConfig.ts)
+
 ## Averting SVG issues
 
 https://github.com/mermaid-js/mermaid-cli/issues/112#issuecomment-869401507

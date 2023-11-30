@@ -19,11 +19,17 @@ brew upgrade --ignore-pinned
 # brew autoremove
 brew bundle dump
 # brew cleanup  # runs every 30 days anyway
-{{- else -}}
+{{ else -}}
 flatpak update
+
+# flatpak remotes >| ~/.config/flatpak/flatpak-remotes.txt  # I don't know enough about what I need to save here
+flatpak list --system --app --columns=application,branch,origin,installation,options >| ~/.config/flatpak/flatpak-system-apps.txt
+# flatpak list --user --app --columns=application,branch,origin,installation,options >| ~/.config/flatpak/flatpak-user-apps.txt
+
+sudo btrfs subvolume list / | grep -vq .snapshots >| ~/.config/btrfs/subvolumes.txt
 
 yay
 
 fwupdmgr refresh --force
 fwupdmgr update
-{{- end }}
+{{ end -}}

@@ -133,10 +133,12 @@ set searchurls.julia https://www.google.com/search?q=site:http://docs.julialang.
 
 " Custom
 
+" disable/ignore by default on these paths
 blacklistadd airtable.com
 blacklistadd docs.google.com
 blacklistadd feedly.com
 blacklistadd mail.google.com/mail
+blacklistadd todoist.com/app/
 
 set searchurls.aur https://aur.archlinux.org/packages?O=0&K=%s
 set searchurls.bgg https://boardgamegeek.com/geeksearch.php?action=search&q=%s&objecttype=boardgame

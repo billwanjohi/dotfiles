@@ -1,6 +1,9 @@
 {
+  "fontFamily": "Inconsolata UltraCondensed",
   "flowchart": {
     "htmlLabels": false,
+    "nodeSpacing": 25,
+    "rankSpacing": 40,
     "useMaxWidth": false
   }
 }
