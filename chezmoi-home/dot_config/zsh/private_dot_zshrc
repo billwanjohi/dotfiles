@@ -255,3 +255,9 @@ alias xo="xdg-open"
 
 export PATH="$PATH:$HOME/.emacs.d/bin"  # doom/spacemacs utilities
 source "${XDG_CONFIG_HOME:-$HOME/.config}/asdf-direnv/zshrc"
+
+# https://github.com/dandavison/delta/issues/1167#issuecomment-1678568122
+# can probably remove once we're on a version > 0.16.5
+# https://github.com/dandavison/delta/releases
+# https://github.com/dandavison/delta/commit/49a99180fed618b62ba773e3aebd8968b044262d
+compdef _gnu_generic delta
